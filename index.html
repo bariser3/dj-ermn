@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ ERMN</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">PRESENTING</p>
+      <h1 class="hero-title">DJ ERMN</h1>
+      <p class="hero-tagline">Hiphop · Clubbangers · House · Techno</p>
+      <a href="#booking" class="btn">Booking anfragen</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Über mich</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            DJ ERMN steht für präzise Übergänge, druckvolle Bässe und eine Crowd die nicht aufhört zu tanzen.
+            Mit dem <strong>Pioneer XDJ-XZ</strong> als Herzstück des Sets liefert ERMN Sets, die sich von
+            klassischem Hiphop bis zu hartem Techno bewegen – immer mit Energie, immer mit Gefühl.
+          </p>
+        </div>
+        <div class="equipment-box">
+          <div class="eq-icon">🎛️</div>
+          <h3>Equipment</h3>
+          <p class="eq-name">Pioneer XDJ-XZ</p>
+          <p class="eq-desc">All-in-One DJ System · 4-Kanal · standalone</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENRES -->
+  <section class="section dark" id="genres">
+    <div class="container">
+      <h2 class="section-title">Genres &amp; Skills</h2>
+      <p class="section-sub">Transparenz über das was ich spiele – und was nicht.</p>
+
+      <div class="genre-grid">
+
+        <div class="genre-col">
+          <h3 class="genre-col-title green">⭐ Stärken</h3>
+          <div class="genre-card strong">
+            <span class="genre-name">Hiphop</span>
+            <div class="bar-wrap"><div class="bar" style="width:95%"></div></div>
+            <span class="bar-label">95%</span>
+          </div>
+          <div class="genre-card strong">
+            <span class="genre-name">Clubbangers</span>
+            <div class="bar-wrap"><div class="bar" style="width:92%"></div></div>
+            <span class="bar-label">92%</span>
+          </div>
+          <div class="genre-card strong">
+            <span class="genre-name">House</span>
+            <div class="bar-wrap"><div class="bar" style="width:88%"></div></div>
+            <span class="bar-label">88%</span>
+          </div>
+          <div class="genre-card strong">
+            <span class="genre-name">Techno</span>
+            <div class="bar-wrap"><div class="bar" style="width:83%"></div></div>
+            <span class="bar-label">83%</span>
+          </div>
+        </div>
+
+        <div class="genre-col">
+          <h3 class="genre-col-title yellow">〜 Gelegentlich</h3>
+          <div class="genre-card medium">
+            <span class="genre-name">Latin</span>
+            <div class="bar-wrap"><div class="bar med" style="width:55%"></div></div>
+            <span class="bar-label">55%</span>
+          </div>
+          <div class="genre-card medium">
+            <span class="genre-name">EDM</span>
+            <div class="bar-wrap"><div class="bar med" style="width:50%"></div></div>
+            <span class="bar-label">50%</span>
+          </div>
+          <div class="genre-card medium">
+            <span class="genre-name">Hard Tech</span>
+            <div class="bar-wrap"><div class="bar med" style="width:45%"></div></div>
+            <span class="bar-label">45%</span>
+          </div>
+        </div>
+
+        <div class="genre-col">
+          <h3 class="genre-col-title red">✗ Nicht gebucht</h3>
+          <div class="genre-card none">
+            <span class="genre-name">Rock</span>
+          </div>
+          <div class="genre-card none">
+            <span class="genre-name">Metal</span>
+          </div>
+          <div class="genre-card none">
+            <span class="genre-name">Schlager</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section" id="booking">
+    <div class="container">
+      <h2 class="section-title">Booking</h2>
+      <p class="section-sub">Interesse an einem Set? Schreib mir gerne.</p>
+      <form class="booking-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Dein Name" required />
+          <input type="email" placeholder="E-Mail" required />
+        </div>
+        <input type="text" placeholder="Event / Location" />
+        <textarea placeholder="Deine Nachricht..." rows="5" required></textarea>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 DJ ERMN &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Nachricht gesendet! ✅\nIch melde mich so schnell wie möglich.');
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
