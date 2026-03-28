@@ -16,9 +16,102 @@
       <p class="hero-sub">PRESENTING</p>
       <h1 class="hero-title">DJ ERMN</h1>
       <p class="hero-tagline">Hiphop · Clubbangers · House · Techno</p>
-      <a href="#booking" class="btn">Booking anfragen</a>
+      <a href="#stories" class="btn">Stories ansehen</a>
     </div>
   </header>
+
+  <!-- STORIES -->
+  <section class="section dark" id="stories">
+    <div class="container">
+      <h2 class="section-title">Stories</h2>
+      <p class="section-sub">Tap links / rechts zum Wechseln · Swipe auf Mobile</p>
+
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <!-- Notch -->
+          <div class="phone-notch"></div>
+
+          <!-- Story progress bars -->
+          <div class="story-progress" id="storyProgress"></div>
+
+          <!-- Story header -->
+          <div class="story-header">
+            <div class="story-avatar">ERMN</div>
+            <div class="story-meta">
+              <span class="story-name">DJ ERMN</span>
+              <span class="story-time">gerade eben</span>
+            </div>
+            <span class="story-close">✕</span>
+          </div>
+
+          <!-- Slides -->
+          <div class="story-slides" id="storySlides">
+
+            <div class="story-slide active" data-type="image">
+              <img src="ERMN-Image-1.JPG" alt="DJ ERMN" />
+              <div class="story-caption">
+                <span class="story-tag">📸 Live</span>
+                <p>DJ ERMN im Einsatz</p>
+              </div>
+            </div>
+
+            <div class="story-slide" data-type="image">
+              <img src="purple-ermn-1.jpg" alt="DJ ERMN purple" />
+              <div class="story-caption">
+                <span class="story-tag">🎧 Vibes</span>
+                <p>Purple Nights &amp; Heavy Beats</p>
+              </div>
+            </div>
+
+            <div class="story-slide" data-type="image">
+              <img src="image-ERMN-1.JPG" alt="ERMN" />
+              <div class="story-caption">
+                <span class="story-tag">🔥 Energy</span>
+                <p>Pioneer XDJ-XZ · All Night Long</p>
+              </div>
+            </div>
+
+            <div class="story-slide" data-type="video">
+              <div class="yt-wrap">
+                <iframe
+                  id="yt1"
+                  src="https://www.youtube.com/embed/kAqLYnxC4yc?enablejsapi=1&rel=0&modestbranding=1"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="story-caption">
+                <span class="story-tag">▶ Mix</span>
+                <p>Set #1 – Live Recording</p>
+              </div>
+            </div>
+
+            <div class="story-slide" data-type="video">
+              <div class="yt-wrap">
+                <iframe
+                  id="yt2"
+                  src="https://www.youtube.com/embed/WdeILncveY4?enablejsapi=1&rel=0&modestbranding=1"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="story-caption">
+                <span class="story-tag">▶ Mix</span>
+                <p>Set #2 – Club Session</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tap zones -->
+          <div class="tap-zone tap-left"  id="tapLeft"></div>
+          <div class="tap-zone tap-right" id="tapRight"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section class="section" id="about">
@@ -133,6 +226,78 @@
   </footer>
 
   <script>
+    /* ── Story Logic ─────────────────────────────── */
+    const slides      = document.querySelectorAll('.story-slide');
+    const progressBar = document.getElementById('storyProgress');
+    const DURATION    = 5000; // ms per image slide
+    let current       = 0;
+    let timer         = null;
+    let startX        = 0;
+
+    // Build progress segments
+    slides.forEach((_, i) => {
+      const seg = document.createElement('div');
+      seg.className = 'progress-seg';
+      const fill = document.createElement('div');
+      fill.className = 'progress-fill';
+      seg.appendChild(fill);
+      progressBar.appendChild(seg);
+    });
+
+    function goTo(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+
+      slides[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+
+      updateProgress();
+      clearInterval(timer);
+
+      const isVideo = slides[current].dataset.type === 'video';
+      if (!isVideo) {
+        timer = setInterval(() => {
+          if (current < slides.length - 1) goTo(current + 1);
+          else clearInterval(timer);
+        }, DURATION);
+      }
+    }
+
+    function updateProgress() {
+      const fills = progressBar.querySelectorAll('.progress-fill');
+      fills.forEach((fill, i) => {
+        fill.style.transition = 'none';
+        if (i < current) {
+          fill.style.width = '100%';
+        } else if (i === current) {
+          fill.style.width = '0%';
+          const isVideo = slides[current].dataset.type === 'video';
+          if (!isVideo) {
+            requestAnimationFrame(() => {
+              fill.style.transition = `width ${DURATION}ms linear`;
+              fill.style.width = '100%';
+            });
+          }
+        } else {
+          fill.style.width = '0%';
+        }
+      });
+    }
+
+    document.getElementById('tapLeft').addEventListener('click',  () => goTo(current - 1));
+    document.getElementById('tapRight').addEventListener('click', () => goTo(current + 1));
+
+    // Touch swipe
+    document.getElementById('storySlides').addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
+    document.getElementById('storySlides').addEventListener('touchend',   e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    });
+
+    goTo(0);
+
+    /* ── Booking Form ────────────────────────────── */
     function handleSubmit(e) {
       e.preventDefault();
       alert('Nachricht gesendet! ✅\nIch melde mich so schnell wie möglich.');
