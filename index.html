@@ -79,14 +79,7 @@
           <input type="checkbox" id="chkFonts" />
           <span class="cookie-toggle"></span>
         </label>
-        <label class="cookie-option">
-          <div class="cookie-option-info">
-            <span class="cookie-option-name">▶ YouTube</span>
-            <span class="cookie-option-desc">Video-Einbettung (Tracking durch Google/YouTube)</span>
-          </div>
-          <input type="checkbox" id="chkYoutube" />
-          <span class="cookie-toggle"></span>
-        </label>
+
       </div>
 
       <div class="cookie-modal-actions">
@@ -104,7 +97,7 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#stories"  onclick="closeMenu()">Stories</a></li>
-      <li><a href="#videos"   onclick="closeMenu()">Video</a></li>
+      <li><a href="#hoerprobe" onclick="closeMenu()">Hörprobe</a></li>
       <li><a href="#about"    onclick="closeMenu()">Über mich</a></li>
       <li><a href="#genres"   onclick="closeMenu()">Genres</a></li>
       <li><a href="#booking"  onclick="closeMenu()">Booking</a></li>
@@ -183,37 +176,20 @@
     </div>
   </section>
 
-  <!-- VIDEOS -->
-  <section class="section dark" id="videos">
+  <!-- HÖRPROBE -->
+  <section class="section dark" id="hoerprobe">
     <div class="container">
-      <h2 class="section-title">Video</h2>
-      <p class="section-sub">Club Session – live aufgenommen.</p>
-
-      <div class="video-accordion" id="videoAccordion">
-        <div class="video-thumb-wrap" id="videoThumb" onclick="openVideo()">
-          <img src="https://img.youtube.com/vi/WdeILncveY4/maxresdefault.jpg" alt="Set – Club Session" />
-          <div class="video-play-btn">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="38" stroke="white" stroke-width="3" fill="rgba(0,0,0,0.5)"/>
-              <polygon points="32,24 32,56 60,40" fill="white"/>
-            </svg>
-          </div>
-          <div class="video-thumb-label">
-            <span class="story-tag">▶ Jetzt ansehen</span>
-            <p>Club Session</p>
-          </div>
-        </div>
-        <div class="video-player-wrap" id="videoPlayer" style="display:none;">
-          <div class="video-wrap">
-            <iframe id="ytFrame"
-              src=""
-              data-src="https://www.youtube.com/embed/WdeILncveY4?rel=0&modestbranding=1&autoplay=1"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <button class="video-close-btn" onclick="closeVideo()">✕ Schließen</button>
-        </div>
+      <h2 class="section-title">Hörprobe</h2>
+      <p class="section-sub">Reinhören – Club Session live.</p>
+      <div class="sc-wrap">
+        <iframe
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/airmann/letse-go-b&color=%23a855f7&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+        </iframe>
       </div>
     </div>
   </section>
@@ -429,16 +405,13 @@
     }
 
     function acceptAll() {
-      document.getElementById('chkFonts').checked   = true;
-      document.getElementById('chkYoutube').checked = true;
+      document.getElementById('chkFonts').checked = true;
       saveSelection();
     }
 
     function saveSelection() {
-      const fonts   = document.getElementById('chkFonts').checked;
-      const youtube = document.getElementById('chkYoutube').checked;
-      localStorage.setItem('cookieFonts',   fonts   ? 'yes' : 'no');
-      localStorage.setItem('cookieYoutube', youtube ? 'yes' : 'no');
+      const fonts = document.getElementById('chkFonts').checked;
+      localStorage.setItem('cookieFonts', fonts ? 'yes' : 'no');
       localStorage.setItem('cookieConsent', 'done');
       closeBanner();
       if (fonts) loadFonts();
@@ -565,35 +538,11 @@
     }
 
     function openCookieSettings() {
-      document.getElementById('chkFonts').checked   = localStorage.getItem('cookieFonts')   === 'yes';
-      document.getElementById('chkYoutube').checked = localStorage.getItem('cookieYoutube') === 'yes';
+      document.getElementById('chkFonts').checked = localStorage.getItem('cookieFonts') === 'yes';
       banner.style.display = 'flex';
       banner.classList.remove('cookie-hide');
       banner.style.opacity = '0';
       requestAnimationFrame(() => requestAnimationFrame(() => { banner.style.opacity = '1'; }));
-    }
-
-    /* ── Video Accordion ─────────────────────────── */
-    function openVideo() {
-      if (localStorage.getItem('cookieYoutube') !== 'yes') {
-        // Checkboxen auf aktuellen Stand setzen und Banner öffnen
-        document.getElementById('chkFonts').checked   = localStorage.getItem('cookieFonts')   === 'yes';
-        document.getElementById('chkYoutube').checked = false;
-        banner.style.display = 'flex';
-        banner.classList.remove('cookie-hide');
-        requestAnimationFrame(() => requestAnimationFrame(() => { banner.style.opacity = '1'; }));
-        return;
-      }
-      const frame = document.getElementById('ytFrame');
-      frame.src = frame.dataset.src;
-      document.getElementById('videoThumb').style.display  = 'none';
-      document.getElementById('videoPlayer').style.display = 'block';
-    }
-    function closeVideo() {
-      const frame = document.getElementById('ytFrame');
-      frame.src = '';
-      document.getElementById('videoPlayer').style.display = 'none';
-      document.getElementById('videoThumb').style.display  = 'block';
     }
   </script>
 
