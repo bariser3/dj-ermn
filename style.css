@@ -927,6 +927,19 @@ body {
   box-shadow: 0 4px 24px rgba(168,85,247,0.2);
 }
 
+.sc-blocked {
+  background: rgba(168,85,247,0.08);
+  border: 1px solid rgba(168,85,247,0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.sc-blocked strong { color: #a855f7; }
+.sc-blocked .cookie-btn { margin-top: 1rem; }
+
 /* Caption overlay */
 .story-caption {
   position: absolute;
