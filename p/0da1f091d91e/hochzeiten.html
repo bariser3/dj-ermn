@@ -12,16 +12,17 @@
     background: #0a0a12;
     color: #f0f0f0;
     min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
   }
 
+  /* ── Header ── */
   header {
     background: linear-gradient(135deg, #130a2e 0%, #0d1628 60%, #0a0a12 100%);
-    padding: 52px 48px 40px;
+    padding: clamp(28px, 6vw, 52px) clamp(16px, 5vw, 48px) clamp(24px, 4vw, 40px);
     border-bottom: 1px solid #ffffff12;
     position: relative;
     overflow: hidden;
   }
-
   header::before {
     content: '';
     position: absolute;
@@ -30,186 +31,183 @@
                 radial-gradient(ellipse at 80% 20%, #2563eb12 0%, transparent 50%);
     pointer-events: none;
   }
-
   header h1 {
-    font-size: 2.6rem;
+    font-size: clamp(1.5rem, 6vw, 2.6rem);
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     background: linear-gradient(100deg, #fff 0%, #c084fc 50%, #818cf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    line-height: 1.15;
   }
-
   header p {
-    margin-top: 10px;
+    margin-top: 8px;
     color: #6b7a99;
-    font-size: 0.92rem;
+    font-size: clamp(0.75rem, 3vw, 0.92rem);
     position: relative;
   }
 
+  /* ── Nav ── */
   .nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
-    margin-top: 24px;
+    margin-top: 20px;
     position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
   }
-
+  .nav::-webkit-scrollbar { display: none; }
   .nav a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border: 1px solid #ffffff18;
     border-radius: 999px;
     background: #ffffff08;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
-
-  .nav a:hover {
+  .nav a:active {
     color: #e2e8f0;
     border-color: #ffffff35;
     background: #ffffff12;
   }
 
+  /* ── Main ── */
   main {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 48px 36px 96px;
+    padding: clamp(24px, 5vw, 48px) clamp(12px, 4vw, 36px) 80px;
   }
 
+  /* ── Section ── */
   .playlist-section {
-    margin-bottom: 60px;
-    scroll-margin-top: 24px;
+    margin-bottom: clamp(40px, 8vw, 60px);
+    scroll-margin-top: 16px;
   }
-
   .playlist-section h2 {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.2rem);
     font-weight: 700;
     color: #e2e8f0;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding-bottom: 14px;
+    gap: 8px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #ffffff12;
+    flex-wrap: wrap;
   }
-
-  .sec-icon { font-size: 1.2rem; line-height: 1; }
-
+  .sec-icon { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
   .count {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #6b7280;
     background: #1a1f2e;
     border: 1px solid #ffffff10;
     padding: 2px 10px;
     border-radius: 999px;
-    margin-left: 2px;
   }
 
+  /* ── Cards ── */
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 10px;
   }
-
   .card {
     background: #12121e;
     border: 1px solid #ffffff0c;
     border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 12px;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    gap: 12px;
+    padding: 10px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background 0.2s, border-color 0.2s;
   }
-
-  .card:hover {
-    background: #1a1a2e;
-    border-color: #ffffff20;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px #0006;
+  @media (hover: hover) {
+    .card:hover {
+      background: #1a1a2e;
+      border-color: #ffffff20;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px #0006;
+    }
   }
 
   .cover {
-    width: 64px;
-    height: 64px;
+    width: clamp(52px, 14vw, 64px);
+    height: clamp(52px, 14vw, 64px);
     border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
     background: #1a1f2e;
   }
-
   .no-cover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background: #1a1f2e;
   }
 
   .card-info { flex: 1; min-width: 0; }
-
   .card-title {
-    font-size: 0.85rem;
+    font-size: clamp(0.78rem, 2.5vw, 0.85rem);
     font-weight: 600;
     color: #f1f5f9;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
+    line-height: 1.3;
   }
-
   .card-artist {
-    font-size: 0.76rem;
+    font-size: clamp(0.7rem, 2.2vw, 0.76rem);
     color: #9ca3af;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+    line-height: 1.3;
   }
-
   .card-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
   }
-
   .badge {
-    font-size: 0.65rem;
+    font-size: clamp(0.6rem, 1.8vw, 0.65rem);
     font-weight: 600;
-    padding: 2px 7px;
+    padding: 3px 7px;
     border-radius: 6px;
     letter-spacing: 0.2px;
+    white-space: nowrap;
   }
-
-  .bpm  { background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a320; }
-  .key  { background: #052e16; color: #6ee7b7; border: 1px solid #16a34a20; }
-  .dur  { background: #1c1917; color: #a8a29e; border: 1px solid #57534e20; }
-  .genre { background: #1e1030; color: #c4b5fd; border: 1px solid #7c3aed20; }
-
-  @media (max-width: 600px) {
-    header { padding: 32px 20px 28px; }
-    header h1 { font-size: 1.8rem; }
-    main { padding: 28px 16px 60px; }
-    .cards { grid-template-columns: 1fr; }
-  }
+  .bpm   { background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a330; }
+  .key   { background: #052e16; color: #6ee7b7; border: 1px solid #16a34a30; }
+  .dur   { background: #1c1917; color: #a8a29e; border: 1px solid #57534e30; }
+  .genre { background: #1e1030; color: #c4b5fd; border: 1px solid #7c3aed30; }
 </style>
 </head>
 <body>
 <header>
   <h1>💍 Hochzeiten — Playlists</h1>
-  <p>Rekordbox Library · 114 Songs in 7 Playlists · Cover via iTunes</p>
-  <nav class="nav">
-    <a href="#NightStart---Light-Start">🌅 NightStart - Light Start</a><a href="#NightStart---Mid">🌙 NightStart - Mid</a><a href="#NightStart---Warm">🔥 NightStart - Warm</a><a href="#NightStart---Hot">💥 NightStart - Hot</a><a href="#NightStart---Freak">⚡ NightStart - Freak</a><a href="#Peak---Banger-b-125-BPM">🎯 Peak - Banger b. 125 BPM</a><a href="#Peak---Banger-b-150-BPM">🚀 Peak - Banger b. 150 BPM</a>
-  </nav>
+  <p>Rekordbox Library · 114 Songs in 7 Playlists</p>
+  <nav class="nav"><a href="#NightStart---Light-Start">🌅 NightStart - Light Start</a><a href="#NightStart---Mid">🌙 NightStart - Mid</a><a href="#NightStart---Warm">🔥 NightStart - Warm</a><a href="#NightStart---Hot">💥 NightStart - Hot</a><a href="#NightStart---Freak">⚡ NightStart - Freak</a><a href="#Peak---Banger-b-125-BPM">🎯 Peak - Banger b. 125 BPM</a><a href="#Peak---Banger-b-150-BPM">🚀 Peak - Banger b. 150 BPM</a></nav>
 </header>
 <main>
-<section class="playlist-section">
+<section class="playlist-section" id="NightStart---Light-Start">
       <h2><span class="sec-icon">🌅</span> NightStart - Light Start <span class="count">14 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/02/59/bf/0259bf62-eb75-e984-c935-2ac09a2eec12/10UMGIM00728.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -394,7 +392,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="NightStart---Mid">
       <h2><span class="sec-icon">🌙</span> NightStart - Mid <span class="count">12 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/f9/e1/b6/f9e1b674-f9be-226d-7322-bee7d1fac186/23UMGIM71363.crop.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -553,7 +551,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="NightStart---Warm">
       <h2><span class="sec-icon">🔥</span> NightStart - Warm <span class="count">16 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/7b/08/f7/7b08f78b-56b2-c6a3-50ff-dc9bd358c816/22UMGIM03886.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -766,7 +764,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="NightStart---Hot">
       <h2><span class="sec-icon">💥</span> NightStart - Hot <span class="count">22 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/84/cd/7a/84cd7a5c-7dec-d743-9f4e-3fc74c150a77/886446592145.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -1055,7 +1053,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="NightStart---Freak">
       <h2><span class="sec-icon">⚡</span> NightStart - Freak <span class="count">39 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8a/76/04/8a760498-ce95-c1f3-4bff-958362821728/14UMGIM28794.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -1565,7 +1563,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="Peak---Banger-b-125-BPM">
       <h2><span class="sec-icon">🎯</span> Peak - Banger b. 125 BPM <span class="count">10 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6e/56/af/6e56af83-bdff-56c2-7c6a-b30cd0d356ce/06UMGIM08757.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
@@ -1698,7 +1696,7 @@
       </div>
     </div></div>
     </section>
-<section class="playlist-section">
+<section class="playlist-section" id="Peak---Banger-b-150-BPM">
       <h2><span class="sec-icon">🚀</span> Peak - Banger b. 150 BPM <span class="count">1 Songs</span></h2>
       <div class="cards"><div class="card">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/fe/6c/21/fe6c21ed-8dc7-c94f-76d2-af8dd67f5037/USATV2002727.sca1.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
