@@ -66,12 +66,14 @@
 
   .cover-wrap { position:relative; flex-shrink:0; width:clamp(52px,14vw,64px); height:clamp(52px,14vw,64px); }
   .cover-wrap .cover { width:100%; height:100%; flex-shrink:unset; }
-  .play-btn { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0); border-radius:8px; border:none; cursor:pointer; opacity:0; transition:opacity 0.2s,background 0.2s; padding:0; }
-  .cover-wrap:hover .play-btn { opacity:1; background:rgba(0,0,0,0.55); }
-  .cover-wrap.pb-active .play-btn { opacity:1; background:rgba(0,0,0,0.55); }
-  @media (pointer:coarse) { .play-btn { opacity:1; background:rgba(0,0,0,0.32); } }
+  .play-btn { position:absolute; bottom:3px; right:3px; width:26px; height:26px; border-radius:50%; background:rgba(0,0,0,0.72); border:1.5px solid rgba(255,255,255,0.22); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0; transition:background 0.15s,border-color 0.15s,transform 0.1s; -webkit-tap-highlight-color:transparent; backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
+  .play-btn:active { transform:scale(0.86); }
+  .play-btn svg { width:11px; height:11px; fill:#fff; flex-shrink:0; }
+  .play-btn.pb-playing { background:rgba(124,58,237,0.9); border-color:rgba(167,139,250,0.5); }
+  .play-btn.pb-error   { background:rgba(220,38,38,0.9);  border-color:rgba(248,113,113,0.5); }
+  .play-btn.pb-loading { border-color:transparent; }
   @keyframes pb-spin { to { transform:rotate(360deg); } }
-  .pb-spin { animation:pb-spin 0.8s linear infinite; transform-origin:12px 12px; }
+  .play-btn.pb-loading::before { content:''; position:absolute; inset:-2px; border-radius:50%; border:2px solid transparent; border-top-color:#a78bfa; animation:pb-spin 0.7s linear infinite; }
 </style>
 </head>
 <body>
@@ -1727,14 +1729,22 @@
 
   const _PLAY  = '<path d="M8 5v14l11-7z"/>';
   const _PAUSE = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-  const _SPIN  = '<circle class="pb-spin" cx="12" cy="12" r="8" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="28 12"/>';
+  const _ERR   = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
 
   let _aud = null, _btn = null, _cache = {};
 
   function _icon(b, p) { b.querySelector('svg').innerHTML = p; }
+  function _setState(b, state) {
+    b.classList.remove('pb-loading','pb-playing','pb-error');
+    if (state) b.classList.add('pb-' + state);
+  }
   function _stop() {
     if (_aud) { _aud.pause(); _aud = null; }
-    if (_btn) { _icon(_btn, _PLAY); _btn.closest('.cover-wrap').classList.remove('pb-active'); _btn = null; }
+    if (_btn) { _icon(_btn, _PLAY); _setState(_btn, null); _btn = null; }
+  }
+  function _showError(b) {
+    _icon(b, _ERR); _setState(b, 'error');
+    setTimeout(() => { if (_btn !== b) { _icon(b, _PLAY); _setState(b, null); } }, 1800);
   }
 
   function _cleanTitle(t) {
@@ -1762,8 +1772,8 @@
   async function playPreview(e, btn) {
     e.stopPropagation();
     if (_btn === btn) {
-      if (_aud && _aud.paused) { _aud.play(); _icon(btn, _PAUSE); }
-      else if (_aud) { _aud.pause(); _icon(btn, _PLAY); }
+      if (_aud && _aud.paused) { _aud.play(); _icon(btn, _PAUSE); _setState(btn, 'playing'); }
+      else if (_aud)           { _aud.pause(); _icon(btn, _PLAY);  _setState(btn, null); }
       return;
     }
     _stop();
@@ -1772,8 +1782,8 @@
     const artist = card.dataset.artist;
     const key    = title + '||' + artist;
     _btn = btn;
-    btn.closest('.cover-wrap').classList.add('pb-active');
-    _icon(btn, _SPIN);
+    _icon(btn, '');
+    _setState(btn, 'loading');
 
     let url = _cache[key];
     if (!url) {
@@ -1788,17 +1798,17 @@
     }
 
     if (_btn !== btn) return;
-    if (!url) {
-      _icon(btn, _PLAY);
-      btn.closest('.cover-wrap').classList.remove('pb-active');
-      _btn = null;
-      return;
-    }
+    if (!url) { _showError(btn); _btn = null; return; }
+
     _aud = new Audio(url);
     _aud.play();
     _icon(btn, _PAUSE);
+    _setState(btn, 'playing');
     _aud.onended = () => {
-      if (_btn === btn) { _icon(btn, _PLAY); btn.closest('.cover-wrap').classList.remove('pb-active'); _btn = null; _aud = null; }
+      if (_btn === btn) { _icon(btn, _PLAY); _setState(btn, null); _btn = null; _aud = null; }
+    };
+    _aud.onerror = () => {
+      if (_btn === btn) { _showError(btn); _btn = null; _aud = null; }
     };
   }
 </script>
