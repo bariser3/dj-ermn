@@ -1736,6 +1736,29 @@
     if (_aud) { _aud.pause(); _aud = null; }
     if (_btn) { _icon(_btn, _PLAY); _btn.closest('.cover-wrap').classList.remove('pb-active'); _btn = null; }
   }
+
+  function _cleanTitle(t) {
+    return t
+      .replace(/\s*[-\u2013]\s*[^-\u2013]*?(remix|edit|mix|version|instrumental|radio|extended|original|bootleg|flip|rework|vip|dub|mashup|medley|clean|dirty|intro|outro)[\s\S]*/gi, '')
+      .replace(/\s*\([^)]*?(clean|dirty|intro|outro|radio|explicit|instrumental|remix|edit|mix|version|extended|original|live|acoustic)[^)]*\)/gi, '')
+      .trim();
+  }
+  function _cleanArtist(a) {
+    return a.split(/\s+(?:ft\.?|feat\.?|&|vs\.?)\s+/i)[0].trim();
+  }
+  async function _search(queries) {
+    for (const q of queries) {
+      if (!q.trim()) continue;
+      try {
+        const r = await fetch('https://itunes.apple.com/search?term=' + encodeURIComponent(q) + '&media=music&limit=3');
+        const d = await r.json();
+        const url = d.results?.find(x => x.previewUrl)?.previewUrl;
+        if (url) return url;
+      } catch {}
+    }
+    return null;
+  }
+
   async function playPreview(e, btn) {
     e.stopPropagation();
     if (_btn === btn) {
@@ -1745,21 +1768,25 @@
     }
     _stop();
     const card = btn.closest('.card');
-    const key = card.dataset.title + '||' + card.dataset.artist;
+    const title  = card.dataset.title;
+    const artist = card.dataset.artist;
+    const key    = title + '||' + artist;
     _btn = btn;
     btn.closest('.cover-wrap').classList.add('pb-active');
     _icon(btn, _SPIN);
 
     let url = _cache[key];
     if (!url) {
-      try {
-        const q = encodeURIComponent(card.dataset.artist + ' ' + card.dataset.title);
-        const r = await fetch('https://itunes.apple.com/search?term=' + q + '&media=music&limit=1&country=de');
-        const d = await r.json();
-        url = d.results?.[0]?.previewUrl || null;
-        if (url) _cache[key] = url;
-      } catch { url = null; }
+      const ct = _cleanTitle(title);
+      const ca = _cleanArtist(artist);
+      url = await _search([
+        ca + ' ' + ct,
+        artist + ' ' + ct,
+        ca + ' ' + title,
+      ].filter((v,i,a) => a.indexOf(v) === i));
+      if (url) _cache[key] = url;
     }
+
     if (_btn !== btn) return;
     if (!url) {
       _icon(btn, _PLAY);
