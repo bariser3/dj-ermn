@@ -63,6 +63,15 @@
 
   .toast { position:fixed; top:20px; left:50%; transform:translateX(-50%) translateY(-80px); background:#1a2e1a; border:1px solid #4ade8055; color:#4ade80; padding:10px 20px; border-radius:10px; font-size:0.82rem; font-weight:600; z-index:200; transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1); white-space:nowrap; }
   .toast.show { transform:translateX(-50%) translateY(0); }
+
+  .cover-wrap { position:relative; flex-shrink:0; width:clamp(52px,14vw,64px); height:clamp(52px,14vw,64px); }
+  .cover-wrap .cover { width:100%; height:100%; flex-shrink:unset; }
+  .play-btn { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0); border-radius:8px; border:none; cursor:pointer; opacity:0; transition:opacity 0.2s,background 0.2s; padding:0; }
+  .cover-wrap:hover .play-btn { opacity:1; background:rgba(0,0,0,0.55); }
+  .cover-wrap.pb-active .play-btn { opacity:1; background:rgba(0,0,0,0.55); }
+  @media (pointer:coarse) { .play-btn { opacity:1; background:rgba(0,0,0,0.32); } }
+  @keyframes pb-spin { to { transform:rotate(360deg); } }
+  .pb-spin { animation:pb-spin 0.8s linear infinite; transform-origin:12px 12px; }
 </style>
 </head>
 <body>
@@ -76,7 +85,7 @@
       <h2><span class="sec-icon">🌅</span> NightStart - Light Start <span class="count">14 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Rude Boy - Paul Mond Remix (Clean)" data-artist="Rihanna" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/02/59/bf/0259bf62-eb75-e984-c935-2ac09a2eec12/10UMGIM00728.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/02/59/bf/0259bf62-eb75-e984-c935-2ac09a2eec12/10UMGIM00728.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Rude Boy - Paul Mond Remix (Clean)">Rude Boy - Paul Mond Remix (Clean)</div>
         <div class="card-artist">Rihanna</div>
@@ -90,7 +99,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Hey Mama - Lincoln Baio Lighter Edit" data-artist="David Guetta ft. Nicki Minaj, Bebe Rexha & Afrojack" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7a/4d/67/7a4d679e-7edc-4780-a57f-84e4c5bf0aad/mzm.aepngygo.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7a/4d/67/7a4d679e-7edc-4780-a57f-84e4c5bf0aad/mzm.aepngygo.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Hey Mama - Lincoln Baio Lighter Edit">Hey Mama - Lincoln Baio Lighter Edit</div>
         <div class="card-artist">David Guetta ft. Nicki Minaj, Bebe Rexha & Afrojack</div>
@@ -104,7 +113,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="One Dance - King Most Mrs. Officer Remix" data-artist="Drake ft. Wizkid & Kyla" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/f5/87/95f587f7-21c3-d5f9-d81a-4350f9caa020/16UMGIM27643.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/f5/87/95f587f7-21c3-d5f9-d81a-4350f9caa020/16UMGIM27643.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="One Dance - King Most Mrs. Officer Remix">One Dance - King Most Mrs. Officer Remix</div>
         <div class="card-artist">Drake ft. Wizkid & Kyla</div>
@@ -118,7 +127,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Don&#39;t Care (Intro)" data-artist="Ed Sheeran & Justin Bieber" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/93/81/20/93812029-ace3-b550-112c-7b412cccf7a7/190295391829.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/93/81/20/93812029-ace3-b550-112c-7b412cccf7a7/190295391829.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Don&#39;t Care (Intro)">I Don't Care (Intro)</div>
         <div class="card-artist">Ed Sheeran & Justin Bieber</div>
@@ -132,7 +141,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Can&#39;t Feel My Face - Soltice, Naken & Batikboy Remix" data-artist="The Weeknd" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/40/cd/1a/40cd1a65-7948-eb96-74c6-1c4b3497456c/15UMGIM36513.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/40/cd/1a/40cd1a65-7948-eb96-74c6-1c4b3497456c/15UMGIM36513.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Can&#39;t Feel My Face - Soltice, Naken & Batikboy Remix">Can't Feel My Face - Soltice, Naken & Batikboy Remix</div>
         <div class="card-artist">The Weeknd</div>
@@ -146,7 +155,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Yo Voy (Remix)" data-artist="Thombs, B R O S S" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/22/c3/92/22c39261-e73e-6345-a1c2-4b454481a4c7/859747700809_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/22/c3/92/22c39261-e73e-6345-a1c2-4b454481a4c7/859747700809_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Yo Voy (Remix)">Yo Voy (Remix)</div>
         <div class="card-artist">Thombs, B R O S S</div>
@@ -160,7 +169,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Dilemma - Madsko & Dan Bravo Remix (Dirty)" data-artist="Nelly ft. Kelly Rowland" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5e/c3/d3/5ec3d3a2-6833-a52d-7cbb-c792fab5baff/mzi.kegyckmt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5e/c3/d3/5ec3d3a2-6833-a52d-7cbb-c792fab5baff/mzi.kegyckmt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Dilemma - Madsko & Dan Bravo Remix (Dirty)">Dilemma - Madsko & Dan Bravo Remix (Dirty)</div>
         <div class="card-artist">Nelly ft. Kelly Rowland</div>
@@ -174,7 +183,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Replay - Merco Remix" data-artist="Iyaz" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/24/90/ce/mzi.noafugku.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/24/90/ce/mzi.noafugku.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Replay - Merco Remix">Replay - Merco Remix</div>
         <div class="card-artist">Iyaz</div>
@@ -188,7 +197,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="RITMO (Bad Boys For Life)" data-artist="Black Eyed Peas J Balvin" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/01/a4/fc/01a4fce0-c900-9b19-169c-842df6e02fc8/886448206064.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/01/a4/fc/01a4fce0-c900-9b19-169c-842df6e02fc8/886448206064.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="RITMO (Bad Boys For Life)">RITMO (Bad Boys For Life)</div>
         <div class="card-artist">Black Eyed Peas J Balvin</div>
@@ -202,7 +211,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Shape Of You - Dan Bravo Remix" data-artist="Ed Sheeran" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/20/03/4c/20034cdb-b2b1-74a7-2ec0-521ccf471bbd/190295851286.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/20/03/4c/20034cdb-b2b1-74a7-2ec0-521ccf471bbd/190295851286.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Shape Of You - Dan Bravo Remix">Shape Of You - Dan Bravo Remix</div>
         <div class="card-artist">Ed Sheeran</div>
@@ -216,7 +225,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Alejandro - Joan Qveralt Remix" data-artist="Lady Gaga" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1b/98/88/1b9888da-6a1f-bff0-ec03-518f445019f6/19UMGIM73435.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1b/98/88/1b9888da-6a1f-bff0-ec03-518f445019f6/19UMGIM73435.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Alejandro - Joan Qveralt Remix">Alejandro - Joan Qveralt Remix</div>
         <div class="card-artist">Lady Gaga</div>
@@ -230,7 +239,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Work It - Tall Boys Lovin On Me Edit (Intro - Clean)" data-artist="Missy Elliot" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/19/5c/ef/195cefbe-555e-c80f-0520-e478c03fa491/dj.cbaflfil.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/19/5c/ef/195cefbe-555e-c80f-0520-e478c03fa491/dj.cbaflfil.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Work It - Tall Boys Lovin On Me Edit (Intro - Clean)">Work It - Tall Boys Lovin On Me Edit (Intro - Clean)</div>
         <div class="card-artist">Missy Elliot</div>
@@ -244,7 +253,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Anti-Hero - Roosevelt Remix" data-artist="Taylor Swift" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/59/13/5c/59135ccc-8425-415c-7f89-8aeada60088e/22UM1IM22440.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/59/13/5c/59135ccc-8425-415c-7f89-8aeada60088e/22UM1IM22440.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Anti-Hero - Roosevelt Remix">Anti-Hero - Roosevelt Remix</div>
         <div class="card-artist">Taylor Swift</div>
@@ -258,7 +267,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Tequila - Stavros Martina & Kevin D Remix" data-artist="The Champs" data-playlist="NightStart - Light Start">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6b/25/43/6b254388-c8fb-76e1-3fbf-391d4b0a29c4/mzi.ezjbrbiy.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6b/25/43/6b254388-c8fb-76e1-3fbf-391d4b0a29c4/mzi.ezjbrbiy.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Tequila - Stavros Martina & Kevin D Remix">Tequila - Stavros Martina & Kevin D Remix</div>
         <div class="card-artist">The Champs</div>
@@ -275,7 +284,7 @@
       <h2><span class="sec-icon">🌙</span> NightStart - Mid <span class="count">12 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Dientes" data-artist="J Balvin, USHER, DJ Khaled" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/f9/e1/b6/f9e1b674-f9be-226d-7322-bee7d1fac186/23UMGIM71363.crop.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/f9/e1/b6/f9e1b674-f9be-226d-7322-bee7d1fac186/23UMGIM71363.crop.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Dientes">Dientes</div>
         <div class="card-artist">J Balvin, USHER, DJ Khaled</div>
@@ -289,7 +298,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Talk Dirty - Richastic Remix (Clean)" data-artist="Jason Derulo ft. 2 Chainz" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/89/28/db/8928db21-0da7-3265-b587-f38844f9baf9/5065002076137.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/89/28/db/8928db21-0da7-3265-b587-f38844f9baf9/5065002076137.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Talk Dirty - Richastic Remix (Clean)">Talk Dirty - Richastic Remix (Clean)</div>
         <div class="card-artist">Jason Derulo ft. 2 Chainz</div>
@@ -303,7 +312,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="My Humps - Anthem Kingz Bongos Edit (Dirty)" data-artist="Black Eyed Peas ft. Pitbull" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/b0/47/63b0476f-3cc6-276a-f09e-ab415db818cd/00602498372425.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/b0/47/63b0476f-3cc6-276a-f09e-ab415db818cd/00602498372425.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="My Humps - Anthem Kingz Bongos Edit (Dirty)">My Humps - Anthem Kingz Bongos Edit (Dirty)</div>
         <div class="card-artist">Black Eyed Peas ft. Pitbull</div>
@@ -317,7 +326,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Ain&#39;t Nobody (Loves Me Better)" data-artist="Felix Jaehn Jasmine Thompson" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/36/b1/0e/36b10e96-2a57-1e11-38e8-3e062ae331ec/00602547533326.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/36/b1/0e/36b10e96-2a57-1e11-38e8-3e062ae331ec/00602547533326.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Ain&#39;t Nobody (Loves Me Better)">Ain't Nobody (Loves Me Better)</div>
         <div class="card-artist">Felix Jaehn Jasmine Thompson</div>
@@ -331,7 +340,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Stupid Love (DJcity Intro)" data-artist="Lady Gaga" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b1/9f/ef/b19fef51-79de-a940-e8ab-9e4e07b04d96/18UMGIM53752.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b1/9f/ef/b19fef51-79de-a940-e8ab-9e4e07b04d96/18UMGIM53752.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Stupid Love (DJcity Intro)">Stupid Love (DJcity Intro)</div>
         <div class="card-artist">Lady Gaga</div>
@@ -345,7 +354,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Relax - The DISCO_NECT Remix" data-artist="Frankie Goes To Hollywood" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cf/70/59/cf7059f9-ea77-d9ae-0769-81c62c6e7f20/18UMGIM12100.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cf/70/59/cf7059f9-ea77-d9ae-0769-81c62c6e7f20/18UMGIM12100.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Relax - The DISCO_NECT Remix">Relax - The DISCO_NECT Remix</div>
         <div class="card-artist">Frankie Goes To Hollywood</div>
@@ -359,7 +368,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Ride Wit Me - DJcity vs Richastic 102-118 Throwback Transition (Dirty)" data-artist="Nelly" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5e/c3/d3/5ec3d3a2-6833-a52d-7cbb-c792fab5baff/mzi.kegyckmt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5e/c3/d3/5ec3d3a2-6833-a52d-7cbb-c792fab5baff/mzi.kegyckmt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Ride Wit Me - DJcity vs Richastic 102-118 Throwback Transition (Dirty)">Ride Wit Me - DJcity vs Richastic 102-118 Throwback Transition (Dirty)</div>
         <div class="card-artist">Nelly</div>
@@ -373,7 +382,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Messy - Les Bisous Remix (Intro - Dirty)" data-artist="Lola Young" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/a9/5a/16a95a81-5aa2-ae56-dcce-feca92350d86/24UM1IM27007.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/a9/5a/16a95a81-5aa2-ae56-dcce-feca92350d86/24UM1IM27007.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Messy - Les Bisous Remix (Intro - Dirty)">Messy - Les Bisous Remix (Intro - Dirty)</div>
         <div class="card-artist">Lola Young</div>
@@ -387,7 +396,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Don&#39;t Be Shy" data-artist="Tiësto KAROL G" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/e0/da/1ae0da58-ced8-bc31-1c22-b9b6e3b75e50/f0e583e6-3666-4d39-a7aa-17ba48983779.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/e0/da/1ae0da58-ced8-bc31-1c22-b9b6e3b75e50/f0e583e6-3666-4d39-a7aa-17ba48983779.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Don&#39;t Be Shy">Don't Be Shy</div>
         <div class="card-artist">Tiësto KAROL G</div>
@@ -401,7 +410,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Move Bitch - Richastic Remix (Intro - Dirty)" data-artist="Ludacris ft. Mystikal & I-20" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/26/12/48/261248ca-fc7d-9aad-5bf2-fabfa7d9ceec/00602577634031.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/26/12/48/261248ca-fc7d-9aad-5bf2-fabfa7d9ceec/00602577634031.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Move Bitch - Richastic Remix (Intro - Dirty)">Move Bitch - Richastic Remix (Intro - Dirty)</div>
         <div class="card-artist">Ludacris ft. Mystikal & I-20</div>
@@ -415,7 +424,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="NUEVAYoL - Da Phonk Club Edit (Dirty)" data-artist="Bad Bunny" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/90/5e/7e/905e7ed5-a8fa-a8f3-cd06-0028fdf3afaa/199066342442.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/90/5e/7e/905e7ed5-a8fa-a8f3-cd06-0028fdf3afaa/199066342442.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="NUEVAYoL - Da Phonk Club Edit (Dirty)">NUEVAYoL - Da Phonk Club Edit (Dirty)</div>
         <div class="card-artist">Bad Bunny</div>
@@ -429,7 +438,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Love Again (Imanbek Remix)" data-artist="Dua Lipa" data-playlist="NightStart - Mid">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/66/f9/9966f925-4722-a08c-c7f0-64f2f92a43c8/20UMGIM01607.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/66/f9/9966f925-4722-a08c-c7f0-64f2f92a43c8/20UMGIM01607.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Love Again (Imanbek Remix)">Love Again (Imanbek Remix)</div>
         <div class="card-artist">Dua Lipa</div>
@@ -446,7 +455,7 @@
       <h2><span class="sec-icon">🔥</span> NightStart - Warm <span class="count">16 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Take My Breath - Tommy Glasses Remix" data-artist="The Weeknd" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/7b/08/f7/7b08f78b-56b2-c6a3-50ff-dc9bd358c816/22UMGIM03886.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/7b/08/f7/7b08f78b-56b2-c6a3-50ff-dc9bd358c816/22UMGIM03886.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Take My Breath - Tommy Glasses Remix">Take My Breath - Tommy Glasses Remix</div>
         <div class="card-artist">The Weeknd</div>
@@ -460,7 +469,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Mwaki" data-artist="Zerb & Sofiya Nzau" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8e/4b/25/8e4b256b-cf93-e80e-2512-44e70b8c2d9d/8721056750528.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8e/4b/25/8e4b256b-cf93-e80e-2512-44e70b8c2d9d/8721056750528.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Mwaki">Mwaki</div>
         <div class="card-artist">Zerb & Sofiya Nzau</div>
@@ -474,7 +483,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="the boy is mine - DJ Robbie Lewis Remix" data-artist="Ariana Grande" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/a6/84/79a68430-8ed3-44a8-651b-bf95c0aa9720/24UMGIM62513.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/a6/84/79a68430-8ed3-44a8-651b-bf95c0aa9720/24UMGIM62513.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="the boy is mine - DJ Robbie Lewis Remix">the boy is mine - DJ Robbie Lewis Remix</div>
         <div class="card-artist">Ariana Grande</div>
@@ -488,7 +497,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Un Gatito Me Llamó (Intro - Dirty)" data-artist="KAROL G " data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8a/a2/54/8aa254e9-5d61-1828-5ea0-26c5ffa6e2eb/0.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8a/a2/54/8aa254e9-5d61-1828-5ea0-26c5ffa6e2eb/0.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Un Gatito Me Llamó (Intro - Dirty)">Un Gatito Me Llamó (Intro - Dirty)</div>
         <div class="card-artist">KAROL G </div>
@@ -502,7 +511,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Blurred Lines - Stavros Martina & Kevin D Remix (Dirty)" data-artist="Robin Thicke ft. Pharrell" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/9f/b1/b9/9fb1b976-bec0-1964-053d-001fed83a720/13UAAIM09929.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/9f/b1/b9/9fb1b976-bec0-1964-053d-001fed83a720/13UAAIM09929.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Blurred Lines - Stavros Martina & Kevin D Remix (Dirty)">Blurred Lines - Stavros Martina & Kevin D Remix (Dirty)</div>
         <div class="card-artist">Robin Thicke ft. Pharrell</div>
@@ -516,7 +525,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Blinding Lights - Chunky Dip & Jesse James More Than You Know Edit" data-artist="The Weeknd" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a6/6e/bf/a66ebf79-5008-8948-b352-a790fc87446b/19UM1IM04638.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a6/6e/bf/a66ebf79-5008-8948-b352-a790fc87446b/19UM1IM04638.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Blinding Lights - Chunky Dip & Jesse James More Than You Know Edit">Blinding Lights - Chunky Dip & Jesse James More Than You Know Edit</div>
         <div class="card-artist">The Weeknd</div>
@@ -530,7 +539,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Dance Monkey - Groove Safari Remix" data-artist="Tones & I" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d2/3a/b8/d23ab839-660d-ef93-2ccb-d0825fc3e8f5/075679838872.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d2/3a/b8/d23ab839-660d-ef93-2ccb-d0825fc3e8f5/075679838872.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Dance Monkey - Groove Safari Remix">Dance Monkey - Groove Safari Remix</div>
         <div class="card-artist">Tones & I</div>
@@ -544,7 +553,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="BAILALO - Afro Cumbia DJ Tool" data-artist="Eddie Boy" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6d/6c/94/6d6c94b1-dc63-df9b-40b1-f9732e463d4c/190295403003.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6d/6c/94/6d6c94b1-dc63-df9b-40b1-f9732e463d4c/190295403003.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="BAILALO - Afro Cumbia DJ Tool">BAILALO - Afro Cumbia DJ Tool</div>
         <div class="card-artist">Eddie Boy</div>
@@ -558,7 +567,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Treasure - DJ Beatzilla & Bossa Nova Crazy Edit" data-artist="Bruno Mars" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/15/63/53/156353b8-d45b-a17d-f553-2d125aeb3cb3/075679957474.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/15/63/53/156353b8-d45b-a17d-f553-2d125aeb3cb3/075679957474.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Treasure - DJ Beatzilla & Bossa Nova Crazy Edit">Treasure - DJ Beatzilla & Bossa Nova Crazy Edit</div>
         <div class="card-artist">Bruno Mars</div>
@@ -572,7 +581,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="yes, and? (DJcity Intro - Dirty)" data-artist="Ariana Grande & Mariah Carey" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/e3/fe/c0/e3fec02e-f6a5-a098-6d59-2444bd7b7cfb/8864489393130101.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/e3/fe/c0/e3fec02e-f6a5-a098-6d59-2444bd7b7cfb/8864489393130101.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="yes, and? (DJcity Intro - Dirty)">yes, and? (DJcity Intro - Dirty)</div>
         <div class="card-artist">Ariana Grande & Mariah Carey</div>
@@ -586,7 +595,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Addicted" data-artist="ZERB & The Chainsmokers ft. Ink" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/63/24/e1/6324e131-0034-4753-9cc6-ade1da39a4a8/886447471074.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/63/24/e1/6324e131-0034-4753-9cc6-ade1da39a4a8/886447471074.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Addicted">Addicted</div>
         <div class="card-artist">ZERB & The Chainsmokers ft. Ink</div>
@@ -600,7 +609,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Telephone" data-artist="Lady Gaga, Beyoncé" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/0a/3d/51/0a3d519a-c737-4dfa-4a15-b34e9d65abf7/10UMGIM02941.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/0a/3d/51/0a3d519a-c737-4dfa-4a15-b34e9d65abf7/10UMGIM02941.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Telephone">Telephone</div>
         <div class="card-artist">Lady Gaga, Beyoncé</div>
@@ -614,7 +623,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Like To Move It (feat. The Mad Stuntman) [Radio Mix]" data-artist="Reel 2 Real The Mad Stuntman" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fb/56/a6/fb56a612-f89d-7e26-0840-d1075ef4f14e/4050538418880.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fb/56/a6/fb56a612-f89d-7e26-0840-d1075ef4f14e/4050538418880.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Like To Move It (feat. The Mad Stuntman) [Radio Mix]">I Like To Move It (feat. The Mad Stuntman) [Radio Mix]</div>
         <div class="card-artist">Reel 2 Real The Mad Stuntman</div>
@@ -628,7 +637,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Running Up That Hill (A Deal With God) - PATCH SAFARI Remix" data-artist="Kate Bush" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/62/97/32/62973286-5bb3-0de7-c051-8b2de8d95472/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/62/97/32/62973286-5bb3-0de7-c051-8b2de8d95472/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Running Up That Hill (A Deal With God) - PATCH SAFARI Remix">Running Up That Hill (A Deal With God) - PATCH SAFARI Remix</div>
         <div class="card-artist">Kate Bush</div>
@@ -642,7 +651,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Baianá" data-artist="Bakermat" data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/f1/3c/63f13cbf-59c1-ca4a-fd0e-cf622a6ddd88/886448117186.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/f1/3c/63f13cbf-59c1-ca4a-fd0e-cf622a6ddd88/886448117186.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Baianá">Baianá</div>
         <div class="card-artist">Bakermat</div>
@@ -658,7 +667,7 @@
 
 " data-playlist="NightStart - Warm">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/94/68/1e9468c9-be1b-3daa-02d6-521edefb3e12/cover_4062851191838.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/94/68/1e9468c9-be1b-3daa-02d6-521edefb3e12/cover_4062851191838.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="La Bebé - Eddie Boy Quickie Edit">La Bebé - Eddie Boy Quickie Edit</div>
         <div class="card-artist">Hugel, Aaron Sevilla & Juany Bravo
@@ -677,7 +686,7 @@
       <h2><span class="sec-icon">💥</span> NightStart - Hot <span class="count">21 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Mi Gente - ATCG Remix" data-artist="J Balvin & Willy William" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/84/cd/7a/84cd7a5c-7dec-d743-9f4e-3fc74c150a77/886446592145.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/84/cd/7a/84cd7a5c-7dec-d743-9f4e-3fc74c150a77/886446592145.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Mi Gente - ATCG Remix">Mi Gente - ATCG Remix</div>
         <div class="card-artist">J Balvin & Willy William</div>
@@ -691,7 +700,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Danza Kuduro - Tiësto Remix" data-artist="Don Omar & Lucenzo" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b3/a6/e9/b3a6e924-6496-4fd4-6e7b-11ccaf6e79a4/10UMGIM27799.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b3/a6/e9/b3a6e924-6496-4fd4-6e7b-11ccaf6e79a4/10UMGIM27799.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Danza Kuduro - Tiësto Remix">Danza Kuduro - Tiësto Remix</div>
         <div class="card-artist">Don Omar & Lucenzo</div>
@@ -705,7 +714,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Diamonds - DJ GALIN Remix" data-artist="Rihanna" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d3/72/50/d3725004-0117-e76d-47f3-00b185e9dd82/12UMGIM59888.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d3/72/50/d3725004-0117-e76d-47f3-00b185e9dd82/12UMGIM59888.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Diamonds - DJ GALIN Remix">Diamonds - DJ GALIN Remix</div>
         <div class="card-artist">Rihanna</div>
@@ -719,7 +728,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Right Round - Anthem Kingz I Wish Edit" data-artist="Flo Rida ft. Ke$ha" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ef/96/1e/ef961eda-0c46-0ee8-3a9e-ba3c6f679f02/mzi.jxmtnemj.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ef/96/1e/ef961eda-0c46-0ee8-3a9e-ba3c6f679f02/mzi.jxmtnemj.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Right Round - Anthem Kingz I Wish Edit">Right Round - Anthem Kingz I Wish Edit</div>
         <div class="card-artist">Flo Rida ft. Ke$ha</div>
@@ -733,7 +742,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Houdini - Effendi Remix" data-artist="Dua Lipa" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/66/f9/9966f925-4722-a08c-c7f0-64f2f92a43c8/20UMGIM01607.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/66/f9/9966f925-4722-a08c-c7f0-64f2f92a43c8/20UMGIM01607.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Houdini - Effendi Remix">Houdini - Effendi Remix</div>
         <div class="card-artist">Dua Lipa</div>
@@ -747,7 +756,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="One Kiss" data-artist="Calvin Harris Dua Lipa" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/91/2a/7b/912a7bdb-c2f6-b887-9392-49728fece0df/886447044360.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/91/2a/7b/912a7bdb-c2f6-b887-9392-49728fece0df/886447044360.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="One Kiss">One Kiss</div>
         <div class="card-artist">Calvin Harris Dua Lipa</div>
@@ -761,7 +770,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Show Me Love - Marlon Galvao Remix" data-artist="Robin S." data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8f/fc/e8/8ffce812-173c-5d0d-a264-07f81247c212/mzi.cdsdlqei.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8f/fc/e8/8ffce812-173c-5d0d-a264-07f81247c212/mzi.cdsdlqei.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Show Me Love - Marlon Galvao Remix">Show Me Love - Marlon Galvao Remix</div>
         <div class="card-artist">Robin S.</div>
@@ -775,7 +784,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Like A Prayer - DJ Dark Remix" data-artist="Madonna" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/33/55/5c/33555c2f-df24-dd08-b680-d92473948262/603497804955.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/33/55/5c/33555c2f-df24-dd08-b680-d92473948262/603497804955.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Like A Prayer - DJ Dark Remix">Like A Prayer - DJ Dark Remix</div>
         <div class="card-artist">Madonna</div>
@@ -789,7 +798,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="How Deep Is Your Love" data-artist="Calvin Harris Disciples" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/04/5c/85/045c85d9-94cb-a9c7-f39b-aa5b7e803c04/dj.dkdebfmh.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/04/5c/85/045c85d9-94cb-a9c7-f39b-aa5b7e803c04/dj.dkdebfmh.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="How Deep Is Your Love">How Deep Is Your Love</div>
         <div class="card-artist">Calvin Harris Disciples</div>
@@ -803,7 +812,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Rhythm Of The Night - Optical Disco Remix" data-artist="Corona" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/0f/1a/36/0f1a362d-d376-7e1f-8ade-fff028d52d3c/825646282784.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/0f/1a/36/0f1a362d-d376-7e1f-8ade-fff028d52d3c/825646282784.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Rhythm Of The Night - Optical Disco Remix">Rhythm Of The Night - Optical Disco Remix</div>
         <div class="card-artist">Corona</div>
@@ -817,7 +826,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Beat Dancer" data-artist="Juliet Sikora" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/01/b6/cb01b66d-ae6a-edc5-1fe6-ee9fca78a2e5/5052075605692.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/01/b6/cb01b66d-ae6a-edc5-1fe6-ee9fca78a2e5/5052075605692.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Beat Dancer">Beat Dancer</div>
         <div class="card-artist">Juliet Sikora</div>
@@ -845,7 +854,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Safe And Sound - De Soffer Remix" data-artist="Capital Cities" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/85/43/fc/8543fc47-b72e-a9de-92d9-bf0a082878ef/602537869688_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/85/43/fc/8543fc47-b72e-a9de-92d9-bf0a082878ef/602537869688_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Safe And Sound - De Soffer Remix">Safe And Sound - De Soffer Remix</div>
         <div class="card-artist">Capital Cities</div>
@@ -859,7 +868,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Closer - Dazz & Calvo Remix" data-artist="Ne-Yo" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3b/86/29/3b86296c-6082-df39-45d5-3f1ee3f9f288/08UMGIM18861.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3b/86/29/3b86296c-6082-df39-45d5-3f1ee3f9f288/08UMGIM18861.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Closer - Dazz & Calvo Remix">Closer - Dazz & Calvo Remix</div>
         <div class="card-artist">Ne-Yo</div>
@@ -873,7 +882,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Umbrella - MIRAMAR Remix" data-artist="Rihanna" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2b/c0/81/2bc081c8-25f0-ba43-d451-587a54613778/16UMGIM59202.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2b/c0/81/2bc081c8-25f0-ba43-d451-587a54613778/16UMGIM59202.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Umbrella - MIRAMAR Remix">Umbrella - MIRAMAR Remix</div>
         <div class="card-artist">Rihanna</div>
@@ -887,7 +896,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Sugar - Colin Jay Remix (Intro - Dirty)" data-artist="Maroon 5" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b7/25/76/b72576f1-072e-3da2-60d5-2724a9bccf4a/14UMGIM31673.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b7/25/76/b72576f1-072e-3da2-60d5-2724a9bccf4a/14UMGIM31673.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Sugar - Colin Jay Remix (Intro - Dirty)">Sugar - Colin Jay Remix (Intro - Dirty)</div>
         <div class="card-artist">Maroon 5</div>
@@ -901,7 +910,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Animals - Joan Qveralt Remix" data-artist="Maroon 5" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6e/1e/f0/6e1ef055-195a-bb73-d5a8-5926058366a5/8712944577525.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6e/1e/f0/6e1ef055-195a-bb73-d5a8-5926058366a5/8712944577525.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Animals - Joan Qveralt Remix">Animals - Joan Qveralt Remix</div>
         <div class="card-artist">Maroon 5</div>
@@ -915,7 +924,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Move Your Body" data-artist="Öwnboss SEVEK" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/31/8a/22/318a228d-1095-77c5-2a83-d6c3a49acfcf/190296407383.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/31/8a/22/318a228d-1095-77c5-2a83-d6c3a49acfcf/190296407383.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Move Your Body">Move Your Body</div>
         <div class="card-artist">Öwnboss SEVEK</div>
@@ -929,7 +938,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="One More Time - Capital People Remix" data-artist="Daft Punk" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="One More Time - Capital People Remix">One More Time - Capital People Remix</div>
         <div class="card-artist">Daft Punk</div>
@@ -943,7 +952,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Sun Is Shining (DJcity Intro)" data-artist="Bob Marley ft. Robin Schulz" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/52/1a/d4/521ad4e3-9c00-39ad-b5ae-6fc2f144bf98/06UMGIM11277.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/52/1a/d4/521ad4e3-9c00-39ad-b5ae-6fc2f144bf98/06UMGIM11277.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Sun Is Shining (DJcity Intro)">Sun Is Shining (DJcity Intro)</div>
         <div class="card-artist">Bob Marley ft. Robin Schulz</div>
@@ -957,7 +966,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Never Going Home" data-artist="Kungs" data-playlist="NightStart - Hot">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/4a/38/6b4a3830-62f2-48f9-c9d1-4eaf6cf74e18/21UMGIM40585.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/4a/38/6b4a3830-62f2-48f9-c9d1-4eaf6cf74e18/21UMGIM40585.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Never Going Home">Never Going Home</div>
         <div class="card-artist">Kungs</div>
@@ -974,7 +983,7 @@
       <h2><span class="sec-icon">⚡</span> NightStart - Freak <span class="count">38 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="I Got You (I Feel Good) - Marijn Jansen Remix" data-artist="James Brown & The Famous Flames" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8a/76/04/8a760498-ce95-c1f3-4bff-958362821728/14UMGIM28794.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8a/76/04/8a760498-ce95-c1f3-4bff-958362821728/14UMGIM28794.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Got You (I Feel Good) - Marijn Jansen Remix">I Got You (I Feel Good) - Marijn Jansen Remix</div>
         <div class="card-artist">James Brown & The Famous Flames</div>
@@ -988,7 +997,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Titanium - DJ Smerk Don&#39;t Wake Me Up Edit" data-artist="David Guetta ft. Sia" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/f0/a4/2c/f0a42c10-829c-8b84-7ac2-271f45d4687e/dj.zykhivrk.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/f0/a4/2c/f0a42c10-829c-8b84-7ac2-271f45d4687e/dj.zykhivrk.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Titanium - DJ Smerk Don&#39;t Wake Me Up Edit">Titanium - DJ Smerk Don't Wake Me Up Edit</div>
         <div class="card-artist">David Guetta ft. Sia</div>
@@ -1002,7 +1011,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Play Hard - Gallardo Remix" data-artist="David Guetta ft. Ne-Yo & Akon" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/ac/46/bbac4605-ff24-6bcd-74a6-927361a59721/5099997593256.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/ac/46/bbac4605-ff24-6bcd-74a6-927361a59721/5099997593256.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Play Hard - Gallardo Remix">Play Hard - Gallardo Remix</div>
         <div class="card-artist">David Guetta ft. Ne-Yo & Akon</div>
@@ -1016,7 +1025,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Poker Face - CHALANT Remix" data-artist="Lady Gaga" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/60/b1/ea/60b1ea38-2d5a-190f-984a-281de09f3d73/10UMGIM12308.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/60/b1/ea/60b1ea38-2d5a-190f-984a-281de09f3d73/10UMGIM12308.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Poker Face - CHALANT Remix">Poker Face - CHALANT Remix</div>
         <div class="card-artist">Lady Gaga</div>
@@ -1030,7 +1039,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="When I Grow Up - Deux Twins Remix" data-artist="The Pussycat Dolls" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e7/5b/f8/e75bf84f-4675-b33e-4e5e-66c9677f8ec1/08UMGIM19457.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e7/5b/f8/e75bf84f-4675-b33e-4e5e-66c9677f8ec1/08UMGIM19457.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="When I Grow Up - Deux Twins Remix">When I Grow Up - Deux Twins Remix</div>
         <div class="card-artist">The Pussycat Dolls</div>
@@ -1044,7 +1053,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="We Found Love" data-artist="Rihanna Calvin Harris" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ae/46/51/ae465169-b0a4-3c10-42a0-63e4448d1508/16UMGIM59230.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ae/46/51/ae465169-b0a4-3c10-42a0-63e4448d1508/16UMGIM59230.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="We Found Love">We Found Love</div>
         <div class="card-artist">Rihanna Calvin Harris</div>
@@ -1058,7 +1067,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Where You Are" data-artist="John Summit HAYLA" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/26/86/a9/2686a9dc-0a17-8e7f-82e3-9bb7c53c1494/23UMGIM19042.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/26/86/a9/2686a9dc-0a17-8e7f-82e3-9bb7c53c1494/23UMGIM19042.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Where You Are">Where You Are</div>
         <div class="card-artist">John Summit HAYLA</div>
@@ -1072,7 +1081,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Don&#39;t Stop The Music - Spryte Remix" data-artist="Rihanna" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/a2/07/12/a20712ae-7ed1-38ee-7ec0-ff33c2168047/16UMGIM59211.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/a2/07/12/a20712ae-7ed1-38ee-7ec0-ff33c2168047/16UMGIM59211.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Don&#39;t Stop The Music - Spryte Remix">Don't Stop The Music - Spryte Remix</div>
         <div class="card-artist">Rihanna</div>
@@ -1086,7 +1095,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Hit The Road Jack - Pizzata & Klein Remix" data-artist="Ray Charles" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/3e/3c/bc/3e3cbc92-7781-ee13-3eea-9156f73fc0a9/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/3e/3c/bc/3e3cbc92-7781-ee13-3eea-9156f73fc0a9/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Hit The Road Jack - Pizzata & Klein Remix">Hit The Road Jack - Pizzata & Klein Remix</div>
         <div class="card-artist">Ray Charles</div>
@@ -1100,7 +1109,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Fresh - Kide & Giorgio Dala Remix" data-artist="Kool & The Gang" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/a3/62/0b/a3620b5b-1804-6e08-ceab-c2c1958ad738/00602567825487.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/a3/62/0b/a3620b5b-1804-6e08-ceab-c2c1958ad738/00602567825487.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Fresh - Kide & Giorgio Dala Remix">Fresh - Kide & Giorgio Dala Remix</div>
         <div class="card-artist">Kool & The Gang</div>
@@ -1114,7 +1123,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Rainfall (Praise You)" data-artist="Tom Santa" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/74/b5/6e/74b56e64-f7cd-29ea-3537-53164888d41e/22UMGIM14284.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/74/b5/6e/74b56e64-f7cd-29ea-3537-53164888d41e/22UMGIM14284.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Rainfall (Praise You)">Rainfall (Praise You)</div>
         <div class="card-artist">Tom Santa</div>
@@ -1128,7 +1137,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Jump Around - MOONLGHT Remix (Intro - Clean)" data-artist="House Of Pain" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c5/b7/2f/c5b72ff4-d593-ed4c-f7ed-080fb4d224aa/081227911560.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c5/b7/2f/c5b72ff4-d593-ed4c-f7ed-080fb4d224aa/081227911560.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Jump Around - MOONLGHT Remix (Intro - Clean)">Jump Around - MOONLGHT Remix (Intro - Clean)</div>
         <div class="card-artist">House Of Pain</div>
@@ -1142,7 +1151,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Barbie Girl - Anthem Kingz Party Starter" data-artist="Aqua" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/77/57/ba/7757ba77-0163-a195-950b-95786aa7a90e/17UMGIM98492.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/77/57/ba/7757ba77-0163-a195-950b-95786aa7a90e/17UMGIM98492.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Barbie Girl - Anthem Kingz Party Starter">Barbie Girl - Anthem Kingz Party Starter</div>
         <div class="card-artist">Aqua</div>
@@ -1156,7 +1165,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Heads Will Roll - PBH & JACK Remix" data-artist="Yeah Yeah Yeahs" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e3/21/d9/e321d904-27b5-22db-6a8c-7c72b2530755/00602527021713.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e3/21/d9/e321d904-27b5-22db-6a8c-7c72b2530755/00602527021713.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Heads Will Roll - PBH & JACK Remix">Heads Will Roll - PBH & JACK Remix</div>
         <div class="card-artist">Yeah Yeah Yeahs</div>
@@ -1170,7 +1179,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Sexy And I Know It" data-artist="LMFAO" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/5b/df/05/5bdf0567-a205-91d4-1f42-1510d4e72068/11UMGIM14032.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/5b/df/05/5bdf0567-a205-91d4-1f42-1510d4e72068/11UMGIM14032.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Sexy And I Know It">Sexy And I Know It</div>
         <div class="card-artist">LMFAO</div>
@@ -1184,7 +1193,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Love It - MARROW LET&#39;S GO Slam Intro Edit (Dirty)" data-artist="Icona Pop ft. Charli XCX" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/ce/28/6bce2887-cb07-4c45-940e-1c7ad3b7cc5a/075679942456.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/ce/28/6bce2887-cb07-4c45-940e-1c7ad3b7cc5a/075679942456.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Love It - MARROW LET&#39;S GO Slam Intro Edit (Dirty)">I Love It - MARROW LET'S GO Slam Intro Edit (Dirty)</div>
         <div class="card-artist">Icona Pop ft. Charli XCX</div>
@@ -1198,7 +1207,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)" data-artist="Icona Pop ft. Charli XCX" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/ce/28/6bce2887-cb07-4c45-940e-1c7ad3b7cc5a/075679942456.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6b/ce/28/6bce2887-cb07-4c45-940e-1c7ad3b7cc5a/075679942456.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)">I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)</div>
         <div class="card-artist">Icona Pop ft. Charli XCX</div>
@@ -1212,7 +1221,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Rock This Party (Everybody Dance Now) - MIKIS & ZING Remix" data-artist="Bob Sinclar ft. Big Ali" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5f/5d/19/5f5d1997-e9c4-48ab-27ba-ae6b040b58a2/3596974549197_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5f/5d/19/5f5d1997-e9c4-48ab-27ba-ae6b040b58a2/3596974549197_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Rock This Party (Everybody Dance Now) - MIKIS & ZING Remix">Rock This Party (Everybody Dance Now) - MIKIS & ZING Remix</div>
         <div class="card-artist">Bob Sinclar ft. Big Ali</div>
@@ -1226,7 +1235,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Bulletproof - FÄT TONY & Medun Remix" data-artist="La Roux" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ad/00/c7/ad00c77d-7d44-d0d0-5a81-476d996e9ed1/18UMGIM83490.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ad/00/c7/ad00c77d-7d44-d0d0-5a81-476d996e9ed1/18UMGIM83490.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Bulletproof - FÄT TONY & Medun Remix">Bulletproof - FÄT TONY & Medun Remix</div>
         <div class="card-artist">La Roux</div>
@@ -1240,7 +1249,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Hit &#39;Em Up Style (Oops!)" data-artist="Essel James Hurr" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e7/2f/e0/e72fe027-c144-a307-d2f0-da8e716da9a4/22UM1IM36165.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e7/2f/e0/e72fe027-c144-a307-d2f0-da8e716da9a4/22UM1IM36165.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Hit &#39;Em Up Style (Oops!)">Hit 'Em Up Style (Oops!)</div>
         <div class="card-artist">Essel James Hurr</div>
@@ -1254,7 +1263,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Low - SANDERSVILLE Remix" data-artist="Flo Rida ft. T-Pain" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8f/b8/52/8fb85296-7555-c948-b9b3-fea89d7237f4/mzi.cumqmvyo.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8f/b8/52/8fb85296-7555-c948-b9b3-fea89d7237f4/mzi.cumqmvyo.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Low - SANDERSVILLE Remix">Low - SANDERSVILLE Remix</div>
         <div class="card-artist">Flo Rida ft. T-Pain</div>
@@ -1268,7 +1277,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Paparazzi - Waltry Remix" data-artist="Lady Gaga" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/23/e6/0c/23e60cf8-1023-b3e2-0620-7bf3fcebcd0f/10UMGIM09073.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/23/e6/0c/23e60cf8-1023-b3e2-0620-7bf3fcebcd0f/10UMGIM09073.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Paparazzi - Waltry Remix">Paparazzi - Waltry Remix</div>
         <div class="card-artist">Lady Gaga</div>
@@ -1282,7 +1291,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Hot In Herre - Andrew Lux Remix" data-artist="Nelly" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/37/35/62/373562e8-ab69-254b-bbf2-f1cb9aca66fe/06UMGIM16889.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/37/35/62/373562e8-ab69-254b-bbf2-f1cb9aca66fe/06UMGIM16889.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Hot In Herre - Andrew Lux Remix">Hot In Herre - Andrew Lux Remix</div>
         <div class="card-artist">Nelly</div>
@@ -1296,7 +1305,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Levels - RICHIE ROZEX Remix" data-artist="Avicii" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/38/43/67384338-9ed7-fc68-5927-93f1fcf4705d/11UMGIM36900.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/38/43/67384338-9ed7-fc68-5927-93f1fcf4705d/11UMGIM36900.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Levels - RICHIE ROZEX Remix">Levels - RICHIE ROZEX Remix</div>
         <div class="card-artist">Avicii</div>
@@ -1310,7 +1319,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Y.M.C.A. - DJ Getdown Remix" data-artist="Village People" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/a7/03/22/mzi.wafixwot.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/a7/03/22/mzi.wafixwot.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Y.M.C.A. - DJ Getdown Remix">Y.M.C.A. - DJ Getdown Remix</div>
         <div class="card-artist">Village People</div>
@@ -1324,7 +1333,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Viva La Vida - CHALANT Remix" data-artist="Coldplay" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/52/aa/85/52aa851f-15b7-6322-f91f-df84b15b7b19/190295978044.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/52/aa/85/52aa851f-15b7-6322-f91f-df84b15b7b19/190295978044.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Viva La Vida - CHALANT Remix">Viva La Vida - CHALANT Remix</div>
         <div class="card-artist">Coldplay</div>
@@ -1338,7 +1347,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Love It (feat. Charli XCX)" data-artist="Icona Pop Charli xcx" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6a/ca/da/6acadad8-808e-3a4b-0ed9-2646985baf6e/603497837281.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6a/ca/da/6acadad8-808e-3a4b-0ed9-2646985baf6e/603497837281.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Love It (feat. Charli XCX)">I Love It (feat. Charli XCX)</div>
         <div class="card-artist">Icona Pop Charli xcx</div>
@@ -1352,7 +1361,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Freed From Desire - 5HOURS & Martina Minelli Remix" data-artist="Gala" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/70/a3/33/70a333a9-29d8-bfde-fe2d-79d2a9a72518/mzi.hroawrfd.tif/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/70/a3/33/70a333a9-29d8-bfde-fe2d-79d2a9a72518/mzi.hroawrfd.tif/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Freed From Desire - 5HOURS & Martina Minelli Remix">Freed From Desire - 5HOURS & Martina Minelli Remix</div>
         <div class="card-artist">Gala</div>
@@ -1366,7 +1375,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="High Hopes (Don Diablo Remix)" data-artist="Panic! At The Disco" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/3b/92/c7/3b92c7e4-92eb-dd0f-68d5-b8b5bd357ec6/075679875136.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/3b/92/c7/3b92c7e4-92eb-dd0f-68d5-b8b5bd357ec6/075679875136.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="High Hopes (Don Diablo Remix)">High Hopes (Don Diablo Remix)</div>
         <div class="card-artist">Panic! At The Disco</div>
@@ -1380,7 +1389,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Gimme! Gimme! Gimme! (A Man After Midnight) - HAWK Remix" data-artist="ABBA" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/f7/90/dcf790c3-7c63-f7b3-e57b-5a8747a8ebbe/14UMGIM11148.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/f7/90/dcf790c3-7c63-f7b3-e57b-5a8747a8ebbe/14UMGIM11148.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Gimme! Gimme! Gimme! (A Man After Midnight) - HAWK Remix">Gimme! Gimme! Gimme! (A Man After Midnight) - HAWK Remix</div>
         <div class="card-artist">ABBA</div>
@@ -1394,7 +1403,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Just Dance - Freejak Remix" data-artist="Lady Gaga ft. Colby O&#39;Donis" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a6/68/28/a66828c0-3fe3-5419-374d-ad98739f3166/08UMGIM13954.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a6/68/28/a66828c0-3fe3-5419-374d-ad98739f3166/08UMGIM13954.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Just Dance - Freejak Remix">Just Dance - Freejak Remix</div>
         <div class="card-artist">Lady Gaga ft. Colby O'Donis</div>
@@ -1408,7 +1417,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Treasure - Mr. Sherman Remix (Clean)" data-artist="Bruno Mars" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/35/d7/c2/35d7c257-6981-8c98-522a-5465e447351a/825646255337.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/35/d7/c2/35d7c257-6981-8c98-522a-5465e447351a/825646255337.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Treasure - Mr. Sherman Remix (Clean)">Treasure - Mr. Sherman Remix (Clean)</div>
         <div class="card-artist">Bruno Mars</div>
@@ -1422,7 +1431,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Let Me Blow Ya Mind - Lincoln Baio Beggin&#39; Edit (Dirty)" data-artist="Eve ft. Gwen Stefani" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/13/0c/86/130c8683-fc27-a98d-7649-7b15e3cd253f/00606949084820.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/13/0c/86/130c8683-fc27-a98d-7649-7b15e3cd253f/00606949084820.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Let Me Blow Ya Mind - Lincoln Baio Beggin&#39; Edit (Dirty)">Let Me Blow Ya Mind - Lincoln Baio Beggin' Edit (Dirty)</div>
         <div class="card-artist">Eve ft. Gwen Stefani</div>
@@ -1436,7 +1445,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="I Love It - Mark Anthony Phatt Bass Edit (Dirty)" data-artist="Icona Pop" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/27/77/f7/2777f767-d677-72f0-5361-8fc339c7124e/075679922014.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/27/77/f7/2777f767-d677-72f0-5361-8fc339c7124e/075679922014.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Love It - Mark Anthony Phatt Bass Edit (Dirty)">I Love It - Mark Anthony Phatt Bass Edit (Dirty)</div>
         <div class="card-artist">Icona Pop</div>
@@ -1450,7 +1459,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Señorita - CAVALLI Afro House Remix" data-artist="Shawn Mendes ft. Camila Cabello" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/46/fe/4a/46fe4a39-feb4-7b8b-97b9-0187d49a46bd/19UMGIM53914.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/46/fe/4a/46fe4a39-feb4-7b8b-97b9-0187d49a46bd/19UMGIM53914.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Señorita - CAVALLI Afro House Remix">Señorita - CAVALLI Afro House Remix</div>
         <div class="card-artist">Shawn Mendes ft. Camila Cabello</div>
@@ -1464,7 +1473,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Pompeii - J Bruus Remix" data-artist="Bastille" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a1/1b/6e/a11b6e09-4814-05ad-20a9-e03cacf55d0e/23UMGIM13659.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a1/1b/6e/a11b6e09-4814-05ad-20a9-e03cacf55d0e/23UMGIM13659.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Pompeii - J Bruus Remix">Pompeii - J Bruus Remix</div>
         <div class="card-artist">Bastille</div>
@@ -1478,7 +1487,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Watch Out For This (Bumaye) - Alex Guesta Mas Gasolina Edit" data-artist="Major Lazer ft. Busy Signal, The Flexican & FS Green" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/80/bc/0b80bcde-a588-afa8-7c6b-67bbd326d6da/5060281613677_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/80/bc/0b80bcde-a588-afa8-7c6b-67bbd326d6da/5060281613677_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Watch Out For This (Bumaye) - Alex Guesta Mas Gasolina Edit">Watch Out For This (Bumaye) - Alex Guesta Mas Gasolina Edit</div>
         <div class="card-artist">Major Lazer ft. Busy Signal, The Flexican & FS Green</div>
@@ -1492,7 +1501,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Bulletproof" data-artist="La Roux Gamper & Dadoni" data-playlist="NightStart - Freak">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a4/1e/c8/a41ec8ff-515e-4e47-6506-8a7d9d167dbb/21UMGIM31717.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a4/1e/c8/a41ec8ff-515e-4e47-6506-8a7d9d167dbb/21UMGIM31717.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Bulletproof">Bulletproof</div>
         <div class="card-artist">La Roux Gamper & Dadoni</div>
@@ -1509,7 +1518,7 @@
       <h2><span class="sec-icon">🎯</span> Peak - Banger b. 125 BPM <span class="count">10 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="In Da Club - NAO Remix (Dirty)" data-artist="50 Cent" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6e/56/af/6e56af83-bdff-56c2-7c6a-b30cd0d356ce/06UMGIM08757.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6e/56/af/6e56af83-bdff-56c2-7c6a-b30cd0d356ce/06UMGIM08757.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="In Da Club - NAO Remix (Dirty)">In Da Club - NAO Remix (Dirty)</div>
         <div class="card-artist">50 Cent</div>
@@ -1523,7 +1532,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Who&#39;s That Girl? - Richastic Remix (Intro)" data-artist="Eve" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/f6/4c/96/f64c9659-adf6-3256-1193-9e02bc14cc3a/dj.qmleubcf.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/f6/4c/96/f64c9659-adf6-3256-1193-9e02bc14cc3a/dj.qmleubcf.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Who&#39;s That Girl? - Richastic Remix (Intro)">Who's That Girl? - Richastic Remix (Intro)</div>
         <div class="card-artist">Eve</div>
@@ -1537,7 +1546,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Thrift Shop - Spracto Remix (Dirty)" data-artist="Macklemore & Ryan Lewis ft. Wanz" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/40/83/44408300-636f-8cae-d508-9dd96db48cea/707541528191.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/40/83/44408300-636f-8cae-d508-9dd96db48cea/707541528191.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Thrift Shop - Spracto Remix (Dirty)">Thrift Shop - Spracto Remix (Dirty)</div>
         <div class="card-artist">Macklemore & Ryan Lewis ft. Wanz</div>
@@ -1551,7 +1560,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="We No Speak Americano - 10th Anniversary Edit" data-artist="Yolanda Be Cool & DCUP" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/30/c7/dd/30c7dd46-492f-b744-93f3-73fbe62149ae/SWEATDS026ER.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/30/c7/dd/30c7dd46-492f-b744-93f3-73fbe62149ae/SWEATDS026ER.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="We No Speak Americano - 10th Anniversary Edit">We No Speak Americano - 10th Anniversary Edit</div>
         <div class="card-artist">Yolanda Be Cool & DCUP</div>
@@ -1565,7 +1574,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Without Me - Rogerson Remix (Clean)" data-artist="Eminem" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Video116/v4/b4/10/ac/b410aca5-c694-72a9-0129-239f7b671280/dj.djbmllpt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video116/v4/b4/10/ac/b410aca5-c694-72a9-0129-239f7b671280/dj.djbmllpt.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Without Me - Rogerson Remix (Clean)">Without Me - Rogerson Remix (Clean)</div>
         <div class="card-artist">Eminem</div>
@@ -1579,7 +1588,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="The Rhythm" data-artist="Don Diablo" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8b/24/d1/8b24d18b-d22c-c2e2-c71a-b50e2794c613/5021732590374.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8b/24/d1/8b24d18b-d22c-c2e2-c71a-b50e2794c613/5021732590374.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="The Rhythm">The Rhythm</div>
         <div class="card-artist">Don Diablo</div>
@@ -1593,7 +1602,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="We Dem Boyz - Jablonski Calabria Edit (Clean)" data-artist="Wiz Khalifa" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c9/38/0b/c9380b6f-a9bc-8a40-3f57-7d502c633e51/198704258770_Cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c9/38/0b/c9380b6f-a9bc-8a40-3f57-7d502c633e51/198704258770_Cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="We Dem Boyz - Jablonski Calabria Edit (Clean)">We Dem Boyz - Jablonski Calabria Edit (Clean)</div>
         <div class="card-artist">Wiz Khalifa</div>
@@ -1607,7 +1616,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="EoO - MarkCutz Hype Intro (Dirty)" data-artist="Bad Bunny" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/39/2e/b5/392eb574-6fb3-d4bd-2422-622d97b7f3cf/8721465749502_NL8RL2613936.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/39/2e/b5/392eb574-6fb3-d4bd-2422-622d97b7f3cf/8721465749502_NL8RL2613936.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="EoO - MarkCutz Hype Intro (Dirty)">EoO - MarkCutz Hype Intro (Dirty)</div>
         <div class="card-artist">Bad Bunny</div>
@@ -1621,7 +1630,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Titanium - Jablonski Tantalizing Edit" data-artist="David Guetta ft. Sia" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/f0/a4/2c/f0a42c10-829c-8b84-7ac2-271f45d4687e/dj.zykhivrk.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/f0/a4/2c/f0a42c10-829c-8b84-7ac2-271f45d4687e/dj.zykhivrk.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Titanium - Jablonski Tantalizing Edit">Titanium - Jablonski Tantalizing Edit</div>
         <div class="card-artist">David Guetta ft. Sia</div>
@@ -1635,7 +1644,7 @@
     </div>
 <div class="card" onclick="toggleSong(this)" data-title="Sweet Memories" data-artist="Cid Kaskade" data-playlist="Peak - Banger b. 125 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/33/81/50338176-6701-3b69-9951-3f39665ff89b/24SYMIM16382.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/33/81/50338176-6701-3b69-9951-3f39665ff89b/24SYMIM16382.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Sweet Memories">Sweet Memories</div>
         <div class="card-artist">Cid Kaskade</div>
@@ -1652,7 +1661,7 @@
       <h2><span class="sec-icon">🚀</span> Peak - Banger b. 150 BPM <span class="count">1 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="I Like It - Dillon Francis Remix (Intro - Dirty)" data-artist="Cardi B ft. Bad Bunny & J Balvin" data-playlist="Peak - Banger b. 150 BPM">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/fe/6c/21/fe6c21ed-8dc7-c94f-76d2-af8dd67f5037/USATV2002727.sca1.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy">
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/fe/6c/21/fe6c21ed-8dc7-c94f-76d2-af8dd67f5037/USATV2002727.sca1.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="I Like It - Dillon Francis Remix (Intro - Dirty)">I Like It - Dillon Francis Remix (Intro - Dirty)</div>
         <div class="card-artist">Cardi B ft. Bad Bunny & J Balvin</div>
@@ -1714,6 +1723,56 @@
     const t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  const _PLAY  = '<path d="M8 5v14l11-7z"/>';
+  const _PAUSE = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+  const _SPIN  = '<circle class="pb-spin" cx="12" cy="12" r="8" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="28 12"/>';
+
+  let _aud = null, _btn = null, _cache = {};
+
+  function _icon(b, p) { b.querySelector('svg').innerHTML = p; }
+  function _stop() {
+    if (_aud) { _aud.pause(); _aud = null; }
+    if (_btn) { _icon(_btn, _PLAY); _btn.closest('.cover-wrap').classList.remove('pb-active'); _btn = null; }
+  }
+  async function playPreview(e, btn) {
+    e.stopPropagation();
+    if (_btn === btn) {
+      if (_aud && _aud.paused) { _aud.play(); _icon(btn, _PAUSE); }
+      else if (_aud) { _aud.pause(); _icon(btn, _PLAY); }
+      return;
+    }
+    _stop();
+    const card = btn.closest('.card');
+    const key = card.dataset.title + '||' + card.dataset.artist;
+    _btn = btn;
+    btn.closest('.cover-wrap').classList.add('pb-active');
+    _icon(btn, _SPIN);
+
+    let url = _cache[key];
+    if (!url) {
+      try {
+        const q = encodeURIComponent(card.dataset.artist + ' ' + card.dataset.title);
+        const r = await fetch('https://itunes.apple.com/search?term=' + q + '&media=music&limit=1&country=de');
+        const d = await r.json();
+        url = d.results?.[0]?.previewUrl || null;
+        if (url) _cache[key] = url;
+      } catch { url = null; }
+    }
+    if (_btn !== btn) return;
+    if (!url) {
+      _icon(btn, _PLAY);
+      btn.closest('.cover-wrap').classList.remove('pb-active');
+      _btn = null;
+      return;
+    }
+    _aud = new Audio(url);
+    _aud.play();
+    _icon(btn, _PAUSE);
+    _aud.onended = () => {
+      if (_btn === btn) { _icon(btn, _PLAY); btn.closest('.cover-wrap').classList.remove('pb-active'); _btn = null; _aud = null; }
+    };
   }
 </script>
 </body>
