@@ -108,10 +108,23 @@
   </div>
 </div>
 
-<script>
-  const RAW = 'https://cdn.jsdelivr.net/gh/DJERMN/DJERMN.github.io@main/now-playing.json';
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getDatabase, ref, onValue } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+
+  const app = initializeApp({
+    apiKey: 'AIzaSyDB7qRbmUTU25sv4R8Db4SWjyc2FGaPQeE',
+    authDomain: 'now-playing-75593.firebaseapp.com',
+    projectId: 'now-playing-75593',
+    storageBucket: 'now-playing-75593.firebasestorage.app',
+    messagingSenderId: '407700694205',
+    appId: '1:407700694205:web:d402761f32892fee5cc3d4',
+    databaseURL: 'https://now-playing-75593-default-rtdb.europe-west1.firebasedatabase.app',
+  });
+
+  const db  = getDatabase(app);
   const bg  = document.getElementById('bg');
-  const app = document.getElementById('app');
+  const appEl = document.getElementById('app');
   let lastTitle = null;
 
   const NOTE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:56px;height:56px;opacity:0.15">
@@ -123,9 +136,9 @@
   }
 
   function render(data) {
-    if (!data.title) {
+    if (!data || !data.title) {
       bg.style.backgroundImage = '';
-      app.innerHTML = `<div class="idle">
+      appEl.innerHTML = `<div class="idle">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
         </svg>
@@ -145,7 +158,7 @@
     const bpm = data.bpm ? `<span class="badge badge-bpm">${data.bpm} BPM</span>` : '';
     const key = data.key ? `<span class="badge badge-key">${esc(data.key)}</span>` : '';
 
-    app.innerHTML = `
+    appEl.innerHTML = `
       <div class="art-wrap">${art}</div>
       <div class="title">${esc(data.title)}</div>
       <div class="artist">${esc(data.artist || '')}</div>
@@ -153,25 +166,17 @@
       <div class="live"><span class="live-dot"></span>Live</div>`;
   }
 
-  async function poll() {
-    try {
-      const url = RAW + '?_=' + Date.now();
-      const r = await fetch(url, { cache: 'no-store' });
-      if (!r.ok) return;
-      const data = await r.json();
-      if (data.title !== lastTitle) {
-        app.classList.add('fading');
-        setTimeout(() => {
-          lastTitle = data.title;
-          render(data);
-          app.classList.remove('fading');
-        }, 300);
-      }
-    } catch (_) {}
-  }
-
-  poll();
-  setInterval(poll, 5000);
+  onValue(ref(db, 'now-playing'), (snapshot) => {
+    const data = snapshot.val() || {};
+    if (data.title !== lastTitle) {
+      appEl.classList.add('fading');
+      setTimeout(() => {
+        lastTitle = data.title;
+        render(data);
+        appEl.classList.remove('fading');
+      }, 300);
+    }
+  });
 </script>
 </body>
 </html>
