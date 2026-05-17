@@ -201,8 +201,11 @@
       transition: transform 0.12s; -webkit-tap-highlight-color: transparent;
     }
     .ib-btn:active { transform: scale(0.85); }
-    .ib-btn-no  { background: rgba(239,68,68,0.12);  border: 1.5px solid rgba(239,68,68,0.3);  color: #ef4444; }
-    .ib-btn-yes { background: rgba(74,222,128,0.12); border: 1.5px solid rgba(74,222,128,0.3); color: #4ade80; }
+    .ib-btn-no   { background: rgba(239,68,68,0.12);  border: 1.5px solid rgba(239,68,68,0.3);  color: #ef4444; }
+    .ib-btn-yes  { background: rgba(74,222,128,0.12); border: 1.5px solid rgba(74,222,128,0.3); color: #4ade80; }
+    .ib-btn-next { width: auto; height: 44px; padding: 0 28px; border-radius: 12px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.15); color: #e4e4e7; font-family:'Inter',sans-serif; font-size: 0.82rem; font-weight: 700; }
+    .ib-card-open { background: rgba(96,165,250,0.07); border-color: rgba(96,165,250,0.18); }
+    .ib-open-icon { font-size: 1.2rem; margin-bottom: 6px; display: block; }
 
     /* ── Snake ── */
     .snake-panel { padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -536,104 +539,108 @@ function renderPhaseChips(current) {
 }
 
 // ── Icebreaker ────────────────────────────────────────────────────────
+// yn:true = Ja/Nein (swipe + stats), yn:false = offene Frage (nur Weiter)
 const QUESTIONS = [
-  "Würdest du für 10.000 € einen Monat ohne Handy leben?",
-  "Hast du schon mal beim Monopoly geschummelt?",
-  "Glaubst du, dass du besser tanzt als du wirklich tanzt?",
-  "Würdest du deinen Ex zu deiner Hochzeit einladen?",
-  "Hast du schon mal aus Langeweile gegessen, obwohl du keinen Hunger hattest?",
-  "Würdest du für 100 € auf der Bühne hier singen?",
-  "Hast du schon mal bei einem Film weinen wollen, dich aber beherrscht?",
-  "Würdest du lieber ein Monat lang nur Pizza essen oder nie wieder Pizza?",
-  "Hast du schon mal etwas aus Versehen kaputt gemacht und jemand anderem die Schuld gegeben?",
-  "Würdest du für 500 € im Winter in einem See schwimmen?",
-  "Hast du schon mal heimlich eine Serie ohne deinen Partner weitergeschaut?",
-  "Würdest du lieber der lauteste oder der unsichtbarste Gast auf dieser Hochzeit sein?",
-  "Hast du schon mal einen Witz erzählt und selbst am meisten gelacht?",
-  "Würdest du für 50 € heute Nacht eine Stunde alleine auf der Tanzfläche durchhalten?",
-  "Hast du schon mal jemanden auf WhatsApp gelesen und absichtlich nicht geantwortet?",
-  "Glaubst du, dass du in einer Zombie-Apokalypse überleben würdest?",
-  "Würdest du lieber unsichtbar sein oder fliegen können?",
-  "Hast du schon mal ein Selfie gemacht und es sofort wieder gelöscht?",
-  "Würdest du dein Gehalt vollständig mit deinem Partner teilen?",
-  "Würdest du für 1.000 € eine Nacht in einem Spukhaus schlafen?",
-  "Hast du schon mal gelogen, dass du krank bist, um nicht zur Arbeit zu müssen?",
-  "Würdest du lieber immer zu früh oder immer zu spät ankommen?",
-  "Hast du schon mal bei Google etwas so Peinliches gesucht, dass du den Verlauf gelöscht hast?",
-  "Würdest du für 200 € 24 Stunden komplett offline bleiben?",
-  "Hast du schon mal jemanden auf Social Media gemuted, ohne es zu sagen?",
-  "Würdest du einen Blinddate-Urlaub buchen, ohne das Ziel zu kennen?",
-  "Hast du schon mal so stark gekocht oder gebacken, dass der Rauchmelder anging?",
-  "Würdest du lieber eine Woche kein WLAN oder kein Warmwasser haben?",
-  "Hast du schon mal einen Witz nicht verstanden und trotzdem mitgelacht?",
-  "Hast du schon mal im Urlaub etwas gekauft, das du nie wieder benutzt hast?",
-  "Würdest du lieber alle deine Textnachrichten oder alle deine Fotos verlieren?",
-  "Hast du schon mal vergessen, wem du was über wen erzählt hast – und Panik bekommen?",
-  "Würdest du für 1.000 € deinen Vornamen für ein Jahr ändern?",
-  "Hast du schon mal auf einer Feier unabsichtlich jemanden beleidigt?",
-  "Würdest du lieber jeden Tag die gleichen Klamotten tragen oder nie wieder shoppen?",
-  "Würdest du für 5.000 € einen Monat in einer fremden Familie wohnen?",
-  "Hast du schon mal beim Kartenspiel so getan, als würdest du verlieren?",
-  "Würdest du lieber für einen Tag die Gedanken aller hören oder ein Jahr unsichtbar sein?",
-  "Hast du schon mal jemandem ein Kompliment gemacht, das du nicht so gemeint hast?",
-  "Hast du schon mal ein Geschenk bekommen, das du heimlich weiterverschenkt hast?",
-  "Würdest du lieber der beste Tänzer oder der beste Witzeerzähler auf dieser Party sein?",
-  "Hast du schon mal beim Telefonieren so getan, als wärst du gleich im Tunnel?",
-  "Würdest du für 10.000 € ein Jahr lang keinen Alkohol trinken?",
-  "Hast du schon mal auf einer Hochzeit heimlich gegähnt?",
-  "Würdest du lieber perfektes Gedächtnis oder perfekten Schlaf haben?",
-  "Hast du schon mal das falsche WC benutzt – aus Versehen?",
-  "Hast du schon mal etwas so lange aufgeschoben, dass es sich von selbst erledigt hat?",
-  "Hast du schon mal laut gesungen und plötzlich gemerkt, dass du nicht allein bist?",
-  "Hast du schon mal absichtlich langsam getippt, damit du nicht antworten musst?",
-  "Hast du schon mal eine Alarmzeit gestellt und dann noch 10x auf Snooze gedrückt?",
-  "Hast du schon mal jemandem gesagt, dass sein Essen lecker war – und das war es wirklich nicht?",
-  "Würdest du lieber ein Jahr ohne Spiegel oder ein Jahr ohne Kameras leben?",
-  "Hast du schon mal einen Post geliket und es sofort bereut?",
-  "Würdest du für 1.000 € eine Stunde Breakdance auf einer Bühne versuchen?",
-  "Hast du schon mal gelogen, dass du gleich da bist, obwohl du noch 30 Min. weg warst?",
-  "Hast du schon mal jemanden auf Social Media gestalkt – und aus Versehen geliket?",
-  "Würdest du für 200 € eine Woche lang keine Süßigkeiten essen?",
-  "Hast du schon mal so getan, als würde dein Handy klingeln, nur um nicht angesprochen zu werden?",
-  "Würdest du lieber alle Lieder der Welt kennen oder alle Sprachen sprechen?",
-  "Hast du schon mal eine Veranstaltung abgesagt und dann doch etwas Schöneres gemacht?",
-  "Hast du schon mal eine Pflanze sterben lassen, obwohl du ihr einen Namen gegeben hattest?",
-  "Würdest du lieber dein Traumhaus oder dein Traumauto geschenkt bekommen?",
-  "Hast du schon mal einen Film nie zu Ende gesehen und trotzdem Spoiler gegeben?",
-  "Würdest du für 100 € den nächsten DJ-Song hier persönlich ansagen – mit voller Leidenschaft?",
-  "Hast du schon mal mit jemandem geredet und seinen Namen dabei komplett vergessen?",
-  "Würdest du lieber jeden Tag dieselbe Mahlzeit essen oder nie mehr ein Lieblingsessen haben?",
-  "Hast du schon mal jemanden zum Geburtstag einen Tag zu spät beglückwünscht und so getan, als wär's Absicht?",
-  "Würdest du für 500 € beim nächsten Song auf der Tanzfläche den Worm machen?",
-  "Hast du schon mal Chips unter der Decke gegessen, damit niemand das Rascheln hört?",
-  "Würdest du lieber immer die Wahrheit sagen müssen oder nie lügen können?",
-  "Hast du schon mal eine Nachricht an die falsche Person geschickt – und bereut?",
-  "Würdest du für 1.000 € eine Woche lang nur Komplimente sagen?",
-  "Hast du schon mal mitten im Satz vergessen, was du sagen wolltest?",
-  "Hast du schon mal auf WhatsApp sofort geantwortet und dann so getan, als hättest du es erst jetzt gelesen?",
-  "Hast du schon mal absichtlich so getan, als würde dein Handy klingeln?",
-  "Würdest du lieber wissen, was alle wirklich über dich denken – oder es nie erfahren?",
-  "Hast du schon mal eine eigene Geschichte so oft erzählt, dass du selbst nicht mehr weißt, ob sie stimmt?",
-  "Glaubst du, dass du eine Staffel einer Serie in einer Nacht durchbingen könntest?",
-  "Würdest du für 2.000 € eine Woche ohne Klimaanlage im Sommer leben?",
-  "Hast du schon mal beim Sport so getan, als wärst du erschöpfter als du warst?",
-  "Würdest du lieber einmal im Jahr total pleite sein oder immer knapp über die Runden kommen?",
-  "Hast du schon mal versucht, jemanden zu ignorieren, der direkt neben dir stand?",
-  "Würdest du deinen Traumjob gegen mehr Freizeit eintauschen?",
-  "Hast du schon mal Essen bestellt und beim Abholen behauptet, es wäre nicht richtig?",
-  "Würdest du für 3.000 € einen Monat keine Musik hören?",
-  "Hast du schon mal eine Ausrede erfunden, die so gut war, dass du sie selbst geglaubt hast?",
-  "Würdest du lieber der Erste oder der Letzte auf der Tanzfläche sein?",
-  "Hast du schon mal bei einem Quiz absichtlich eine falsche Antwort gegeben?",
-  "Hast du schon mal heimlich nachts Eis aus dem Tiefkühlfach gegessen?",
-  "Würdest du lieber immer über alles informiert sein oder entspannt unwissend bleiben?",
-  "Hast du jemals einen Strafzettel bekommen und so getan, als hättest du ihn nicht gesehen?",
-  "Würdest du für 1.000 € eine Woche lang immer mit Sonnenbrille schlafen?",
-  "Hast du schon mal jemandem etwas Wichtiges beichtet und dann gesagt 'War nur ein Witz'?",
-  "Glaubst du, dass du lügen kannst, ohne dass es jemand merkt?",
-  "Würdest du für 200 € heute Nacht als Letzter diese Hochzeit verlassen?",
-  "Hast du schon mal so laut gelacht, dass du etwas verschüttet hast?",
-  "Würdest du lieber für einen Tag Baris ERMN oder für eine Woche du selbst sein?",
+  { q: "Würdest du für 10.000 € einen Monat ohne Handy leben?", yn: true },
+  { q: "Was wäre dein Traumurlaub für die Flitterwochen?", yn: false },
+  { q: "Hast du schon mal beim Monopoly geschummelt?", yn: true },
+  { q: "Welchen Song muss der DJ heute Nacht unbedingt spielen?", yn: false },
+  { q: "Glaubst du, dass du besser tanzt als du wirklich tanzt?", yn: true },
+  { q: "Was würdest du mit 1 Million € als allererstes kaufen?", yn: false },
+  { q: "Würdest du deinen Ex zu deiner Hochzeit einladen?", yn: true },
+  { q: "Was ist dein bisher peinlichstes Tanzfloor-Erlebnis?", yn: false },
+  { q: "Hast du schon mal aus Langeweile gegessen, obwohl du keinen Hunger hattest?", yn: true },
+  { q: "Wenn du ein Tier wärst – welches und warum?", yn: false },
+  { q: "Würdest du für 100 € hier auf der Bühne singen?", yn: true },
+  { q: "Was ist dein geheimes Talent, das kaum jemand kennt?", yn: false },
+  { q: "Hast du schon mal bei einem Film weinen wollen, dich aber beherrscht?", yn: true },
+  { q: "Wie lautet deine beste schlechte Ausrede aller Zeiten?", yn: false },
+  { q: "Würdest du lieber ein Monat lang nur Pizza essen oder nie wieder Pizza?", yn: true },
+  { q: "Was ist das Mutigste, das du je aus Liebe getan hast?", yn: false },
+  { q: "Hast du schon mal etwas kaputt gemacht und jemand anderem die Schuld gegeben?", yn: true },
+  { q: "Was würdest du essen, wenn Kalorien keine Rolle spielen würden?", yn: false },
+  { q: "Würdest du für 500 € im Winter in einem See schwimmen?", yn: true },
+  { q: "Was war dein peinlichster Moment auf einer Feier?", yn: false },
+  { q: "Hast du schon mal heimlich eine Serie ohne deinen Partner weitergeschaut?", yn: true },
+  { q: "Welches Gericht würdest du auf einer einsamen Insel am meisten vermissen?", yn: false },
+  { q: "Würdest du lieber der lauteste oder der unsichtbarste Gast auf dieser Hochzeit sein?", yn: true },
+  { q: "Was war dein erstes Konzert oder Festival – und wie war es?", yn: false },
+  { q: "Hast du schon mal einen Witz erzählt und selbst am meisten gelacht?", yn: true },
+  { q: "Wenn du für einen Tag jemand anderen wärst – wen würdest du wählen?", yn: false },
+  { q: "Würdest du für 50 € heute Nacht eine Stunde alleine auf der Tanzfläche durchhalten?", yn: true },
+  { q: "Was ist das Seltsamste, das du je gegessen hast?", yn: false },
+  { q: "Hast du schon mal jemanden auf WhatsApp gelesen und absichtlich nicht geantwortet?", yn: true },
+  { q: "Wenn du morgen eine komplett neue Karriere starten müsstest – welche?", yn: false },
+  { q: "Glaubst du, dass du in einer Zombie-Apokalypse überleben würdest?", yn: true },
+  { q: "Was ist dein Go-to Karaoke-Song?", yn: false },
+  { q: "Würdest du lieber unsichtbar sein oder fliegen können?", yn: true },
+  { q: "Was war dein letzter komplett sinnloser Spontankauf?", yn: false },
+  { q: "Hast du schon mal ein Selfie gemacht und es sofort wieder gelöscht?", yn: true },
+  { q: "Wenn du einen Superhelden-Namen hättest – wie würde er lauten?", yn: false },
+  { q: "Würdest du dein Gehalt vollständig mit deinem Partner teilen?", yn: true },
+  { q: "Was würdest du als Erstes tun, wenn du Präsident für einen Tag wärst?", yn: false },
+  { q: "Würdest du für 1.000 € eine Nacht in einem Spukhaus schlafen?", yn: true },
+  { q: "Was ist deine heimliche Leidenschaft, über die du kaum sprichst?", yn: false },
+  { q: "Hast du schon mal gelogen, dass du krank bist, um nicht zur Arbeit zu müssen?", yn: true },
+  { q: "Welchen Film oder welche Serie würdest du allen hier empfehlen?", yn: false },
+  { q: "Würdest du lieber immer zu früh oder immer zu spät ankommen?", yn: true },
+  { q: "Was war die beste Entscheidung deines Lebens?", yn: false },
+  { q: "Hast du schon mal bei Google etwas so Peinliches gesucht, dass du den Verlauf gelöscht hast?", yn: true },
+  { q: "Was ist das Dümmste, das du je aus Liebe getan hast?", yn: false },
+  { q: "Würdest du für 200 € 24 Stunden komplett offline bleiben?", yn: true },
+  { q: "Wenn du heute Nacht einen Wunsch frei hättest – was wäre es?", yn: false },
+  { q: "Hast du schon mal jemanden auf Social Media gemuted, ohne es zu sagen?", yn: true },
+  { q: "Was macht für dich die perfekte Party aus?", yn: false },
+  { q: "Würdest du einen Blinddate-Urlaub buchen, ohne das Ziel zu kennen?", yn: true },
+  { q: "Was ist dein bizarrster Aberglaube oder deine seltsamste Gewohnheit?", yn: false },
+  { q: "Würdest du lieber eine Woche kein WLAN oder kein Warmwasser haben?", yn: true },
+  { q: "Welcher Mensch hat dich am meisten geprägt – und warum?", yn: false },
+  { q: "Hast du schon mal einen Witz nicht verstanden und trotzdem mitgelacht?", yn: true },
+  { q: "Was ist das Verrückteste, das du je spontan gemacht hast?", yn: false },
+  { q: "Würdest du lieber alle deine Textnachrichten oder alle deine Fotos verlieren?", yn: true },
+  { q: "Wenn du eine Fähigkeit über Nacht erlernen könntest – welche?", yn: false },
+  { q: "Hast du schon mal vergessen, wem du was über wen erzählt hast – und Panik bekommen?", yn: true },
+  { q: "Was ist das Beste an Hochzeiten aus deiner Sicht?", yn: false },
+  { q: "Würdest du für 1.000 € deinen Vornamen für ein Jahr ändern?", yn: true },
+  { q: "Was würdest du tun, wenn du wüsstest, dass du nicht scheitern kannst?", yn: false },
+  { q: "Würdest du lieber jeden Tag die gleichen Klamotten tragen oder nie wieder shoppen?", yn: true },
+  { q: "Welches Buch, welche Serie oder welcher Film hat dich zuletzt wirklich bewegt?", yn: false },
+  { q: "Hast du schon mal beim Kartenspiel so getan, als würdest du verlieren?", yn: true },
+  { q: "Was ist deine wildeste 'Ich war total betrunken und dann...'-Geschichte?", yn: false },
+  { q: "Würdest du lieber für einen Tag die Gedanken aller hören oder ein Jahr unsichtbar sein?", yn: true },
+  { q: "Was vermisst du aus deiner Kindheit am meisten?", yn: false },
+  { q: "Hast du schon mal jemandem ein Kompliment gemacht, das du nicht so gemeint hast?", yn: true },
+  { q: "Wenn du heute Nacht mit einer Person hier tauschen könntest – mit wem?", yn: false },
+  { q: "Würdest du für 10.000 € ein Jahr lang keinen Alkohol trinken?", yn: true },
+  { q: "Was ist dein Lieblingsding an der Person, mit der du heute hier bist?", yn: false },
+  { q: "Würdest du lieber perfektes Gedächtnis oder perfekten Schlaf haben?", yn: true },
+  { q: "Wie sieht dein perfekter Sonntag aus?", yn: false },
+  { q: "Hast du schon mal etwas so lange aufgeschoben, dass es sich von selbst erledigt hat?", yn: true },
+  { q: "Was ist das Faulste, das du je getan hast?", yn: false },
+  { q: "Hast du schon mal laut gesungen und plötzlich gemerkt, dass du nicht allein bist?", yn: true },
+  { q: "Was wäre dein letztes Abendessen vor dem Tod?", yn: false },
+  { q: "Hast du schon mal eine Alarmzeit gestellt und dann noch 10x auf Snooze gedrückt?", yn: true },
+  { q: "Was ist das Ehrlichste, das du heute sagen könntest, aber nicht willst?", yn: false },
+  { q: "Würdest du lieber ein Jahr ohne Spiegel oder ein Jahr ohne Kameras leben?", yn: true },
+  { q: "Was war dein bisher bester oder schlimmster Urlaub?", yn: false },
+  { q: "Hast du schon mal einen Post geliket und es sofort bereut?", yn: true },
+  { q: "Womit kannst du andere garantiert zum Lachen bringen?", yn: false },
+  { q: "Hast du schon mal gelogen, dass du gleich da bist, obwohl du noch 30 Min. weg warst?", yn: true },
+  { q: "Was ist dein unpopuläres Lieblingsessen, das du anderen nie gestehst?", yn: false },
+  { q: "Würdest du lieber alle Lieder der Welt kennen oder alle Sprachen sprechen?", yn: true },
+  { q: "Wenn du eine Sache an dir ändern könntest – was wäre das?", yn: false },
+  { q: "Hast du schon mal eine Nachricht an die falsche Person geschickt – und bereut?", yn: true },
+  { q: "Was ist die komischste Situation, in der du dich je befunden hast?", yn: false },
+  { q: "Würdest du lieber wissen, was alle wirklich über dich denken – oder es nie erfahren?", yn: true },
+  { q: "Was hast du zuletzt zum ersten Mal in deinem Leben getan?", yn: false },
+  { q: "Würdest du für 2.000 € eine Woche ohne Klimaanlage im Sommer leben?", yn: true },
+  { q: "Was ist das Romantischste, das dir je jemand getan oder gesagt hat?", yn: false },
+  { q: "Würdest du deinen Traumjob gegen mehr Freizeit eintauschen?", yn: true },
+  { q: "Welchen Rat würdest du deinem jüngeren Ich geben?", yn: false },
+  { q: "Würdest du lieber der Erste oder der Letzte auf der Tanzfläche sein?", yn: true },
+  { q: "Was ist dein Lieblingsmoment von heute – bisher?", yn: false },
+  { q: "Glaubst du, dass du lügen kannst, ohne dass es jemand merkt?", yn: true },
+  { q: "Wofür bist du heute dankbar?", yn: false },
 ];
 
 let ibQueue = JSON.parse(localStorage.getItem('ib-queue') || 'null');
@@ -652,6 +659,18 @@ function renderIcebreaker() {
   const total = QUESTIONS.length;
   const answered = total - queue.length;
   const qIdx = queue[queue.length - 1];
+  const q = QUESTIONS[qIdx];
+  const isYN = q.yn;
+
+  const actions = isYN
+    ? `<div class="ib-stats" id="ib-stats">…</div>
+       <div class="ib-actions">
+         <button class="ib-btn ib-btn-no"  id="ib-no">✕</button>
+         <button class="ib-btn ib-btn-yes" id="ib-yes">✓</button>
+       </div>`
+    : `<div class="ib-actions">
+         <button class="ib-btn ib-btn-next" id="ib-next">Weiter →</button>
+       </div>`;
 
   appEl.innerHTML = `<div class="game-view">
     <div class="game-view-header">${backBtn()}<span class="game-view-title">Icebreaker</span></div>
@@ -661,23 +680,26 @@ function renderIcebreaker() {
           <span>${answered+1}/${total}</span>
           <div class="ib-progress-bar"><div class="ib-progress-fill" style="width:${(answered/total)*100}%"></div></div>
         </div>
-        <div class="ib-card-wrap"><div class="ib-card" id="ib-card">${esc(QUESTIONS[qIdx])}</div></div>
-        <div class="ib-stats" id="ib-stats">…</div>
-        <div class="ib-actions">
-          <button class="ib-btn ib-btn-no"  id="ib-no">✕</button>
-          <button class="ib-btn ib-btn-yes" id="ib-yes">✓</button>
+        <div class="ib-card-wrap">
+          <div class="ib-card${isYN ? '' : ' ib-card-open'}" id="ib-card">
+            ${isYN ? '' : '<div class="ib-open-icon">💬</div>'}
+            ${esc(q.q)}
+          </div>
         </div>
+        ${actions}
       </div>
     </div>
   </div>`;
   attachBack();
 
-  get(ref(db,`icebreaker/${qIdx}`)).then(s=>{
-    const el=document.getElementById('ib-stats'); if(!el) return;
-    const votes=s.val()||{}; const vals=Object.values(votes);
-    const yes=vals.filter(Boolean).length; const total=vals.length;
-    el.innerHTML=total===0?'Sei der Erste!':`<strong>${Math.round((yes/total)*100)}%</strong> haben Ja gesagt <span style="color:#3f3f46">· ${total}</span>`;
-  }).catch(()=>{});
+  if (isYN) {
+    get(ref(db,`icebreaker/${qIdx}`)).then(s=>{
+      const el=document.getElementById('ib-stats'); if(!el) return;
+      const votes=s.val()||{}; const vals=Object.values(votes);
+      const yes=vals.filter(Boolean).length; const n=vals.length;
+      el.innerHTML=n===0?'Sei der Erste!':`<strong>${Math.round((yes/n)*100)}%</strong> haben Ja gesagt <span style="color:#3f3f46">· ${n}</span>`;
+    }).catch(()=>{});
+  }
 
   let tx=null,ty=null;
   const card=document.getElementById('ib-card');
@@ -685,11 +707,25 @@ function renderIcebreaker() {
   card.addEventListener('touchend',e=>{
     if(tx===null) return;
     const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
-    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)) answerQ(dx>0);
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)) isYN ? answerQ(dx>0) : advanceQ();
     tx=null;
   },{passive:true});
-  document.getElementById('ib-no').addEventListener('click',()=>answerQ(false));
-  document.getElementById('ib-yes').addEventListener('click',()=>answerQ(true));
+
+  if (isYN) {
+    document.getElementById('ib-no').addEventListener('click',()=>answerQ(false));
+    document.getElementById('ib-yes').addEventListener('click',()=>answerQ(true));
+  } else {
+    document.getElementById('ib-next').addEventListener('click', advanceQ);
+  }
+}
+
+function advanceQ() {
+  const card=document.getElementById('ib-card'); if(!card) return;
+  card.classList.add('fly-right');
+  ibQueue.pop();
+  if (ibQueue.length===0) { ibQueue=null; localStorage.removeItem('ib-queue'); }
+  else localStorage.setItem('ib-queue',JSON.stringify(ibQueue));
+  setTimeout(()=>{ if(activeTab==='icebreaker') renderIcebreaker(); },340);
 }
 
 function answerQ(yes) {
