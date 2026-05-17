@@ -381,6 +381,36 @@ body {
   box-shadow: 0 0 30px rgba(58,158,95,0.4);
 }
 
+.hero-content .btn + .btn {
+  margin-left: 12px;
+}
+
+.btn-live {
+  border-color: #ef4444;
+  color: #ef4444;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-live:hover {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(239,68,68,0.4);
+}
+.live-dot-hero {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+  animation: blink-hero 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.btn-live:hover .live-dot-hero {
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
+}
+@keyframes blink-hero { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
 /* ── SECTIONS ─────────────────────────────────────── */
 .section {
   padding: 4rem 1.5rem;
