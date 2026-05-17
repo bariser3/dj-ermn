@@ -103,7 +103,7 @@
       position: fixed;
       bottom: 0; left: 0; right: 0;
       z-index: 20;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;
       padding: 8px 16px max(16px, env(safe-area-inset-bottom));
       background: rgba(9,9,11,0.92);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -207,64 +207,6 @@
     .ib-card-open { background: rgba(96,165,250,0.07); border-color: rgba(96,165,250,0.18); }
     .ib-open-icon { font-size: 1.2rem; margin-bottom: 6px; display: block; }
 
-    /* ── Snake ── */
-    .snake-panel { padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .snake-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-    .snake-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #3f3f46; }
-    .snake-score-display { font-size: 0.75rem; font-weight: 700; color: #4ade80; }
-    .snake-canvas-wrap { position: relative; }
-    #snake-canvas { border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); display: block; touch-action: none; }
-    .snake-overlay {
-      position: absolute; inset: 0; background: rgba(9,9,11,0.78);
-      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border-radius: 10px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-    }
-    .snake-start-btn {
-      background: #fff; color: #09090b; border: none; border-radius: 10px;
-      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700;
-      padding: 11px 28px; cursor: pointer; -webkit-tap-highlight-color: transparent;
-    }
-    .snake-start-btn:active { opacity: 0.85; transform: scale(0.95); }
-    .snake-gameover-score { font-size: 0.85rem; color: #a1a1aa; font-weight: 600; }
-    .snake-dpad { display: grid; grid-template-columns: repeat(3, 50px); grid-template-rows: repeat(2, 42px); gap: 4px; }
-    .snake-dpad button {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px; color: #71717a; font-size: 0.9rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      -webkit-tap-highlight-color: transparent; touch-action: manipulation;
-    }
-    .snake-dpad button:active { background: rgba(255,255,255,0.14); color: #e4e4e7; transform: scale(0.9); }
-    .dpad-up { grid-column: 2; grid-row: 1; } .dpad-left { grid-column: 1; grid-row: 2; }
-    .dpad-down { grid-column: 2; grid-row: 2; } .dpad-right { grid-column: 3; grid-row: 2; }
-
-    /* ── Chat ── */
-    .chat-panel { display: flex; flex-direction: column; height: 360px; }
-    .chat-messages {
-      flex: 1; overflow-y: auto; padding: 12px 14px;
-      display: flex; flex-direction: column; gap: 7px; scrollbar-width: none;
-    }
-    .chat-messages::-webkit-scrollbar { display: none; }
-    .chat-msg { max-width: 80%; padding: 8px 12px; border-radius: 16px; font-size: 0.83rem; line-height: 1.45; word-break: break-word; }
-    .chat-msg.mine { align-self: flex-end; border-bottom-right-radius: 4px; color: #09090b; font-weight: 500; }
-    .chat-msg.theirs { align-self: flex-start; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); color: #e4e4e7; border-bottom-left-radius: 4px; }
-    .chat-input-wrap { padding: 10px 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 8px; align-items: flex-end; }
-    .chat-input {
-      flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 12px; color: #f4f4f5; font-family: 'Inter', sans-serif;
-      font-size: 16px; padding: 8px 12px; outline: none; resize: none; max-height: 80px; line-height: 1.4;
-    }
-    .chat-input::placeholder { color: #52525b; }
-    .chat-input:focus { border-color: rgba(255,255,255,0.2); }
-    .chat-send-btn {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px; color: #a1a1aa; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; flex-shrink: 0; -webkit-tap-highlight-color: transparent;
-    }
-    .chat-send-btn:active { background: rgba(255,255,255,0.2); color: #f4f4f5; }
-    .chat-counter { font-size: 0.5rem; color: #3f3f46; text-align: right; padding: 0 14px 6px; }
-    .chat-counter.warn { color: #f59e0b; } .chat-counter.over { color: #ef4444; }
-    .chat-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 7px; color: #3f3f46; font-size: 0.75rem; }
-    .chat-empty-icon { font-size: 2rem; opacity: 0.35; }
 
     /* ── Utility ── */
     #refresh-btn {
@@ -317,13 +259,11 @@
 <div id="game-tabs">
   <button class="game-tab" data-tab="info"><span class="ti">💌</span>Info</button>
   <button class="game-tab" data-tab="icebreaker"><span class="ti">🃏</span>Icebreaker</button>
-  <button class="game-tab" data-tab="snake"><span class="ti">🐍</span>Me Time</button>
-  <button class="game-tab" data-tab="chat"><span class="ti">💬</span>Kommentare</button>
 </div>
 
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getDatabase, ref, onValue, get, set, push, onChildAdded, query, limitToLast } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+import { getDatabase, ref, onValue, get, set } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
 const app = initializeApp({
   apiKey: 'AIzaSyDB7qRbmUTU25sv4R8Db4SWjyc2FGaPQeE',
@@ -346,7 +286,6 @@ let lastTitle = null, lastArtwork = null, toastTimer = null;
 let currentData = null;
 let activeTab = 'nowplaying';
 let panelUnsub = null;
-let snakeGame = null;
 let reloadTimer = null;
 
 function scheduleReload() {
@@ -367,13 +306,6 @@ const uid = (() => {
   if (!id) { id = crypto.randomUUID(); localStorage.setItem('djermn-uid', id); }
   return id;
 })();
-const userColor = (() => {
-  const p = ['#f87171','#fb923c','#fbbf24','#4ade80','#60a5fa','#a78bfa','#f472b6','#34d399','#e879f9'];
-  let c = localStorage.getItem('djermn-color');
-  if (!c) { c = p[Math.floor(Math.random()*p.length)]; localStorage.setItem('djermn-color', c); }
-  return c;
-})();
-
 // ── Mood ──────────────────────────────────────────────────────────────
 function avgEmoji(a) { return a>=4.5?'🔥':a>=3.5?'😍':a>=2.5?'🙂':a>=1.5?'😐':'😴'; }
 
@@ -461,7 +393,6 @@ onValue(ref(db,'now-playing'), (snapshot) => {
 // ── Tab Switching ─────────────────────────────────────────────────────
 function switchToNowPlaying() {
   if (panelUnsub) { panelUnsub(); panelUnsub=null; }
-  if (snakeGame)  { snakeGame.stop(); snakeGame=null; }
   activeTab = 'nowplaying';
   document.querySelectorAll('.game-tab').forEach(b=>b.classList.remove('active'));
   moodEl.style.display = '';
@@ -474,7 +405,6 @@ document.querySelectorAll('.game-tab').forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.dataset.tab;
     if (panelUnsub) { panelUnsub(); panelUnsub=null; }
-    if (snakeGame)  { snakeGame.stop(); snakeGame=null; }
     clearTimeout(reloadTimer);
     activeTab = tab;
     document.querySelectorAll('.game-tab').forEach(b=>b.classList.remove('active'));
@@ -500,8 +430,6 @@ function attachBack() {
 function renderGame(tab) {
   if      (tab === 'info')        renderInfo();
   else if (tab === 'icebreaker')  renderIcebreaker();
-  else if (tab === 'snake')       renderSnake();
-  else if (tab === 'chat')        renderChat();
 }
 
 // ── Info ──────────────────────────────────────────────────────────────
@@ -746,170 +674,6 @@ function answerQ(yes) {
   setTimeout(()=>{ if(activeTab==='icebreaker') renderIcebreaker(); },340);
 }
 
-// ── Snake ─────────────────────────────────────────────────────────────
-function renderSnake() {
-  const size = Math.min(320, window.innerWidth - 60);
-  appEl.innerHTML = `<div class="game-view">
-    <div class="game-view-header">${backBtn()}<span class="game-view-title">Me Time — Snake</span></div>
-    <div class="game-view-body">
-      <div class="snake-panel">
-        <div class="snake-header">
-          <span class="snake-label">Snake</span>
-          <span class="snake-score-display" id="snake-score">Score: 0</span>
-        </div>
-        <div class="snake-canvas-wrap" style="width:${size}px;height:${size}px">
-          <canvas id="snake-canvas" width="${size}" height="${size}"></canvas>
-          <div class="snake-overlay" id="snake-overlay">
-            <div id="snake-gameover-score" style="display:none" class="snake-gameover-score"></div>
-            <button class="snake-start-btn" id="snake-start">Spielen ▶</button>
-          </div>
-        </div>
-        <div class="snake-dpad">
-          <button class="dpad-up" id="dpad-up">▲</button>
-          <button class="dpad-left" id="dpad-left">◀</button>
-          <button class="dpad-down" id="dpad-down">▼</button>
-          <button class="dpad-right" id="dpad-right">▶</button>
-        </div>
-      </div>
-    </div>
-  </div>`;
-  attachBack();
-
-  const canvas = document.getElementById('snake-canvas');
-  snakeGame = new SnakeGame(canvas, size,
-    (score) => { const el=document.getElementById('snake-score'); if(el) el.textContent=`Score: ${score}`; },
-    (final) => {
-      const ov=document.getElementById('snake-overlay'), os=document.getElementById('snake-gameover-score'), sb=document.getElementById('snake-start');
-      if(ov) ov.style.display='flex'; if(os){os.style.display='block';os.textContent=`Score: ${final}`;} if(sb) sb.textContent='Nochmal ▶';
-    }
-  );
-  document.getElementById('snake-start').addEventListener('click',()=>{ document.getElementById('snake-overlay').style.display='none'; document.getElementById('snake-gameover-score').style.display='none'; document.getElementById('snake-score').textContent='Score: 0'; snakeGame.start(); });
-  document.getElementById('dpad-up').addEventListener('click',   ()=>snakeGame?.setDir(0,-1));
-  document.getElementById('dpad-down').addEventListener('click', ()=>snakeGame?.setDir(0,1));
-  document.getElementById('dpad-left').addEventListener('click', ()=>snakeGame?.setDir(-1,0));
-  document.getElementById('dpad-right').addEventListener('click',()=>snakeGame?.setDir(1,0));
-}
-
-class SnakeGame {
-  constructor(canvas,size,onScore,onGameOver) {
-    this.canvas=canvas; this.ctx=canvas.getContext('2d'); this.cols=20; this.cs=size/20;
-    this.onScore=onScore; this.onGameOver=onGameOver; this.interval=null;
-    this._keyHandler=(e)=>{ const m={'ArrowUp':[0,-1],'ArrowDown':[0,1],'ArrowLeft':[-1,0],'ArrowRight':[1,0]}; if(m[e.key]){e.preventDefault();this.setDir(...m[e.key]);} };
-    document.addEventListener('keydown',this._keyHandler);
-    let tx,ty;
-    canvas.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
-    canvas.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty; if(Math.abs(dx)>Math.abs(dy)) this.setDir(dx>0?1:-1,0); else this.setDir(0,dy>0?1:-1); },{passive:true});
-    this.initState(); this.draw();
-  }
-  initState() { const m=Math.floor(this.cols/2); this.snake=[{x:m,y:m},{x:m-1,y:m},{x:m-2,y:m}]; this.dir={x:1,y:0}; this.nextDir={x:1,y:0}; this.food=this.randomFood(); this.score=0; this.alive=true; }
-  randomFood() { let p; do{p={x:Math.floor(Math.random()*this.cols),y:Math.floor(Math.random()*this.cols)};}while(this.snake.some(s=>s.x===p.x&&s.y===p.y)); return p; }
-  start() { if(this.interval) clearInterval(this.interval); this.initState(); this.interval=setInterval(()=>this.tick(),140); }
-  stop()  { clearInterval(this.interval); document.removeEventListener('keydown',this._keyHandler); }
-  setDir(dx,dy) { if(dx!==0&&this.dir.x!==0) return; if(dy!==0&&this.dir.y!==0) return; this.nextDir={x:dx,y:dy}; }
-  tick() {
-    this.dir=this.nextDir; const h={x:this.snake[0].x+this.dir.x,y:this.snake[0].y+this.dir.y};
-    if(h.x<0||h.x>=this.cols||h.y<0||h.y>=this.cols||this.snake.some(s=>s.x===h.x&&s.y===h.y)) { clearInterval(this.interval); this.alive=false; this.draw(); this.onGameOver?.(this.score); return; }
-    this.snake.unshift(h);
-    if(h.x===this.food.x&&h.y===this.food.y){this.score++;this.onScore?.(this.score);this.food=this.randomFood();}else this.snake.pop();
-    this.draw();
-  }
-  draw() {
-    const {ctx,cs,cols}=this;
-    ctx.fillStyle='#09090b'; ctx.fillRect(0,0,cols*cs,cols*cs);
-    ctx.fillStyle='rgba(255,255,255,0.025)';
-    for(let x=0;x<cols;x++) for(let y=0;y<cols;y++){ctx.beginPath();ctx.arc(x*cs+cs/2,y*cs+cs/2,1,0,Math.PI*2);ctx.fill();}
-    ctx.fillStyle='#ef4444'; ctx.shadowColor='#ef4444'; ctx.shadowBlur=10;
-    ctx.beginPath();ctx.arc(this.food.x*cs+cs/2,this.food.y*cs+cs/2,cs/2-2,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
-    this.snake.forEach((s,i)=>{ const a=Math.max(0.15,1-(i/this.snake.length)*0.75); ctx.fillStyle=`rgba(74,222,128,${a})`; ctx.beginPath();ctx.arc(s.x*cs+cs/2,s.y*cs+cs/2,i===0?cs*0.42:cs*0.34,0,Math.PI*2);ctx.fill(); });
-  }
-}
-
-// ── Chat ──────────────────────────────────────────────────────────────
-function renderChat() {
-  appEl.innerHTML = `<div class="game-view">
-    <div class="game-view-header">${backBtn()}<span class="game-view-title">Kommentare</span></div>
-    <div class="game-view-body">
-      <div class="chat-panel">
-        <div class="chat-messages" id="chat-messages">
-          <div class="chat-empty"><span class="chat-empty-icon">💬</span>Noch keine Nachrichten – sei der Erste!</div>
-        </div>
-        <div class="chat-counter" id="chat-counter">0 / 140</div>
-        <div id="chat-error" style="display:none;font-size:0.65rem;color:#ef4444;padding:4px 14px;"></div>
-        <div class="chat-input-wrap">
-          <textarea class="chat-input" id="chat-input" placeholder="Schreib etwas…" maxlength="140" rows="1"></textarea>
-          <button class="chat-send-btn" id="chat-send" aria-label="Senden">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>`;
-  attachBack();
-
-  const messagesEl = document.getElementById('chat-messages');
-  const inputEl    = document.getElementById('chat-input');
-  const counterEl  = document.getElementById('chat-counter');
-  const sendBtn    = document.getElementById('chat-send');
-  const errorEl    = document.getElementById('chat-error');
-
-  function showChatError(msg) {
-    if (!errorEl) return;
-    errorEl.textContent = msg;
-    errorEl.style.display = 'block';
-  }
-
-  // Render all messages via onValue (simpler + re-renders on any change)
-  panelUnsub = onValue(query(ref(db, 'chat/messages'), limitToLast(80)), (snap) => {
-    messagesEl.innerHTML = '';
-    const data = snap.val();
-    if (!data) {
-      messagesEl.innerHTML = '<div class="chat-empty"><span class="chat-empty-icon">💬</span>Noch keine Nachrichten – sei der Erste!</div>';
-      return;
-    }
-    Object.values(data)
-      .sort((a, b) => (a.ts || 0) - (b.ts || 0))
-      .forEach(msg => {
-        if (!msg.text) return;
-        const isMine = msg.uid === uid;
-        const div = document.createElement('div');
-        div.className = `chat-msg ${isMine ? 'mine' : 'theirs'}`;
-        if (isMine) div.style.background = msg.color || userColor;
-        div.textContent = msg.text;
-        messagesEl.appendChild(div);
-      });
-    requestAnimationFrame(() => { messagesEl.scrollTop = messagesEl.scrollHeight; });
-  }, (err) => {
-    showChatError('⚠️ Lesefehler: ' + err.code + ' — Firebase Regeln prüfen');
-  });
-
-  inputEl.addEventListener('input', () => {
-    const len = inputEl.value.length;
-    counterEl.textContent = `${len} / 140`;
-    counterEl.className = 'chat-counter' + (len >= 140 ? ' over' : len >= 120 ? ' warn' : '');
-    inputEl.style.height = 'auto';
-    inputEl.style.height = Math.min(inputEl.scrollHeight, 80) + 'px';
-  });
-
-  function send() {
-    const text = inputEl.value.trim();
-    if (!text) return;
-    sendBtn.disabled = true;
-    push(ref(db, 'chat/messages'), { text, ts: Date.now(), color: userColor, uid })
-      .then(() => {
-        inputEl.value = '';
-        inputEl.style.height = 'auto';
-        counterEl.textContent = '0 / 140';
-        counterEl.className = 'chat-counter';
-        if (errorEl) errorEl.style.display = 'none';
-      })
-      .catch(err => {
-        showChatError('⚠️ Senden fehlgeschlagen: ' + err.code);
-      })
-      .finally(() => { sendBtn.disabled = false; });
-  }
-  sendBtn.addEventListener('click', send);
-  inputEl.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
-}
 </script>
 </body>
 </html>
