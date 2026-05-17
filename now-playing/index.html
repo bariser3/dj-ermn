@@ -351,7 +351,14 @@ let reloadTimer = null;
 
 function scheduleReload() {
   clearTimeout(reloadTimer);
-  reloadTimer = setTimeout(() => { if (activeTab === 'nowplaying') location.reload(); }, 45000);
+  reloadTimer = setTimeout(() => {
+    if (activeTab !== 'nowplaying') return;
+    get(ref(db, 'now-playing')).then(s => {
+      const d = s.val() || {};
+      currentData = d; lastTitle = null; lastArtwork = null;
+      renderNowPlaying(d);
+    }).catch(() => {});
+  }, 45000);
 }
 scheduleReload();
 
@@ -522,7 +529,7 @@ function renderInfo() {
     </div>
   </div>`;
   attachBack();
-  get(ref(db,'info/phase')).then(s=>renderPhaseChips(s.val()||'Chillout')).catch(()=>renderPhaseChips('Chillout'));
+  panelUnsub = onValue(ref(db,'info/phase'), s => renderPhaseChips(s.val() || 'Chillout'));
 }
 
 function renderPhaseChips(current) {
