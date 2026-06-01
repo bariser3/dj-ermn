@@ -64,6 +64,7 @@
     .bpm { @apply bg-amber-950 text-amber-400 ring-1 ring-amber-900/50; }
     .key { @apply bg-emerald-950 text-emerald-400 ring-1 ring-emerald-900/50; }
     .dur { @apply bg-zinc-800 text-zinc-500 ring-1 ring-zinc-700/50; }
+    .genre { @apply bg-zinc-800 text-zinc-400 ring-1 ring-zinc-700/50; }
     .share-bar { @apply fixed bottom-0 left-0 right-0 z-50 bg-zinc-900 border-t border-zinc-800 flex items-center justify-between gap-3; padding: clamp(12px,3vw,16px) clamp(16px,5vw,32px); transform: translateY(100%); transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1); }
     .share-bar.visible { transform: translateY(0); }
     .share-bar-info { @apply flex-1 min-w-0; }
@@ -81,16 +82,32 @@
 <body>
 <header>
   <h1>Hochzeiten Mainfloor — Playlists</h1>
-  <p>Rekordbox Library · 96 Songs in 5 Playlists</p>
+  <p>Rekordbox Library · 108 Songs in 6 Playlists</p>
   <p class="hint">Tippe auf einen Song, der nicht passt — dann teile deine Auswahl.</p>
-  <nav class="nav"><a href="#Startup---Feeling">Startup - Feeling</a><a href="#Startup---II-Act">Startup - II Act</a><a href="#Startup---III-Act">Startup - III Act</a><a href="#Startup---Alman-Abriss-Late">Startup - Alman Abriss Late</a><a href="#Startup---Bench">Startup - Bench</a></nav>
+  <nav class="nav"><a href="#Startup---Feeling">Startup - Feeling</a><a href="#Startup---II-Act">Startup - II Act</a><a href="#Startup---Alman-Whitelist">Startup - Alman Whitelist</a><a href="#Startup---III-Act">Startup - III Act</a><a href="#Startup---Hello-Tomorrow-Land">Startup - Hello Tomorrow Land</a><a href="#Startup---Good-Feel-Latin-Night">Startup - Good Feel Latin Night</a></nav>
 </header>
 <main>
 <section class="playlist-section" id="Startup---Feeling">
-      <h2>Startup - Feeling <span class="count">21 Songs</span></h2>
-      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="LET&#x27;S GO - MFresh Hype Intro (Dirty)" data-artist="Jaden Bojsen &amp; Sami Brielle" data-playlist="Startup - Feeling">
+      <h2>Startup - Feeling <span class="count">20 Songs</span></h2>
+      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Waiting For Love" data-artist="Avicii" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/69/ab/c069ab0f-1f89-8636-8579-2e5df6e62a68/mzaf_16059040705385155103.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/e0/f4/25/e0f425ba-2848-f1c2-e102-9ddcef5e9d9d/15UMGIM35223.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Waiting For Love">Waiting For Love</div>
+        <div class="card-artist">Avicii</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">11A</span><span class="badge dur">3:50</span><span class="badge genre">Club-Banger</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Levels - RICHIE ROZEX Remix" data-artist="Avicii" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/6e/bd/ed6ebdf2-0a97-5dae-7fc6-583de355dca1/mzaf_10095989580213298663.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/38/43/67384338-9ed7-fc68-5927-93f1fcf4705d/11UMGIM36900.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Levels - RICHIE ROZEX Remix">Levels - RICHIE ROZEX Remix</div>
+        <div class="card-artist">Avicii</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">12A</span><span class="badge dur">3:32</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="LET&#x27;S GO - MFresh Hype Intro (Dirty)" data-artist="Jaden Bojsen &amp; Sami Brielle" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/dd/41/dfdd4181-b3b3-ad63-c90c-46d5c6353f73/mzaf_9080837147866723039.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/88/6c/94/886c9480-ed96-b164-dd37-3c637404c3c6/46e4bbf4-b144-450f-9b2a-8be9711dda81.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="LET&#x27;S GO - MFresh Hype Intro (Dirty)">LET&#x27;S GO - MFresh Hype Intro (Dirty)</div>
         <div class="card-artist">Jaden Bojsen &amp; Sami Brielle</div>
@@ -104,13 +121,13 @@
         <div class="card-artist">Disco Lines &amp; Tinashe</div>
         <div class="card-meta"><span class="badge bpm">131</span><span class="badge key">1A</span><span class="badge dur">3:25</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix" data-artist="Akon" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/cb/2a/adcb2aa2-37b0-2053-5bc0-d9f39637c9c3/mzaf_17555669687187659249.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="S&amp;M - Jablonski vs James Hype Alone Edit" data-artist="Rihanna" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/02/a8/4d/02a84d1b-e538-ade2-bcae-cb9548c9c13f/mzaf_665222301792604031.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d8/54/d5/d854d550-a945-a28c-d253-3bceeea2bb7f/25UMGIM62998.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1c/8c/06/1c8c06c4-56e0-c89a-6936-3b4871e05917/11UMGIM10184.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix">Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix</div>
-        <div class="card-artist">Akon</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">1A</span><span class="badge dur">2:50</span></div>
+        <div class="card-title" title="S&amp;M - Jablonski vs James Hype Alone Edit">S&amp;M - Jablonski vs James Hype Alone Edit</div>
+        <div class="card-artist">Rihanna</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2A</span><span class="badge dur">5:03</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="DtMF - ETX Better Off Alone Edit (Dirty)" data-artist="Bad Bunny" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2e/97/55/2e97555a-1ed3-9e07-de57-07e1213186c9/mzaf_7594924455925081680.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -118,31 +135,47 @@
       <div class="card-info">
         <div class="card-title" title="DtMF - ETX Better Off Alone Edit (Dirty)">DtMF - ETX Better Off Alone Edit (Dirty)</div>
         <div class="card-artist">Bad Bunny</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">1A</span><span class="badge dur">3:33</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">1A</span><span class="badge dur">3:33</span><span class="badge genre">Latin</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="S&amp;M - Jablonski vs James Hype Alone Edit" data-artist="Rihanna" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/02/a8/4d/02a84d1b-e538-ade2-bcae-cb9548c9c13f/mzaf_665222301792604031.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)" data-artist="Icona Pop ft. Charli XCX" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9c/c9/12/9cc91239-e796-d6a7-2243-92699ed7c403/mzaf_12506769683209245465.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1c/8c/06/1c8c06c4-56e0-c89a-6936-3b4871e05917/11UMGIM10184.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/26/05/1e/26051e9a-fefc-6b8b-75c8-53794ee0a9d0/075679954503.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="S&amp;M - Jablonski vs James Hype Alone Edit">S&amp;M - Jablonski vs James Hype Alone Edit</div>
-        <div class="card-artist">Rihanna</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2A</span><span class="badge dur">5:03</span></div>
+        <div class="card-title" title="I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)">I Love It - Anthem Kingz Heads Will Roll Edit (Dirty)</div>
+        <div class="card-artist">Icona Pop ft. Charli XCX</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">1A</span><span class="badge dur">2:05</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Mercy - Spryte RVN (Raven) Edit (Dirty)" data-artist="Kanye West ft. Big Sean &amp; 2 Chainz" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/3b/e7/11/3be71187-3ad2-cf61-dfed-aafc381fd3f3/mzaf_9072581490573010426.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix" data-artist="Akon" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/cb/2a/adcb2aa2-37b0-2053-5bc0-d9f39637c9c3/mzaf_17555669687187659249.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/fb/89/da/fb89da0d-1920-2cef-a965-8421d11e28cc/00602537164431.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d8/54/d5/d854d550-a945-a28c-d253-3bceeea2bb7f/25UMGIM62998.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Mercy - Spryte RVN (Raven) Edit (Dirty)">Mercy - Spryte RVN (Raven) Edit (Dirty)</div>
-        <div class="card-artist">Kanye West ft. Big Sean &amp; 2 Chainz</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">1A</span><span class="badge dur">3:27</span></div>
+        <div class="card-title" title="Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix">Right Now (Na Na Na) - Robin Roij &amp; Da Phonk Remix</div>
+        <div class="card-artist">Akon</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">1A</span><span class="badge dur">2:50</span><span class="badge genre">Dance</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Bel Mercy - Proppa Remix" data-artist="Jengi" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/30/78/bb/3078bbbe-96f3-e021-3b99-ca53c6bf2c8a/mzaf_12425674205556492226.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="You Make Me" data-artist="Avicii" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/db/bd/3c/dbbd3c27-3edb-52f5-b6b5-dde58b214612/mzaf_1514652502982651358.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/31/53/aa/3153aaf4-3494-0415-f365-43a338cb3469/1795.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/18/5b/1e/185b1ef5-5d97-19d8-aebf-8e29e41874ef/13UAAIM59255.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Bel Mercy - Proppa Remix">Bel Mercy - Proppa Remix</div>
-        <div class="card-artist">Jengi</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">4:37</span></div>
+        <div class="card-title" title="You Make Me">You Make Me</div>
+        <div class="card-artist">Avicii</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">2A</span><span class="badge dur">3:53</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="We Found Love" data-artist="Rihanna Calvin Harris" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/35/49/9a/35499ab4-2de4-229f-8e2f-9dd8ae6fd5b3/mzaf_5220015884336574774.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/16/90/6e/16906e38-2538-9d48-aa30-6eba7405972c/16UMGIM59229.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="We Found Love">We Found Love</div>
+        <div class="card-artist">Rihanna Calvin Harris</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2B</span><span class="badge dur">3:35</span><span class="badge genre">Club-Banger</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Somebody Told Me - Freejak Remix" data-artist="The Killers" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/52/56/3f525606-7cb8-0292-51c1-c617802ba773/mzaf_433193577063250516.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/07/1a/5a/071a5aee-6e42-060c-35b9-6a6e45b9ea59/06UMGIM10441.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Somebody Told Me - Freejak Remix">Somebody Told Me - Freejak Remix</div>
+        <div class="card-artist">The Killers</div>
+        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">3A</span><span class="badge dur">4:14</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Ooouuu - MFresh Bel Mercy Edit (Clean)" data-artist="Young M.A" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/1e/40/d01e4015-c383-2c2a-9445-f47edb4ae5e0/mzaf_10847000075002169806.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -152,69 +185,21 @@
         <div class="card-artist">Young M.A</div>
         <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">4A</span><span class="badge dur">3:04</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Viva La Vida - CHALANT Remix" data-artist="Coldplay" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/2b/04/65/2b0465c3-2db1-e461-2362-14b528456b8f/mzaf_1805426141027060154.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/52/aa/85/52aa851f-15b7-6322-f91f-df84b15b7b19/190295978044.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Viva La Vida - CHALANT Remix">Viva La Vida - CHALANT Remix</div>
-        <div class="card-artist">Coldplay</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">4A</span><span class="badge dur">5:10</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Rave" data-artist="Pelari" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/61/89/88/618988a1-e753-b83c-5460-81a4f2f357a1/mzaf_17918293512695478367.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/62/85/596285e9-20f3-0563-7f88-b9de8d502a9f/5060211501746.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Rave">Rave</div>
-        <div class="card-artist">Pelari</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">5A</span><span class="badge dur">5:55</span></div>
-      </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Rock Right Now" data-artist="Firebeatz Madison Mars" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/cb/39/e0/cb39e076-b117-e617-bed1-30cba11ac420/mzaf_12209613344931140203.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9c/48/07/9c480772-1546-f1cc-f85e-79ec2ff2ed35/8718522195020.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Rock Right Now">Rock Right Now</div>
         <div class="card-artist">Firebeatz Madison Mars</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">2:49</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">2:49</span><span class="badge genre">Club-Banger</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Drums" data-artist="James Hype Kim Petras Tiësto" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/f9/61/4cf961ee-19a5-9128-08c8-724802662b81/mzaf_1132337271415523922.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Viva La Vida - CHALANT Remix" data-artist="Coldplay" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/2b/04/65/2b0465c3-2db1-e461-2362-14b528456b8f/mzaf_1805426141027060154.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ab/db/26/abdb26ef-e655-e67d-ee06-c747bd23a929/24UMGIM07332.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/52/aa/85/52aa851f-15b7-6322-f91f-df84b15b7b19/190295978044.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Drums">Drums</div>
-        <div class="card-artist">James Hype Kim Petras Tiësto</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">3A</span><span class="badge dur">2:52</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Somebody Told Me - Freejak Remix" data-artist="The Killers" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/52/56/3f525606-7cb8-0292-51c1-c617802ba773/mzaf_433193577063250516.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/07/1a/5a/071a5aee-6e42-060c-35b9-6a6e45b9ea59/06UMGIM10441.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Somebody Told Me - Freejak Remix">Somebody Told Me - Freejak Remix</div>
-        <div class="card-artist">The Killers</div>
-        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">3A</span><span class="badge dur">4:14</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Don&#x27;t Phunk With My Heart - WOODERSON Remix" data-artist="Black Eyed Peas" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/1d/f7/cc/1df7cc0a-d74b-eb0e-9129-402540073d7b/mzaf_12036818266134592912.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/b0/47/63b0476f-3cc6-276a-f09e-ab415db818cd/00602498372425.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Don&#x27;t Phunk With My Heart - WOODERSON Remix">Don&#x27;t Phunk With My Heart - WOODERSON Remix</div>
-        <div class="card-artist">Black Eyed Peas</div>
-        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">4A</span><span class="badge dur">3:05</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="I Like It - Guille Placencia Remix (Dirty)" data-artist="Cardi B ft. Bad Bunny" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/7f/5d/fd7f5df2-255d-d51d-23b1-d1cd33b37688/mzaf_13244856273657682935.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ca/58/e5/ca58e5e3-acb7-8ca3-6af9-ad63af3b71f1/075679873675.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="I Like It - Guille Placencia Remix (Dirty)">I Like It - Guille Placencia Remix (Dirty)</div>
-        <div class="card-artist">Cardi B ft. Bad Bunny</div>
-        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">4A</span><span class="badge dur">6:27</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Mercy - Rogerson Remix" data-artist="Duffy" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/27/8b/5e278b1d-5214-3283-9585-113b842bd8d8/mzaf_7819129412847163426.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7e/16/eb/7e16ebde-fa58-dea8-b9b8-c5c3f16302ff/00602517729001.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Mercy - Rogerson Remix">Mercy - Rogerson Remix</div>
-        <div class="card-artist">Duffy</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">3:26</span></div>
+        <div class="card-title" title="Viva La Vida - CHALANT Remix">Viva La Vida - CHALANT Remix</div>
+        <div class="card-artist">Coldplay</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">4A</span><span class="badge dur">5:10</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Suavemente" data-artist="(MJX &amp; Pasku Remix Extended)" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/32/06/af/3206af39-96b5-74ae-6f83-80e6749b4a86/mzaf_10610457590279416645.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -222,23 +207,7 @@
       <div class="card-info">
         <div class="card-title" title="Suavemente">Suavemente</div>
         <div class="card-artist">(MJX &amp; Pasku Remix Extended)</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">5A</span><span class="badge dur">3:28</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Spicey" data-artist="GHSTGHSTGHST" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3b/cd/f5/3bcdf507-25fc-c784-216c-0229205f686e/mzaf_5515582432472440264.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/20/c0/20/20c0200a-3feb-c641-3b26-d09b7f783258/197338711248.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Spicey">Spicey</div>
-        <div class="card-artist">GHSTGHSTGHST</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">5:32</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Up N&#x27; Down" data-artist="Deeper Purpose BRN JmNPR" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/b9/3b/9eb93bfb-1c5f-1d37-06f8-9e1b70b34986/mzaf_10126599547505830576.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9e/fc/a6/9efca65b-b45c-ec34-4340-c21691e4ab89/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Up N&#x27; Down">Up N&#x27; Down</div>
-        <div class="card-artist">Deeper Purpose BRN JmNPR</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">3:28</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">5A</span><span class="badge dur">3:28</span><span class="badge genre">Hip Hop</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="What Is Love - BVRNOUT Remix" data-artist="Haddaway" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/89/ea/52/89ea5203-802f-2158-614c-8c7d5cedd3df/mzaf_13828661315018209252.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -246,26 +215,51 @@
       <div class="card-info">
         <div class="card-title" title="What Is Love - BVRNOUT Remix">What Is Love - BVRNOUT Remix</div>
         <div class="card-artist">Haddaway</div>
-        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">6A</span><span class="badge dur">3:53</span></div>
+        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">6A</span><span class="badge dur">3:53</span><span class="badge genre">Dance</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Fuck What U Heard" data-artist="Ralvero" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dd/83/bc/dd83bcae-38ee-6a12-c34e-264bb03c51c3/mzaf_15041956837559820462.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Blank Space - Lincoln Baio All You Need Is Love Edit" data-artist="Taylor Swift" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/79/55/b1/7955b10c-6cb6-462a-861c-8e5cbcacfb76/mzaf_3395570742482345989.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/85/72/a6/8572a68b-e0cf-07ae-ea07-2a72322dc7c2/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a7/98/d8/a798d867-344d-2bf2-fbfe-d2d1412dcef8/14UMDIM03793.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Fuck What U Heard">Fuck What U Heard</div>
-        <div class="card-artist">Ralvero</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">5:58</span></div>
+        <div class="card-title" title="Blank Space - Lincoln Baio All You Need Is Love Edit">Blank Space - Lincoln Baio All You Need Is Love Edit</div>
+        <div class="card-artist">Taylor Swift</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">7B</span><span class="badge dur">3:33</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Scream &amp; Shout - Anthem Kingz Intoxicated Edit (Dirty)" data-artist="will.i.am ft. Britney Spears" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/76/8d/f3/768df35a-a801-aedf-5688-ed21b59f28f9/mzaf_9461667921124652116.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/84/6d/92/846d926b-8290-3855-b32b-dd903cc9b1ad/13UMGIM26867.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Scream &amp; Shout - Anthem Kingz Intoxicated Edit (Dirty)">Scream &amp; Shout - Anthem Kingz Intoxicated Edit (Dirty)</div>
+        <div class="card-artist">will.i.am ft. Britney Spears</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">8A</span><span class="badge dur">2:16</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="How Deep Is Your Love" data-artist="Calvin Harris Disciples" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/f8/c9/e7/f8c9e7cf-5fdf-f8df-9002-d87fe1beae04/mzaf_3217620725537876419.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0a/14/ec/0a14ecf0-e123-f439-723f-d72f38a6d2f9/886445437676.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="How Deep Is Your Love">How Deep Is Your Love</div>
+        <div class="card-artist">Calvin Harris Disciples</div>
+        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">9A</span><span class="badge dur">3:32</span><span class="badge genre">Club-Banger</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Wake Me Up - SNEISEN Remix" data-artist="Avicii" data-playlist="Startup - Feeling" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/1e/60/681e601f-e1f2-4ebb-37de-adf00bdf57b6/mzaf_8266263075137964740.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/18/5b/1e/185b1ef5-5d97-19d8-aebf-8e29e41874ef/13UAAIM59255.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Wake Me Up - SNEISEN Remix">Wake Me Up - SNEISEN Remix</div>
+        <div class="card-artist">Avicii</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">10A</span><span class="badge dur">3:58</span><span class="badge genre">Dance</span></div>
       </div>
     </div></div>
-    </section><section class="playlist-section" id="Startup---II-Act">
-      <h2>Startup - II Act <span class="count">26 Songs</span></h2>
+    </section>
+<section class="playlist-section" id="Startup---II-Act">
+      <h2>Startup - II Act <span class="count">24 Songs</span></h2>
       <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="WHERE IS MY HUSBAND! - Beto Luna Remix" data-artist="RAYE" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fc/f5/24/fcf52459-e6a3-c728-c472-58766d300ef7/mzaf_12031297918382153127.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/10/8a/69108a18-55ec-d774-a653-90b2242733db/199538765458.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="WHERE IS MY HUSBAND! - Beto Luna Remix">WHERE IS MY HUSBAND! - Beto Luna Remix</div>
         <div class="card-artist">RAYE</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">4A</span><span class="badge dur">3:25</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">4A</span><span class="badge dur">3:25</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Love Tonight - Hypelezz Be My Lover Edit" data-artist="Shouse" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/29/e8/db/29e8db25-c770-6ae5-2739-34384c116336/mzaf_123641869836392749.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -273,7 +267,15 @@
       <div class="card-info">
         <div class="card-title" title="Love Tonight - Hypelezz Be My Lover Edit">Love Tonight - Hypelezz Be My Lover Edit</div>
         <div class="card-artist">Shouse</div>
-        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">5A</span><span class="badge dur">2:15</span></div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">5A</span><span class="badge dur">2:15</span><span class="badge genre">House</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Get Low - Audirorokk 101-128 Throwback Transition (Dirty)" data-artist="Steve Aoki &amp; Lil Jon" data-playlist="Startup - II Act">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="card-info">
+        <div class="card-title" title="Get Low - Audirorokk 101-128 Throwback Transition (Dirty)">Get Low - Audirorokk 101-128 Throwback Transition (Dirty)</div>
+        <div class="card-artist">Steve Aoki &amp; Lil Jon</div>
+        <div class="card-meta"><span class="badge bpm">101</span><span class="badge key">5A</span><span class="badge dur">5:11</span><span class="badge genre">Hip Hop</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="My House - 5HOURS Remix" data-artist="Flo Rida" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b6/5e/f1/b65ef1d9-f040-cf34-cc4f-204a9c4f1730/mzaf_6904926973601899576.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -281,7 +283,7 @@
       <div class="card-info">
         <div class="card-title" title="My House - 5HOURS Remix">My House - 5HOURS Remix</div>
         <div class="card-artist">Flo Rida</div>
-        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">6A</span><span class="badge dur">2:51</span></div>
+        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">6A</span><span class="badge dur">2:51</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="If You Had My Love" data-artist="Paul Schulze FŪNKENSTEIN LEVII" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b4/11/46/b4114605-9dc4-17fa-906c-0423cd7c2e5c/mzaf_14328018588033607627.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -305,7 +307,7 @@
       <div class="card-info">
         <div class="card-title" title="Crazy In Love">Crazy In Love</div>
         <div class="card-artist">MATTN &amp; Noel Holler</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">7A</span><span class="badge dur">3:20</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">7A</span><span class="badge dur">3:20</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="I Got A Feeling" data-artist="Felix Jaehn &amp; Robin Schulz ft. Georgia Ku" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/64/f8/af/64f8afc7-2f33-4d65-c6a5-ac650720fce6/mzaf_10465189815972761350.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -313,15 +315,7 @@
       <div class="card-info">
         <div class="card-title" title="I Got A Feeling">I Got A Feeling</div>
         <div class="card-artist">Felix Jaehn &amp; Robin Schulz ft. Georgia Ku</div>
-        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">7A</span><span class="badge dur">3:22</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="CONTIGO" data-artist="KAROL G Tiësto" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/81/66/b18166e9-3f45-7d71-bffc-61c0ae14cc07/mzaf_8135670259742130059.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ec/5c/b8/ec5cb83e-f24f-9984-56ac-8402b522368d/24UMGIM13229.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="CONTIGO">CONTIGO</div>
-        <div class="card-artist">KAROL G Tiësto</div>
-        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">7B</span><span class="badge dur">3:12</span></div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">7A</span><span class="badge dur">3:22</span><span class="badge genre">House</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="boy you turn me (DJcity Intro)" data-artist="Felix Jaehn &amp; Cascada" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/43/e7/f3/43e7f382-3da6-3d81-857a-fa936605bb42/mzaf_10517651750400743839.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -345,15 +339,15 @@
       <div class="card-info">
         <div class="card-title" title="One Kiss">One Kiss</div>
         <div class="card-artist">Calvin Harris Dua Lipa</div>
-        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">8A</span><span class="badge dur">3:34</span></div>
+        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">8A</span><span class="badge dur">3:34</span><span class="badge genre">Club-Banger</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Where You Are" data-artist="John Summit HAYLA" data-playlist="Startup - II Act">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Where You Are" data-artist="John Summit HAYLA" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/01/c0/ec/01c0ecc6-36cb-6a62-faf4-e2617cc2e33d/mzaf_11012603604995349193.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/26/86/a9/2686a9dc-0a17-8e7f-82e3-9bb7c53c1494/23UMGIM19042.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Where You Are">Where You Are</div>
         <div class="card-artist">John Summit HAYLA</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">8A</span><span class="badge dur">3:55</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">8A</span><span class="badge dur">3:55</span><span class="badge genre">Club-Banger</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Espresso - Tommy Glasses Remix (Dirty)" data-artist="Sabrina Carpenter" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/da/ff/99daffce-cdde-59c6-5ae0-7f922ce411a8/mzaf_5621292401829922816.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -361,7 +355,7 @@
       <div class="card-info">
         <div class="card-title" title="Espresso - Tommy Glasses Remix (Dirty)">Espresso - Tommy Glasses Remix (Dirty)</div>
         <div class="card-artist">Sabrina Carpenter</div>
-        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">8A</span><span class="badge dur">4:02</span></div>
+        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">8A</span><span class="badge dur">4:02</span><span class="badge genre">Pop</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Crazy What Love Can Do - Tommy Glasses Remix" data-artist="David Guetta, Becky Hill &amp; Ella Henderson" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5b/59/1b/5b591ba2-98bf-fb48-37cb-d600d73cc4ef/mzaf_13405450404576618693.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -369,23 +363,7 @@
       <div class="card-info">
         <div class="card-title" title="Crazy What Love Can Do - Tommy Glasses Remix">Crazy What Love Can Do - Tommy Glasses Remix</div>
         <div class="card-artist">David Guetta, Becky Hill &amp; Ella Henderson</div>
-        <div class="card-meta"><span class="badge bpm">120</span><span class="badge key">9A</span><span class="badge dur">4:19</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Get Low - Audirorokk 101-128 Throwback Transition (Dirty)" data-artist="Steve Aoki &amp; Lil Jon" data-playlist="Startup - II Act">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
-      <div class="card-info">
-        <div class="card-title" title="Get Low - Audirorokk 101-128 Throwback Transition (Dirty)">Get Low - Audirorokk 101-128 Throwback Transition (Dirty)</div>
-        <div class="card-artist">Steve Aoki &amp; Lil Jon</div>
-        <div class="card-meta"><span class="badge bpm">101</span><span class="badge key">5A</span><span class="badge dur">5:11</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Do It To It" data-artist="Acraze Cherish" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d3/2e/8a/d32e8a71-8981-9f8c-5434-54f54db41519/mzaf_4001819714916465289.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/f7/6d/c2f76d7d-1ef4-0621-8454-bc94b4be9c68/00842812154461_Cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Do It To It">Do It To It</div>
-        <div class="card-artist">Acraze Cherish</div>
-        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">10A</span><span class="badge dur">2:37</span></div>
+        <div class="card-meta"><span class="badge bpm">120</span><span class="badge key">9A</span><span class="badge dur">4:19</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Without You" data-artist="Mike Williams &amp; Felix Jaehn" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/fa/2f/17fa2f72-b2dc-511c-6aba-9cdb164b668f/mzaf_3205623372089019419.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -393,15 +371,7 @@
       <div class="card-info">
         <div class="card-title" title="Without You">Without You</div>
         <div class="card-artist">Mike Williams &amp; Felix Jaehn</div>
-        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">10A</span><span class="badge dur">3:25</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Wake Me Up - SNEISEN Remix" data-artist="Avicii" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/1e/60/681e601f-e1f2-4ebb-37de-adf00bdf57b6/mzaf_8266263075137964740.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/18/5b/1e/185b1ef5-5d97-19d8-aebf-8e29e41874ef/13UAAIM59255.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Wake Me Up - SNEISEN Remix">Wake Me Up - SNEISEN Remix</div>
-        <div class="card-artist">Avicii</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">10A</span><span class="badge dur">3:58</span></div>
+        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">10A</span><span class="badge dur">3:25</span><span class="badge genre">House</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Ghost - Ligotti Remix" data-artist="Justin Bieber" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/35/03/85/350385d9-e71f-4e23-49eb-9bbf812c6ffc/mzaf_18141129225761277085.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -409,7 +379,7 @@
       <div class="card-info">
         <div class="card-title" title="Ghost - Ligotti Remix">Ghost - Ligotti Remix</div>
         <div class="card-artist">Justin Bieber</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">10B</span><span class="badge dur">4:01</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">10B</span><span class="badge dur">4:01</span><span class="badge genre">House</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Die With A Smile - Kue&#x27;s Piano Remix" data-artist="Lady Gaga &amp; Bruno Mars" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1e/99/b0/1e99b094-e7f1-fec1-d500-0991dcb59da4/mzaf_18284251449791584449.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -417,7 +387,7 @@
       <div class="card-info">
         <div class="card-title" title="Die With A Smile - Kue&#x27;s Piano Remix">Die With A Smile - Kue&#x27;s Piano Remix</div>
         <div class="card-artist">Lady Gaga &amp; Bruno Mars</div>
-        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">11A</span><span class="badge dur">6:10</span></div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">11A</span><span class="badge dur">6:10</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Sexy Bitch - Edgar Aguirre Remix (Dirty)" data-artist="David Guetta ft. Akon" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/ee/37/aa/ee37aa42-98ba-5e71-b521-5b4c81cecf6e/mzaf_14213183151469356245.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -425,7 +395,7 @@
       <div class="card-info">
         <div class="card-title" title="Sexy Bitch - Edgar Aguirre Remix (Dirty)">Sexy Bitch - Edgar Aguirre Remix (Dirty)</div>
         <div class="card-artist">David Guetta ft. Akon</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">11A</span><span class="badge dur">5:06</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">11A</span><span class="badge dur">5:06</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Hotel Room Service (feat. Nicole Scherzinger) (Remix)" data-artist="Pitbull, Nicole Scherzinger" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/28/37/21/2837213c-7f36-4edf-5643-901d35b4e04a/mzaf_10344959302015570364.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -433,7 +403,7 @@
       <div class="card-info">
         <div class="card-title" title="Hotel Room Service (feat. Nicole Scherzinger) (Remix)">Hotel Room Service (feat. Nicole Scherzinger) (Remix)</div>
         <div class="card-artist">Pitbull, Nicole Scherzinger</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">11A</span><span class="badge dur">3:47</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">11A</span><span class="badge dur">3:47</span><span class="badge genre">Hip Hop</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Where Are You Now" data-artist="Lost Frequencies Calum Scott" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/8a/af/fb8aaff1-10d0-8bc0-0339-88f1d3461e51/mzaf_11564294262882764378.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -459,24 +429,93 @@
         <div class="card-artist">Taylor Swift</div>
         <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">12A</span><span class="badge dur">2:17</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Right Round - Gallardo Remix" data-artist="Flo Rida ft. Ke$ha" data-playlist="Startup - II Act">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Right Round - Gallardo Remix" data-artist="Flo Rida ft. Ke$ha" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fe/3b/d0/fe3bd092-9d8e-9051-7fe1-b16c6acd221d/mzaf_8166976603338902638.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4e/62/be/4e62be48-6e99-1dbe-622d-8ac2cf92467a/mzi.sngplwsl.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
         <div class="card-title" title="Right Round - Gallardo Remix">Right Round - Gallardo Remix</div>
         <div class="card-artist">Flo Rida ft. Ke$ha</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">1A</span><span class="badge dur">3:33</span></div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">1A</span><span class="badge dur">3:33</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Low - SANDERSVILLE Remix" data-artist="Flo Rida ft. T-Pain" data-playlist="Startup - II Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/8e/64/b38e64fe-81b4-353a-0912-e849792bd7d5/mzaf_3197818180611327662.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/14/42/a0/1442a084-36ea-09a0-ff87-d5aea0cc19f8/mzi.ktgesuhn.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Low - SANDERSVILLE Remix">Low - SANDERSVILLE Remix</div>
+        <div class="card-artist">Flo Rida ft. T-Pain</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2A</span><span class="badge dur">3:16</span><span class="badge genre">Dance</span></div>
       </div>
     </div></div>
-    </section><section class="playlist-section" id="Startup---III-Act">
-      <h2>Startup - III Act <span class="count">22 Songs</span></h2>
-      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Low (feat. T-Pain)" data-artist="Flo Rida, T-Pain" data-playlist="Startup - III Act">
+    </section>
+<section class="playlist-section" id="Startup---Alman-Whitelist">
+      <h2>Startup - Alman Whitelist <span class="count">7 Songs</span></h2>
+      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Hey DJ - Initi8 Remix" data-artist="Joel Corry" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cb/3f/98/cb3f98a4-78f8-508a-3f17-9d246450b9b4/mzaf_3699494921341066996.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d0/50/7a/d0507abe-9948-47cf-8ed7-8b2ce24d3087/5054197826610.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Low (feat. T-Pain)">Low (feat. T-Pain)</div>
-        <div class="card-artist">Flo Rida, T-Pain</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2A</span><span class="badge dur">3:51</span></div>
+        <div class="card-title" title="Hey DJ - Initi8 Remix">Hey DJ - Initi8 Remix</div>
+        <div class="card-artist">Joel Corry</div>
+        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">4A</span><span class="badge dur">3:03</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Wackelkontakt" data-artist="Oimara" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/1d/df/491ddf14-f165-1963-bb4d-79ee9a09a713/mzaf_11428729626896029443.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cb/27/62/cb276245-ecff-2d1b-384e-9e4e0af583c9/25UMGIM06426.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Wackelkontakt">Wackelkontakt</div>
+        <div class="card-artist">Oimara</div>
+        <div class="card-meta"><span class="badge bpm">170</span><span class="badge key">8A</span><span class="badge dur">2:47</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Friesenjung - PRIDE &amp; PARKER Remix" data-artist="Ski Aggu, Joost &amp; Otto Waalkes" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/26/7c/ca/267cca09-57e0-fbf7-d343-cc2d98465d1f/mzaf_16653790302217645094.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/98/d3/3e/98d33e00-01b7-5351-0a3c-3e0e92a49899/197902569183.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Friesenjung - PRIDE &amp; PARKER Remix">Friesenjung - PRIDE &amp; PARKER Remix</div>
+        <div class="card-artist">Ski Aggu, Joost &amp; Otto Waalkes</div>
+        <div class="card-meta"><span class="badge bpm">140</span><span class="badge key">10A</span><span class="badge dur">4:06</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Bella Napoli" data-artist="Roy Bianco &amp; Die Abbrunzati Boys" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3c/a0/8e/3ca08e89-9c9c-03ad-d0fe-d9dee768556b/mzaf_8381272217601833669.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/66/fd/0e/66fd0eef-7d0c-8bff-b079-e5319d41757e/21UM1IM27773.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Bella Napoli">Bella Napoli</div>
+        <div class="card-artist">Roy Bianco &amp; Die Abbrunzati Boys</div>
+        <div class="card-meta"><span class="badge bpm">135</span><span class="badge key">10B</span><span class="badge dur">3:55</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Ferrari - Isca Beats &amp; Smoothies Remix" data-artist="James Hype &amp; Miggy Dela Rosa" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d5/61/b3/d561b33c-9c81-e6e6-4fd8-db3670ca996d/mzaf_18204870484323786108.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a9/02/ca/a902ca66-530d-d678-077c-17d9da7533ef/22UMGIM36635.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Ferrari - Isca Beats &amp; Smoothies Remix">Ferrari - Isca Beats &amp; Smoothies Remix</div>
+        <div class="card-artist">James Hype &amp; Miggy Dela Rosa</div>
+        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">12A</span><span class="badge dur">3:02</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Sarà Perché Ti Amo (Stereoact Remix)" data-artist="DJ Redblack Stereoact" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5f/03/53/5f0353e5-8431-edf3-46fd-a0d56c3b8ecd/mzaf_17395863666773889379.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9d/92/dd/9d92ddfc-f729-9232-879a-883392a41fc4/23UMGIM54443.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Sarà Perché Ti Amo (Stereoact Remix)">Sarà Perché Ti Amo (Stereoact Remix)</div>
+        <div class="card-artist">DJ Redblack Stereoact</div>
+        <div class="card-meta"><span class="badge bpm">138</span><span class="badge key">12B</span><span class="badge dur">2:02</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)" data-artist="Nik Stone, Tonec &amp; Lazard" data-playlist="Startup - Alman Whitelist" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/76/cd/b9/76cdb916-9e36-4377-e84e-588a92c34a4e/mzaf_6629018173716063107.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a3/9e/58/a39e58ff-35da-8e85-5fa4-3915a9a5dd93/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)">Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)</div>
+        <div class="card-artist">Nik Stone, Tonec &amp; Lazard</div>
+        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">12B</span><span class="badge dur">3:29</span></div>
+      </div>
+    </div></div>
+    </section>
+<section class="playlist-section" id="Startup---III-Act">
+      <h2>Startup - III Act <span class="count">22 Songs</span></h2>
+      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Low - SANDERSVILLE Remix" data-artist="Flo Rida ft. T-Pain" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/8e/64/b38e64fe-81b4-353a-0912-e849792bd7d5/mzaf_3197818180611327662.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/14/42/a0/1442a084-36ea-09a0-ff87-d5aea0cc19f8/mzi.ktgesuhn.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Low - SANDERSVILLE Remix">Low - SANDERSVILLE Remix</div>
+        <div class="card-artist">Flo Rida ft. T-Pain</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2A</span><span class="badge dur">3:16</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="On The Floor - Tiger Toast Remix" data-artist="Jennifer Lopez ft. Pitbull" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b7/c2/9f/b7c29f2a-4d89-1dba-8484-14ff71ef8a81/mzaf_10145980146387884095.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -484,7 +523,7 @@
       <div class="card-info">
         <div class="card-title" title="On The Floor - Tiger Toast Remix">On The Floor - Tiger Toast Remix</div>
         <div class="card-artist">Jennifer Lopez ft. Pitbull</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2A</span><span class="badge dur">5:38</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2A</span><span class="badge dur">5:38</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Clarity (feat. Foxes) [Tiësto Remix]" data-artist="ZEDD Foxes" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/35/35/23353556-3bdf-c385-2d11-f833b87265ea/mzaf_10564340346449161425.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -500,7 +539,7 @@
       <div class="card-info">
         <div class="card-title" title="It&#x27;s That Time - B00ST Rattle Remix">It&#x27;s That Time - B00ST Rattle Remix</div>
         <div class="card-artist">Marlon Hoffstadt &amp; DJ Daddy Trance</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">3:01</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">3:01</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Somebody To Love - CHALANT &amp; Close Friends Only Remix" data-artist="Justin Bieber" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/72/fa/b272fa85-35ea-e45b-d9d6-c6e3e9f49f4a/mzaf_16677370619723451334.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -508,7 +547,7 @@
       <div class="card-info">
         <div class="card-title" title="Somebody To Love - CHALANT &amp; Close Friends Only Remix">Somebody To Love - CHALANT &amp; Close Friends Only Remix</div>
         <div class="card-artist">Justin Bieber</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">4:11</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">4:11</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="The Fate Of Ophelia - Loud Luxury Remix (Clean)" data-artist="Taylor Swift" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/07/28/4b07285f-b50c-7aff-cb40-2d732256b703/mzaf_16739866530441939982.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -516,7 +555,7 @@
       <div class="card-info">
         <div class="card-title" title="The Fate Of Ophelia - Loud Luxury Remix (Clean)">The Fate Of Ophelia - Loud Luxury Remix (Clean)</div>
         <div class="card-artist">Taylor Swift</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">7A</span><span class="badge dur">2:32</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">7A</span><span class="badge dur">2:32</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="I Know You Want Me (Calle Ocho)" data-artist="Pitbull" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8b/fa/97/8bfa9797-c475-77a7-060c-80b4ccbf0565/mzaf_2077265384393458920.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -524,7 +563,7 @@
       <div class="card-info">
         <div class="card-title" title="I Know You Want Me (Calle Ocho)">I Know You Want Me (Calle Ocho)</div>
         <div class="card-artist">Pitbull</div>
-        <div class="card-meta"><span class="badge bpm">127</span><span class="badge key">7A</span><span class="badge dur">3:57</span></div>
+        <div class="card-meta"><span class="badge bpm">127</span><span class="badge key">7A</span><span class="badge dur">3:57</span><span class="badge genre">Latin</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Samba De Janeiro - Johnny 500 Remix" data-artist="Bellini" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/9b/e2/35/9be23556-8689-8846-e3bb-777c9c2d9b4a/mzaf_16577768579007719878.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -532,7 +571,7 @@
       <div class="card-info">
         <div class="card-title" title="Samba De Janeiro - Johnny 500 Remix">Samba De Janeiro - Johnny 500 Remix</div>
         <div class="card-artist">Bellini</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">8A</span><span class="badge dur">2:54</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">8A</span><span class="badge dur">2:54</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Danza Kuduro - DJ Mag Remix" data-artist="Don Omar ft. Lucenzo" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/13/79/d1/1379d1f5-0c47-8df7-7e21-ef6225854d2d/mzaf_3711008858921440324.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -540,7 +579,7 @@
       <div class="card-info">
         <div class="card-title" title="Danza Kuduro - DJ Mag Remix">Danza Kuduro - DJ Mag Remix</div>
         <div class="card-artist">Don Omar ft. Lucenzo</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">8B</span><span class="badge dur">2:50</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">8B</span><span class="badge dur">2:50</span><span class="badge genre">Latin</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Beauty And A Beat - Joan Qveralt Remix (Dirty)" data-artist="Justin Bieber ft. Nicki Minaj" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/db/66/9d/db669d1d-7051-5fbd-1ddb-cf6d0b06758a/mzaf_15223103171846878304.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -548,7 +587,7 @@
       <div class="card-info">
         <div class="card-title" title="Beauty And A Beat - Joan Qveralt Remix (Dirty)">Beauty And A Beat - Joan Qveralt Remix (Dirty)</div>
         <div class="card-artist">Justin Bieber ft. Nicki Minaj</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">8B</span><span class="badge dur">3:46</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">8B</span><span class="badge dur">3:46</span><span class="badge genre">Pop</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Safe and Sound (Club Remix Video Edit)" data-artist="Soulshifters" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/a8/71/55a87161-117e-cba3-9b28-8ff395cb50ad/mzaf_7838368098149799884.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -564,7 +603,7 @@
       <div class="card-info">
         <div class="card-title" title="Astronaut In The Ocean - Anthem Kingz vs Salkin Remix (Dirty)">Astronaut In The Ocean - Anthem Kingz vs Salkin Remix (Dirty)</div>
         <div class="card-artist">Masked Wolf</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">9A</span><span class="badge dur">3:13</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">9A</span><span class="badge dur">3:13</span><span class="badge genre">House</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="One More Time - Valmer Remix" data-artist="Daft Punk" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/98/96/f6/9896f638-8b47-3f76-c47e-19e43b53677c/mzaf_15900001332254520801.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -572,7 +611,7 @@
       <div class="card-info">
         <div class="card-title" title="One More Time - Valmer Remix">One More Time - Valmer Remix</div>
         <div class="card-artist">Daft Punk</div>
-        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">9B</span><span class="badge dur">5:12</span></div>
+        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">9B</span><span class="badge dur">5:12</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Don&#x27;t You Worry Child" data-artist="Swedish House Mafia John Martin" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e1/de/65/e1de650b-02d0-5774-033b-5fa877c2ca04/mzaf_12115001286278485369.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -580,7 +619,7 @@
       <div class="card-info">
         <div class="card-title" title="Don&#x27;t You Worry Child">Don&#x27;t You Worry Child</div>
         <div class="card-artist">Swedish House Mafia John Martin</div>
-        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">10A</span><span class="badge dur">6:43</span></div>
+        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">10A</span><span class="badge dur">6:43</span><span class="badge genre">Club-Banger</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Down - Robin Roij &amp; Merco Remix" data-artist="Jay Sean" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/48/81/44/488144a6-2866-906f-1fe2-2493fab5b996/mzaf_782099756025679034.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -588,7 +627,15 @@
       <div class="card-info">
         <div class="card-title" title="Down - Robin Roij &amp; Merco Remix">Down - Robin Roij &amp; Merco Remix</div>
         <div class="card-artist">Jay Sean</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10B</span><span class="badge dur">2:31</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10B</span><span class="badge dur">2:31</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Do It To It" data-artist="Acraze Cherish" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d3/2e/8a/d32e8a71-8981-9f8c-5434-54f54db41519/mzaf_4001819714916465289.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/f7/6d/c2f76d7d-1ef4-0621-8454-bc94b4be9c68/00842812154461_Cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Do It To It">Do It To It</div>
+        <div class="card-artist">Acraze Cherish</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">10A</span><span class="badge dur">2:37</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Meet Her (Tiësto vs. Da Hool)" data-artist="Tiësto Da Hool" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f1/25/69/f12569ac-c40d-4218-04de-0300dd821b35/mzaf_12552863512538177385.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -604,15 +651,7 @@
       <div class="card-info">
         <div class="card-title" title="Love Story - Disco Fries Beat Of Your Heart Edit">Love Story - Disco Fries Beat Of Your Heart Edit</div>
         <div class="card-artist">Taylor Swift</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10B</span><span class="badge dur">3:46</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Don&#x27;t Stop the Party (feat. TJR)" data-artist="Pitbull TJR" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/68/a9/c3/68a9c3e7-6763-bfde-e278-560869ae02b8/mzaf_18078357235331277646.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1b/c5/af/1bc5af7d-ba57-a2a2-02ce-5a07c1a1074b/886444305686.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Don&#x27;t Stop the Party (feat. TJR)">Don&#x27;t Stop the Party (feat. TJR)</div>
-        <div class="card-artist">Pitbull TJR</div>
-        <div class="card-meta"><span class="badge bpm">127</span><span class="badge key">11A</span><span class="badge dur">3:26</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10B</span><span class="badge dur">3:46</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Levels - RICHIE ROZEX Remix" data-artist="Avicii" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/6e/bd/ed6ebdf2-0a97-5dae-7fc6-583de355dca1/mzaf_10095989580213298663.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -620,15 +659,7 @@
       <div class="card-info">
         <div class="card-title" title="Levels - RICHIE ROZEX Remix">Levels - RICHIE ROZEX Remix</div>
         <div class="card-artist">Avicii</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">12A</span><span class="badge dur">3:32</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="How Deep is Your Love - Rob DVS Reckless Edit" data-artist="Huge Carter &amp; BOOST" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/ca/72/b8ca7249-2686-86b4-5160-165f91d9dadf/mzaf_3812637551234872504.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ce/dd/6b/cedd6b73-6eef-55c5-12ef-998a7c3b807a/198846608105.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="How Deep is Your Love - Rob DVS Reckless Edit">How Deep is Your Love - Rob DVS Reckless Edit</div>
-        <div class="card-artist">Huge Carter &amp; BOOST</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">12B</span><span class="badge dur">4:24</span></div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">12A</span><span class="badge dur">3:32</span><span class="badge genre">Dance</span></div>
       </div>
     </div><div class="card" onclick="toggleSong(this)" data-title="Love Is The Answer (feat. Blessid Union Of Souls) [Tiësto Remix]" data-artist="Jus Jack Oza Blessid Union Of Souls" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c1/22/9b/c1229bd0-4727-7a2b-94d1-40b3699e1054/mzaf_12093165660297505413.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
@@ -644,28 +675,69 @@
       <div class="card-info">
         <div class="card-title" title="Give It To Me - Denero Remix (Dirty)">Give It To Me - Denero Remix (Dirty)</div>
         <div class="card-artist">Timbaland ft. Justin Timberlake &amp; Nelly Furtado</div>
-        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">1A</span><span class="badge dur">2:57</span></div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">1A</span><span class="badge dur">2:57</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="How Deep is Your Love - Rob DVS Reckless Edit" data-artist="Huge Carter &amp; BOOST" data-playlist="Startup - III Act" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/ca/72/b8ca7249-2686-86b4-5160-165f91d9dadf/mzaf_3812637551234872504.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ce/dd/6b/cedd6b73-6eef-55c5-12ef-998a7c3b807a/198846608105.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="How Deep is Your Love - Rob DVS Reckless Edit">How Deep is Your Love - Rob DVS Reckless Edit</div>
+        <div class="card-artist">Huge Carter &amp; BOOST</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">12B</span><span class="badge dur">4:24</span><span class="badge genre">Dance</span></div>
       </div>
     </div></div>
-    </section><section class="playlist-section" id="Startup---Alman-Abriss-Late">
-      <h2>Startup - Alman Abriss Late <span class="count">18 Songs</span></h2>
-      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Thank You (Not So Bad)" data-artist="Dimitri Vegas &amp; Like Mike Tiësto Dido W&amp;W Dimitri Vegas Like Mike" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/9f/30/92/9f309209-23fb-69f9-5304-cdd1af684dfc/mzaf_11843825201161930196.plus.aac.p.m4a">
+    </section>
+<section class="playlist-section" id="Startup---Hello-Tomorrow-Land">
+      <h2>Startup - Hello Tomorrow Land <span class="count">20 Songs</span></h2>
+      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Blurred Lines" data-artist="Robin Thicke T.I. Pharrell Williams" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5a/fc/03/5afc039d-8019-e2ba-f61f-85aa99cda2ec/mzaf_7802599809055002716.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8d/bf/3f/8dbf3f83-e277-bf20-6c6e-44bb623d2a8f/196871655651.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/38/4c/f1/384cf18e-adca-a05c-9ff9-175bc2595643/13UAAIM09921.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Thank You (Not So Bad)">Thank You (Not So Bad)</div>
-        <div class="card-artist">Dimitri Vegas &amp; Like Mike Tiësto Dido W&amp;W Dimitri Vegas Like Mike</div>
-        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">1A</span><span class="badge dur">2:19</span></div>
+        <div class="card-title" title="Blurred Lines">Blurred Lines</div>
+        <div class="card-artist">Robin Thicke T.I. Pharrell Williams</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">1A</span><span class="badge dur">5:08</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Loud &amp; Proud" data-artist="BlasterJaxx Billy The Kit" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/06/c1/e2/06c1e27a-2560-9700-efae-ed41e231d0be/mzaf_12689867772175226722.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Walk With Me" data-artist="Felix Jaehn &amp; Shouse" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/23/21/c4232146-5727-e66f-eaab-31d0b12d3a63/mzaf_1707863993259383766.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/78/53/dc/7853dc2f-1274-e859-df29-7d1001033c6b/8712944441178.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/42/dc/08/42dc08c3-7348-9c41-a477-3b3725a65ba9/24UM1IM17399.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Loud &amp; Proud">Loud &amp; Proud</div>
-        <div class="card-artist">BlasterJaxx Billy The Kit</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2A</span><span class="badge dur">6:13</span></div>
+        <div class="card-title" title="Walk With Me">Walk With Me</div>
+        <div class="card-artist">Felix Jaehn &amp; Shouse</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">1A</span><span class="badge dur">4:26</span><span class="badge genre">Dance</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Weekends (DJcity Intro - Dirty)" data-artist="Jonas Blue &amp; Felix Jaehn" data-playlist="Startup - Alman Abriss Late">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Jackie Chan (Intro - Dirty)" data-artist="Tiesto &amp; Dzeko ft. Preme &amp; Post Malone" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6d/68/ec/6d68ec80-bff9-4af2-4683-2f3e510824d5/mzaf_2070536043041294066.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e5/d6/72/e5d6729e-ad66-c946-5978-7cc19a9a5dc0/00602567668169.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Jackie Chan (Intro - Dirty)">Jackie Chan (Intro - Dirty)</div>
+        <div class="card-artist">Tiesto &amp; Dzeko ft. Preme &amp; Post Malone</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">2A</span><span class="badge dur">4:15</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="A Sky Full of Stars - J Bruus Remix" data-artist="Coldplay" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a2/31/4b/a2314b97-10b6-190c-72b3-45cc21bbf56b/mzaf_740612971315603868.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/60/90/ad/6090adc3-8863-861d-afcc-23c55c6fe5da/dj.vmtulfyu.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="A Sky Full of Stars - J Bruus Remix">A Sky Full of Stars - J Bruus Remix</div>
+        <div class="card-artist">Coldplay</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2B</span><span class="badge dur">4:26</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="You Belong With Me - itspatpoulin Club Remix" data-artist="Taylor Swift" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/84/f2/ec84f262-1498-583f-dd5b-cd1a78587bce/mzaf_8651470950553551918.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c3/d0/1c/c3d01c88-73e7-187e-fd62-e1744de979a6/21UMGIM09915.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="You Belong With Me - itspatpoulin Club Remix">You Belong With Me - itspatpoulin Club Remix</div>
+        <div class="card-artist">Taylor Swift</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">2B</span><span class="badge dur">2:42</span><span class="badge genre">House</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Drums" data-artist="James Hype Kim Petras Tiësto" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/f9/61/4cf961ee-19a5-9128-08c8-724802662b81/mzaf_1132337271415523922.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ab/db/26/abdb26ef-e655-e67d-ee06-c747bd23a929/24UMGIM07332.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Drums">Drums</div>
+        <div class="card-artist">James Hype Kim Petras Tiësto</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">3A</span><span class="badge dur">2:52</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Weekends (DJcity Intro - Dirty)" data-artist="Jonas Blue &amp; Felix Jaehn" data-playlist="Startup - Hello Tomorrow Land">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
       <div class="card-info">
@@ -673,154 +745,103 @@
         <div class="card-artist">Jonas Blue &amp; Felix Jaehn</div>
         <div class="card-meta"><span class="badge bpm">149</span><span class="badge key">3B</span><span class="badge dur">2:53</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Hey DJ - Initi8 Remix" data-artist="Joel Corry" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cb/3f/98/cb3f98a4-78f8-508a-3f17-9d246450b9b4/mzaf_3699494921341066996.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Don&#x27;t Phunk With My Heart - WOODERSON Remix" data-artist="Black Eyed Peas" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/1d/f7/cc/1df7cc0a-d74b-eb0e-9129-402540073d7b/mzaf_12036818266134592912.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d0/50/7a/d0507abe-9948-47cf-8ed7-8b2ce24d3087/5054197826610.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/63/b0/47/63b0476f-3cc6-276a-f09e-ab415db818cd/00602498372425.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Hey DJ - Initi8 Remix">Hey DJ - Initi8 Remix</div>
-        <div class="card-artist">Joel Corry</div>
-        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">4A</span><span class="badge dur">3:03</span></div>
+        <div class="card-title" title="Don&#x27;t Phunk With My Heart - WOODERSON Remix">Don&#x27;t Phunk With My Heart - WOODERSON Remix</div>
+        <div class="card-artist">Black Eyed Peas</div>
+        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">4A</span><span class="badge dur">3:05</span><span class="badge genre">Dance</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Kleiner Grüner Kaktus" data-artist="KLEPTO, Michael Caspar &amp; German Gents" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/18/42/85/1842857d-975c-1880-9e24-b261f07b4489/mzaf_13625083787029768372.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Rave" data-artist="Pelari" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/61/89/88/618988a1-e753-b83c-5460-81a4f2f357a1/mzaf_17918293512695478367.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fc/27/e8/fc27e844-1d76-9950-f4df-429fc86c2383/196872552928.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/62/85/596285e9-20f3-0563-7f88-b9de8d502a9f/5060211501746.png/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Kleiner Grüner Kaktus">Kleiner Grüner Kaktus</div>
-        <div class="card-artist">KLEPTO, Michael Caspar &amp; German Gents</div>
-        <div class="card-meta"><span class="badge bpm">160</span><span class="badge key">4A</span><span class="badge dur">1:53</span></div>
+        <div class="card-title" title="Rave">Rave</div>
+        <div class="card-artist">Pelari</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">5A</span><span class="badge dur">5:55</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Es Tut Weh" data-artist="Achtabahn &amp; Katy B Diamond" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a0/58/7a/a0587a7e-f5f9-0756-0bb9-b60e594888d3/mzaf_11142604272264970150.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Fuck What U Heard" data-artist="Ralvero" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dd/83/bc/dd83bcae-38ee-6a12-c34e-264bb03c51c3/mzaf_15041956837559820462.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/75/45/c5/7545c5f4-fe7f-5c62-9e50-2cf755cf8a6c/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/85/72/a6/8572a68b-e0cf-07ae-ea07-2a72322dc7c2/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Es Tut Weh">Es Tut Weh</div>
-        <div class="card-artist">Achtabahn &amp; Katy B Diamond</div>
-        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">6A</span><span class="badge dur">2:02</span></div>
+        <div class="card-title" title="Fuck What U Heard">Fuck What U Heard</div>
+        <div class="card-artist">Ralvero</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">5:58</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Zeit, DASS SICH WAS DREHT - FEIER &amp; EIS Remix" data-artist="$OHO BANI, Herbert Grönemeyer &amp; Ericson" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/0e/38/9b0e38a6-58f4-99ca-7cf0-18e363d1512b/mzaf_10473267992181236321.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Up N&#x27; Down" data-artist="Deeper Purpose BRN JmNPR" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/b9/3b/9eb93bfb-1c5f-1d37-06f8-9e1b70b34986/mzaf_10126599547505830576.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a1/5f/a9/a15fa9fa-1954-2423-1d58-f5ad29b009ef/196872369731.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9e/fc/a6/9efca65b-b45c-ec34-4340-c21691e4ab89/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Zeit, DASS SICH WAS DREHT - FEIER &amp; EIS Remix">Zeit, DASS SICH WAS DREHT - FEIER &amp; EIS Remix</div>
-        <div class="card-artist">$OHO BANI, Herbert Grönemeyer &amp; Ericson</div>
-        <div class="card-meta"><span class="badge bpm">155</span><span class="badge key">7A</span><span class="badge dur">2:24</span></div>
+        <div class="card-title" title="Up N&#x27; Down">Up N&#x27; Down</div>
+        <div class="card-artist">Deeper Purpose BRN JmNPR</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">3:28</span><span class="badge genre">Club-Banger</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Axel F - Dibs &amp; MGM Nite Mode Edit (Dirty)" data-artist="Crazy Frog" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/29/89/45/29894503-c1db-6bce-9979-0dddd621e831/mzaf_4671425623140848850.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Spicey" data-artist="GHSTGHSTGHST" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3b/cd/f5/3bcdf507-25fc-c784-216c-0229205f686e/mzaf_5515582432472440264.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5d/9f/9d/5d9f9df6-32b9-a5e0-8f91-3feb197e4a3f/4251513964020_3000.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/20/c0/20/20c0200a-3feb-c641-3b26-d09b7f783258/197338711248.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Axel F - Dibs &amp; MGM Nite Mode Edit (Dirty)">Axel F - Dibs &amp; MGM Nite Mode Edit (Dirty)</div>
-        <div class="card-artist">Crazy Frog</div>
-        <div class="card-meta"><span class="badge bpm">140</span><span class="badge key">7A</span><span class="badge dur">2:25</span></div>
+        <div class="card-title" title="Spicey">Spicey</div>
+        <div class="card-artist">GHSTGHSTGHST</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">5:32</span><span class="badge genre">Dance</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Samba De Janeiro (HYPERTECHNO)" data-artist="Kolya Funk, Nikita Rise &amp; Aris" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/68/b4/f0/68b4f0a6-19e1-95fc-3909-562d879ffa8a/mzaf_4961422463389914543.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Paradise - MEDUN Remix" data-artist="Coldplay" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/13/1f/f0/131ff0ec-09d2-cc44-043f-698e60713641/mzaf_1497246005369579066.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/03/47/df/0347df9f-3650-d638-dcd8-a15e8803f184/198622262798_cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fa/41/1c/fa411c37-7a65-8a3e-71c9-4b566c49617c/5099967983858_1562x1562_300dpi.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Samba De Janeiro (HYPERTECHNO)">Samba De Janeiro (HYPERTECHNO)</div>
-        <div class="card-artist">Kolya Funk, Nikita Rise &amp; Aris</div>
-        <div class="card-meta"><span class="badge bpm">140</span><span class="badge key">8A</span><span class="badge dur">2:06</span></div>
+        <div class="card-title" title="Paradise - MEDUN Remix">Paradise - MEDUN Remix</div>
+        <div class="card-artist">Coldplay</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">3:26</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Wackelkontakt" data-artist="Oimara" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/1d/df/491ddf14-f165-1963-bb4d-79ee9a09a713/mzaf_11428729626896029443.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="I&#x27;m Good (Blue) - KidCutUp Throwback Intro (Dirty)" data-artist="David Guetta &amp; Bebe Rexha" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3a/4e/bd/3a4ebd86-16fa-4804-d39b-04e62e596735/mzaf_1434980429612457583.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cb/27/62/cb276245-ecff-2d1b-384e-9e4e0af583c9/25UMGIM06426.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/32/d2/9c/32d29c8a-e0a2-a629-7889-23c12ead0595/5054197344749.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Wackelkontakt">Wackelkontakt</div>
-        <div class="card-artist">Oimara</div>
-        <div class="card-meta"><span class="badge bpm">170</span><span class="badge key">8A</span><span class="badge dur">2:47</span></div>
+        <div class="card-title" title="I&#x27;m Good (Blue) - KidCutUp Throwback Intro (Dirty)">I&#x27;m Good (Blue) - KidCutUp Throwback Intro (Dirty)</div>
+        <div class="card-artist">David Guetta &amp; Bebe Rexha</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">6A</span><span class="badge dur">4:16</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Favorite Song" data-artist="Luca-Dante Spadafora &amp; Good Humans" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/66/e0/ca/66e0ca70-d281-76fa-39a3-0fe1d9ee6ee2/mzaf_11188195460026399196.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="One (Your Name) (Radio Edit)" data-artist="Swedish House Mafia" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/19/ac/82/19ac82f4-421a-1082-04b6-f3b666d1a623/mzaf_5238421517267497053.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f7/fe/aa/f7feaa71-5549-c8da-a15d-535e18da7c53/cover_197086855720.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/19/ab/bf/19abbf03-1736-dfa7-4825-31ef2a3dc9ef/05099990575754.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Favorite Song">Favorite Song</div>
-        <div class="card-artist">Luca-Dante Spadafora &amp; Good Humans</div>
-        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">8B</span><span class="badge dur">2:08</span></div>
+        <div class="card-title" title="One (Your Name) (Radio Edit)">One (Your Name) (Radio Edit)</div>
+        <div class="card-artist">Swedish House Mafia</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">7A</span><span class="badge dur">2:43</span><span class="badge genre">Club-Banger</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Friesenjung - PRIDE &amp; PARKER Remix" data-artist="Ski Aggu, Joost &amp; Otto Waalkes" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/26/7c/ca/267cca09-57e0-fbf7-d343-cc2d98465d1f/mzaf_16653790302217645094.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Pursuit Of Happiness" data-artist="Kid Cudi MGMT Ratatat" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9f/96/a3/9f96a3f7-921c-08dd-b99e-8360f0ac2768/mzaf_5554590330721672539.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/98/d3/3e/98d33e00-01b7-5351-0a3c-3e0e92a49899/197902569183.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/e1/cb/32/e1cb3268-1ba1-2c11-2f47-92ee469fac6a/09UMGIM33420.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Friesenjung - PRIDE &amp; PARKER Remix">Friesenjung - PRIDE &amp; PARKER Remix</div>
-        <div class="card-artist">Ski Aggu, Joost &amp; Otto Waalkes</div>
-        <div class="card-meta"><span class="badge bpm">140</span><span class="badge key">10A</span><span class="badge dur">4:06</span></div>
+        <div class="card-title" title="Pursuit Of Happiness">Pursuit Of Happiness</div>
+        <div class="card-artist">Kid Cudi MGMT Ratatat</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">8A</span><span class="badge dur">6:13</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Bella Napoli" data-artist="Roy Bianco &amp; Die Abbrunzati Boys" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3c/a0/8e/3ca08e89-9c9c-03ad-d0fe-d9dee768556b/mzaf_8381272217601833669.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Ready For Your Love" data-artist="Felix Jaehn ft. Sophie Ellis-Bextor" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5c/e0/fb/5ce0fbed-82e2-e806-36a4-2e6aefdbb123/mzaf_1779066302819714658.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/66/fd/0e/66fd0eef-7d0c-8bff-b079-e5319d41757e/21UM1IM27773.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/58/c6/a858c66b-daa0-0dc0-a8ac-ad35f32ed16b/24UMGIM62819.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Bella Napoli">Bella Napoli</div>
-        <div class="card-artist">Roy Bianco &amp; Die Abbrunzati Boys</div>
-        <div class="card-meta"><span class="badge bpm">135</span><span class="badge key">10B</span><span class="badge dur">3:55</span></div>
+        <div class="card-title" title="Ready For Your Love">Ready For Your Love</div>
+        <div class="card-artist">Felix Jaehn ft. Sophie Ellis-Bextor</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">9A</span><span class="badge dur">4:00</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Mockingbird" data-artist="Tiësto Dimitri Vegas &amp; Like Mike Gabry Ponte" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/97/d0/4697d035-27f7-ff21-798e-21e87591b59b/mzaf_11744967217647727921.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Close Your Eyes" data-artist="Felix Jaehn &amp; VIZE ft. Miss Li" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/80/91/a2/8091a2cf-8b03-21e6-4688-1ddc3c9fe570/mzaf_14938397909447954200.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/80/67/bd806726-f09a-b0c5-23c5-9c0a1076ec33/5021732270498.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/55/10/d4/5510d4e9-613a-0f41-4b01-fcfb01a0d214/19UMGIM97473.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Mockingbird">Mockingbird</div>
-        <div class="card-artist">Tiësto Dimitri Vegas &amp; Like Mike Gabry Ponte</div>
-        <div class="card-meta"><span class="badge bpm">155</span><span class="badge key">11A</span><span class="badge dur">2:34</span></div>
+        <div class="card-title" title="Close Your Eyes">Close Your Eyes</div>
+        <div class="card-artist">Felix Jaehn &amp; VIZE ft. Miss Li</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10A</span><span class="badge dur">2:41</span><span class="badge genre">House</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Schloss Aus Sand - FEIER &amp; EIS Remix" data-artist="1986zig" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/7e/59/37/7e593767-cbb1-d56f-90cb-5b3d8f48139d/mzaf_11185830878344014087.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Day &#x27;N&#x27; Nite - Rogerson Remix" data-artist="Kid Cudi" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/07/23/f707231e-ed5b-4e50-499c-114232d369ab/mzaf_7872385221426664785.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/14/a7/4d/14a74dcf-39ec-9ad9-935f-e8e4fe120f99/24UMGIM04583.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/8c/97/4f8c9778-cefe-51a7-b17b-7093154aad7c/09UMGIM33417.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Schloss Aus Sand - FEIER &amp; EIS Remix">Schloss Aus Sand - FEIER &amp; EIS Remix</div>
-        <div class="card-artist">1986zig</div>
-        <div class="card-meta"><span class="badge bpm">170</span><span class="badge key">12A</span><span class="badge dur">3:00</span></div>
+        <div class="card-title" title="Day &#x27;N&#x27; Nite - Rogerson Remix">Day &#x27;N&#x27; Nite - Rogerson Remix</div>
+        <div class="card-artist">Kid Cudi</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10A</span><span class="badge dur">3:54</span><span class="badge genre">House</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Ferrari - Isca Beats &amp; Smoothies Remix" data-artist="James Hype &amp; Miggy Dela Rosa" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d5/61/b3/d561b33c-9c81-e6e6-4fd8-db3670ca996d/mzaf_18204870484323786108.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a9/02/ca/a902ca66-530d-d678-077c-17d9da7533ef/22UMGIM36635.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Ferrari - Isca Beats &amp; Smoothies Remix">Ferrari - Isca Beats &amp; Smoothies Remix</div>
-        <div class="card-artist">James Hype &amp; Miggy Dela Rosa</div>
-        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">12A</span><span class="badge dur">3:02</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Sarà Perché Ti Amo (Stereoact Remix)" data-artist="DJ Redblack Stereoact" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5f/03/53/5f0353e5-8431-edf3-46fd-a0d56c3b8ecd/mzaf_17395863666773889379.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9d/92/dd/9d92ddfc-f729-9232-879a-883392a41fc4/23UMGIM54443.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Sarà Perché Ti Amo (Stereoact Remix)">Sarà Perché Ti Amo (Stereoact Remix)</div>
-        <div class="card-artist">DJ Redblack Stereoact</div>
-        <div class="card-meta"><span class="badge bpm">138</span><span class="badge key">12B</span><span class="badge dur">2:02</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)" data-artist="Nik Stone, Tonec &amp; Lazard" data-playlist="Startup - Alman Abriss Late" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/76/cd/b9/76cdb916-9e36-4377-e84e-588a92c34a4e/mzaf_6629018173716063107.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a3/9e/58/a39e58ff-35da-8e85-5fa4-3915a9a5dd93/cover.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)">Sarà Perché Ti Amo - Scotty Remix (Euro 2024 Version)</div>
-        <div class="card-artist">Nik Stone, Tonec &amp; Lazard</div>
-        <div class="card-meta"><span class="badge bpm">150</span><span class="badge key">12B</span><span class="badge dur">3:29</span></div>
-      </div>
-    </div></div>
-    </section><section class="playlist-section" id="Startup---Bench">
-      <h2>Startup - Bench <span class="count">9 Songs</span></h2>
-      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="Belly Dancer" data-artist="Imanbek &amp; BYOR" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/09/fc/0f/09fc0f14-c89d-1ee5-4e07-0cffe8cd6f7d/mzaf_5501234059056506201.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ff/ba/d3/ffbad3ab-1fd4-9f52-4468-6d34ea2ac1de/190296221330.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Belly Dancer">Belly Dancer</div>
-        <div class="card-artist">Imanbek &amp; BYOR</div>
-        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">4A</span><span class="badge dur">3:32</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="BOOM" data-artist="Tiësto, Sevenn, Gucci Mane" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/42/c6/8c/42c68c26-5bb2-1f6e-e39c-e05a77245f1b/mzaf_11469032847606023343.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/59/04/4c/59044c01-2432-2c5c-c5f6-c2302e1fe754/00602567331322.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="BOOM">BOOM</div>
-        <div class="card-artist">Tiësto, Sevenn, Gucci Mane</div>
-        <div class="card-meta"><span class="badge bpm">123</span><span class="badge key">7A</span><span class="badge dur">2:59</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Pump It Louder (Dirty)" data-artist="Tiësto &amp; Black Eyed Peas" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e4/8c/67/e48c6740-581d-a529-b976-5eaa906e2efd/mzaf_14347255046789268320.plus.aac.p.m4a">
-      <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e3/bb/5c/e3bb5c43-25fa-835d-c962-f3ef7b15bbe6/075679708489.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
-      <div class="card-info">
-        <div class="card-title" title="Pump It Louder (Dirty)">Pump It Louder (Dirty)</div>
-        <div class="card-artist">Tiësto &amp; Black Eyed Peas</div>
-        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">9A</span><span class="badge dur">3:45</span></div>
-      </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Clocks - DJ Dark &amp; Mentol &amp; MD DJ Remix" data-artist="Coldplay" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/9b/17/d29b173f-546a-606b-378f-8f3c333e81f1/mzaf_3952108508633208951.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Clocks - DJ Dark &amp; Mentol &amp; MD DJ Remix" data-artist="Coldplay" data-playlist="Startup - Hello Tomorrow Land" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/9b/17/d29b173f-546a-606b-378f-8f3c333e81f1/mzaf_3952108508633208951.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b9/b4/2a/b9b42ad1-1e25-5096-da43-497a247e69a3/190295978051.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
@@ -828,45 +849,129 @@
         <div class="card-artist">Coldplay</div>
         <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">10B</span><span class="badge dur">4:59</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Yellow - MT SOUL Remix" data-artist="Coldplay" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/66/f3/1a/66f31a76-a6ed-cb4c-f353-23310a7ae9a8/mzaf_10593596652344378873.plus.aac.p.m4a">
+    </div></div>
+    </section>
+<section class="playlist-section" id="Startup---Good-Feel-Latin-Night">
+      <h2>Startup - Good Feel Latin Night <span class="count">15 Songs</span></h2>
+      <div class="cards"><div class="card" onclick="toggleSong(this)" data-title="All I Do Is Win - Afro Bros Remix (Clean)" data-artist="DJ Khaled ft. T-Pain" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/64/ba/9b64bad4-a663-f5f5-fa58-7c43c9ff1612/mzaf_11054710522346032940.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f5/93/8c/f5938c49-964c-31d1-4b33-78b634f71fb7/190295978075.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/73/13/d1/mzi.cxtvatin.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Yellow - MT SOUL Remix">Yellow - MT SOUL Remix</div>
-        <div class="card-artist">Coldplay</div>
-        <div class="card-meta"><span class="badge bpm">124</span><span class="badge key">11A</span><span class="badge dur">3:21</span></div>
+        <div class="card-title" title="All I Do Is Win - Afro Bros Remix (Clean)">All I Do Is Win - Afro Bros Remix (Clean)</div>
+        <div class="card-artist">DJ Khaled ft. T-Pain</div>
+        <div class="card-meta"><span class="badge bpm">133</span><span class="badge key">7A</span><span class="badge dur">2:23</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Friday (feat. Mufasa &amp; Hypeman) (Dopamine Re-Edit)" data-artist="Riton Nightcrawlers Mufasa &amp; Hypeman" data-playlist="Startup - Bench" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/12/da/f4/12daf49a-1dc3-d718-fbef-bfabc67ce94a/mzaf_7474240996698232994.plus.aac.p.m4a">
+    </div><div class="card" onclick="toggleSong(this)" data-title="CONTIGO" data-artist="KAROL G Tiësto" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/81/66/b18166e9-3f45-7d71-bffc-61c0ae14cc07/mzaf_8135670259742130059.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/a5/5f/f8a55f83-f755-524c-aa9e-fd6a039e34e7/886448989318.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ec/5c/b8/ec5cb83e-f24f-9984-56ac-8402b522368d/24UMGIM13229.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Friday (feat. Mufasa &amp; Hypeman) (Dopamine Re-Edit)">Friday (feat. Mufasa &amp; Hypeman) (Dopamine Re-Edit)</div>
-        <div class="card-artist">Riton Nightcrawlers Mufasa &amp; Hypeman</div>
-        <div class="card-meta"><span class="badge bpm">123</span><span class="badge key">11A</span><span class="badge dur">2:49</span></div>
+        <div class="card-title" title="CONTIGO">CONTIGO</div>
+        <div class="card-artist">KAROL G Tiësto</div>
+        <div class="card-meta"><span class="badge bpm">122</span><span class="badge key">7B</span><span class="badge dur">3:12</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Goosebumps (Remix)" data-artist="Travis Scott HVME" data-playlist="Startup - Bench">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Mercy - Rogerson Remix" data-artist="Duffy" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/27/8b/5e278b1d-5214-3283-9585-113b842bd8d8/mzaf_7819129412847163426.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7e/16/eb/7e16ebde-fa58-dea8-b9b8-c5c3f16302ff/00602517729001.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Mercy - Rogerson Remix">Mercy - Rogerson Remix</div>
+        <div class="card-artist">Duffy</div>
+        <div class="card-meta"><span class="badge bpm">130</span><span class="badge key">6A</span><span class="badge dur">3:26</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="DtMF - MarkCutz Club Edit (Dirty)" data-artist="Bad Bunny" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/28/ad/eb/28adeb53-5969-35a0-e136-28767f0d6144/mzaf_15250745364174301370.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/3d/ca/e73dca71-449b-7c65-bbe6-6d3f1edee4cc/1155852.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="DtMF - MarkCutz Club Edit (Dirty)">DtMF - MarkCutz Club Edit (Dirty)</div>
+        <div class="card-artist">Bad Bunny</div>
+        <div class="card-meta"><span class="badge bpm">113</span><span class="badge key">12B</span><span class="badge dur">4:31</span><span class="badge genre">Latin</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="I Like It - Guille Placencia Remix (Dirty)" data-artist="Cardi B ft. Bad Bunny" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/7f/5d/fd7f5df2-255d-d51d-23b1-d1cd33b37688/mzaf_13244856273657682935.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ca/58/e5/ca58e5e3-acb7-8ca3-6af9-ad63af3b71f1/075679873675.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="I Like It - Guille Placencia Remix (Dirty)">I Like It - Guille Placencia Remix (Dirty)</div>
+        <div class="card-artist">Cardi B ft. Bad Bunny</div>
+        <div class="card-meta"><span class="badge bpm">129</span><span class="badge key">4A</span><span class="badge dur">6:27</span><span class="badge genre">House</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Gasolina - Dibs &amp; MGM vs Chuwe 96-125 Transition" data-artist="Daddy Yankee ft. Lil Jon &amp; Pitbull" data-playlist="Startup - Good Feel Latin Night">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
       <div class="card-info">
-        <div class="card-title" title="Goosebumps (Remix)">Goosebumps (Remix)</div>
-        <div class="card-artist">Travis Scott HVME</div>
-        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">2A</span><span class="badge dur">2:42</span></div>
+        <div class="card-title" title="Gasolina - Dibs &amp; MGM vs Chuwe 96-125 Transition">Gasolina - Dibs &amp; MGM vs Chuwe 96-125 Transition</div>
+        <div class="card-artist">Daddy Yankee ft. Lil Jon &amp; Pitbull</div>
+        <div class="card-meta"><span class="badge bpm">96</span><span class="badge key">4A</span><span class="badge dur">4:54</span><span class="badge genre">House</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="I Knew You Were Trouble - Pascal West Remix" data-artist="Taylor Swift" data-playlist="Startup - Bench">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Temperature" data-artist="Sean Paul" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/60/e6/09/60e6090a-46c2-13f5-7795-fabc5de1fa45/mzaf_6243822993450014202.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/01/a4/63/01a463c1-a951-eda2-291b-e601b6303c5a/mzi.eemlybcl.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Temperature">Temperature</div>
+        <div class="card-artist">Sean Paul</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">3A</span><span class="badge dur">3:36</span><span class="badge genre">Hip Hop</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Memories - Manuferz, Cortex_o &amp; Peace Remix (Dirty)" data-artist="David Guetta ft. Kid Cudi" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/7d/1d/9a/7d1d9ace-7193-981c-1964-2a59bfe0a430/mzaf_6796483144721275890.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0a/0c/4f/0a0c4f12-1489-3bda-ab41-7cb04f181e5f/5099990837951.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Memories - Manuferz, Cortex_o &amp; Peace Remix (Dirty)">Memories - Manuferz, Cortex_o &amp; Peace Remix (Dirty)</div>
+        <div class="card-artist">David Guetta ft. Kid Cudi</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">3A</span><span class="badge dur">3:44</span><span class="badge genre">Dance</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Who&#x27;s That Girl? - KidCutUp vs Richastic 97-125 Throwback Transition" data-artist="Eve" data-playlist="Startup - Good Feel Latin Night">
       <div class="card-check"><span class="check-icon">✕</span></div>
       <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
       <div class="card-info">
-        <div class="card-title" title="I Knew You Were Trouble - Pascal West Remix">I Knew You Were Trouble - Pascal West Remix</div>
-        <div class="card-artist">Taylor Swift</div>
-        <div class="card-meta"><span class="badge bpm">132</span><span class="badge key">2A</span><span class="badge dur">4:51</span></div>
+        <div class="card-title" title="Who&#x27;s That Girl? - KidCutUp vs Richastic 97-125 Throwback Transition">Who&#x27;s That Girl? - KidCutUp vs Richastic 97-125 Throwback Transition</div>
+        <div class="card-artist">Eve</div>
+        <div class="card-meta"><span class="badge bpm">97</span><span class="badge key">3A</span><span class="badge dur">3:09</span><span class="badge genre">Hip Hop</span></div>
       </div>
-    </div><div class="card" onclick="toggleSong(this)" data-title="Shots - Marty Dunstan vs Marty Marvel Rattle Edit (Dirty)" data-artist="Lil Jon ft. LMFAO" data-playlist="Startup - Bench" data-preview="https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/6d/5b/56/6d5b56fa-308b-c1a7-2043-0d06f533c80c/mzvf_4181293079974052707.640x406.h264lc.U.p.m4v">
+    </div><div class="card" onclick="toggleSong(this)" data-title="Baila Conmigo (feat. Kelly Ruiz)" data-artist="Dayvi Víctor Cárdenas Kelly Ruiz" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b1/47/08/b1470886-78ea-aee2-ae3b-661432b606f5/mzaf_16512576659888810579.plus.aac.p.m4a">
       <div class="card-check"><span class="check-icon">✕</span></div>
-      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Video/v4/ae/e6/c9/aee6c978-9339-0722-2215-9ffa34a11f9c/09UMGIM29270_1_1.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/29/47/5b/29475b79-9c7f-d8b4-8138-ac2860e587c3/886447938980.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="card-info">
-        <div class="card-title" title="Shots - Marty Dunstan vs Marty Marvel Rattle Edit (Dirty)">Shots - Marty Dunstan vs Marty Marvel Rattle Edit (Dirty)</div>
-        <div class="card-artist">Lil Jon ft. LMFAO</div>
-        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">4A</span><span class="badge dur">3:28</span></div>
+        <div class="card-title" title="Baila Conmigo (feat. Kelly Ruiz)">Baila Conmigo (feat. Kelly Ruiz)</div>
+        <div class="card-artist">Dayvi Víctor Cárdenas Kelly Ruiz</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10A</span><span class="badge dur">3:09</span><span class="badge genre">Latin</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Without You (feat. Usher)" data-artist="David Guetta, USHER" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e1/ed/41/e1ed417c-9f94-7718-00a8-6b044405294b/mzaf_17953594502943349240.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f6/b9/e2/f6b9e2df-c638-3e4b-c28d-a68b06465758/5099997943051.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Without You (feat. Usher)">Without You (feat. Usher)</div>
+        <div class="card-artist">David Guetta, USHER</div>
+        <div class="card-meta"><span class="badge bpm">128</span><span class="badge key">10B</span><span class="badge dur">3:28</span><span class="badge genre">Hip Hop</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Don&#x27;t Stop the Party (feat. TJR)" data-artist="Pitbull TJR" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/68/a9/c3/68a9c3e7-6763-bfde-e278-560869ae02b8/mzaf_18078357235331277646.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1b/c5/af/1bc5af7d-ba57-a2a2-02ce-5a07c1a1074b/886444305686.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Don&#x27;t Stop the Party (feat. TJR)">Don&#x27;t Stop the Party (feat. TJR)</div>
+        <div class="card-artist">Pitbull TJR</div>
+        <div class="card-meta"><span class="badge bpm">127</span><span class="badge key">11A</span><span class="badge dur">3:26</span><span class="badge genre">Latin</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Taki Taki - 5HOURS Remix (Clean)" data-artist="DJ Snake ft. Selena Gomez, Ozuna &amp; Cardi B" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9d/9d/0b/9d9d0b79-d309-c0d2-fb18-c1650b576d57/mzaf_4852893199516087676.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/96/dd/45/96dd45f2-76a9-6eaf-b001-bdaa144d69e2/19UMGIM01664.rgb.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Taki Taki - 5HOURS Remix (Clean)">Taki Taki - 5HOURS Remix (Clean)</div>
+        <div class="card-artist">DJ Snake ft. Selena Gomez, Ozuna &amp; Cardi B</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">11A</span><span class="badge dur">2:25</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Lambada - DJ Mag Remix" data-artist="Kaoma" data-playlist="Startup - Good Feel Latin Night" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/f9/91/bdf991d2-0f5a-9a1b-3684-8e44b14bd017/mzaf_3563031856789457319.plus.aac.p.m4a">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/93/dc/4c/93dc4c19-8abd-3f5e-ade3-0cbbf5d7a4a5/mzi.jhacztdu.jpg/600x600bb.jpg" alt="Cover" class="cover" loading="lazy"><button class="play-btn" onclick="playPreview(event,this)" aria-label="Vorschau"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="card-info">
+        <div class="card-title" title="Lambada - DJ Mag Remix">Lambada - DJ Mag Remix</div>
+        <div class="card-artist">Kaoma</div>
+        <div class="card-meta"><span class="badge bpm">125</span><span class="badge key">7A</span><span class="badge dur">3:35</span><span class="badge genre">Latin</span></div>
+      </div>
+    </div><div class="card" onclick="toggleSong(this)" data-title="Dame Un Grrr - Gael Borrego Remix" data-artist="Fantomel &amp; KATE LINN" data-playlist="Startup - Good Feel Latin Night">
+      <div class="card-check"><span class="check-icon">✕</span></div>
+      <div class="cover-wrap"><div class="cover no-cover">🎵</div></div>
+      <div class="card-info">
+        <div class="card-title" title="Dame Un Grrr - Gael Borrego Remix">Dame Un Grrr - Gael Borrego Remix</div>
+        <div class="card-artist">Fantomel &amp; KATE LINN</div>
+        <div class="card-meta"><span class="badge bpm">126</span><span class="badge key">4A</span><span class="badge dur">3:18</span><span class="badge genre">Latin</span></div>
       </div>
     </div></div>
     </section>
@@ -950,7 +1055,6 @@ function showToast(msg) {
   t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2500);
 }
-document.querySelectorAll('.card:not([data-preview]) .play-btn').forEach(b => b.style.display = 'none');
 </script>
 </body>
 </html>
